@@ -104,29 +104,16 @@ Die Generierung erfolgt durch eine sequentielle Abfrage und Abgleich aller Eigen
 					\State $temp\_bit\_array[i] =$ \texttt{false}
 				\EndFor
 			\EndIf
-			\NoThen
-			\If{$\big(\Call{NodeIsAliphatic}{node} == \texttt{true}\big)$}
-				\If{$\big(\Call{NodeSymbolNegationFlag}{node} == \texttt{false}\big)$}
-					\State $node\_is\_aliphatic =$ \texttt{true}
-				\EndIf
-				\NoThen
-			\Else 
-				\State $node\_is\_aliphatic =$ \texttt{false}
-			\EndIf
-			\NoThen
-			\If{$\big(\Call{NodeIsAromatic}{node} == \texttt{true}\big)$}
-				\If{$\big(\Call{NodeSymbolNegationFlag}{node} == \texttt{false}\big)$}
-					\State $node\_is\_aliphatic =$ \texttt{true}
-				\EndIf
-				\NoThen
-			\Else 
-				\State $node\_is\_aromatic =$ \texttt{false}
-			\EndIf
-			\NoThen
 		\EndIf
-		\NoThen
 	\EndIf
 	\NoThen
+	\If{$\big(\Call{NodeIsAliphatic}{node} != \texttt{true}\big)$}
+		\State $node\_is\_aliphatic =$ \texttt{false}
+	\EndIf
+	\NoThen
+	\If{$\big(\Call{NodeIsAromatic}{node} != \texttt{true}\big)$}
+		\State $node\_is\_aliphatic =$ \texttt{false}
+	\EndIf
 	\State $sec\_temp\_bit\_array = temp\_bit\_array \land sec\_temp\_bit\_array$
 \EndFor
 \State $bit\_array = bit\_array \lor sec\_temp\_bit\_array$
@@ -305,6 +292,8 @@ Beispiel \ref{bsp:intersectwo} zeigt, zwei SMARTS-Ausdrücke bei denen Formel \eq
 Anhand der im eben beschriebenen generierten Relations-Matrizen von Knoten und Kanten ist es nun möglich zwei Muster auf eine Subgraphisomorphismus zu untersuchen.
 
 Mit der für die Knoten erzeugten Relations-Matrix, den jeweiligen Adjazenz-Matrizen und der Information zur Vereinbarkeit der Kanten durch die entsprechende Relations-Matrix wird durch den Algorithmus nach Ullmann ein Isomorphismus gesucht und die gefundenen bijektiven Abbildungen in Form von Permutationsmatrizen ausgegeben.
+
+Bei der Überprüfung auf eine Schnitt-Relation werden die Permutationsmatrizen in einem weiteren Schritt erneut auf diese Teilmengen-Relation geprüft. In diesem Schritt wird für die resultierende bijektive Abbildung geprüft, ob Formel \eqref{eq:fall1} und Formel \eqref{eq:fall2} gelten.
 
 \subsection{Kennzeichnung}
 Zur eindeutigen Zuordnung der gefundenen Isomorphismen wurde anschließend eine Än-\\derung der \textit{Label} des Ziel-SMARTS erzeugt, die als Abbildung des Anfrage-SMARTS dienen. Durch diese Kennzeichnung der Knoten eines Anfrage-SMARTS in einem Ziel-SMARTS wird bei der Ausgabe deutlich welche Knoten eine Abbildung darstellen. Beispiel \ref{bsp:labelmapping} zeigt für die vier möglichen Teilmengen-Relationen die Ausgabe der gefundenen \textit{Mappings}.\\

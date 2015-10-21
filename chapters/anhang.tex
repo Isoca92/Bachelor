@@ -114,6 +114,15 @@ Setzt anhand eines gefundenen Isomorphismus die \textit{Label} innerhalb der SMA
 \end{flalign*}
 Berechnet für einen Anfrage- und Ziel-SMARTS ob es einen oder mehrere Isomorphismen gibt, und gibt diese in Form einer Permutationsmatrix aus.
 
+\begin{flalign*}
+\texttt{static std::vector<Base::SimpleMatrix}& \texttt{<int>>recheckIntersection} &\\
+&\texttt{(const std::string \&querySmarts,}&\\
+&\texttt{ const std::string \&targetSmarts,}&\\
+&\texttt{ std::vector<Base::SimpleMatrix<int>>}&\\
+&\qquad \texttt{ solutions)}
+\end{flalign*}
+Überprüft die gewonnenen \textit{Mappings}, ob für sie die Schnitt-Relation gilt, und gibt die überprüften \textit{Mappings} aus.
+
 \textbf{RelationMatrix.hpp}
 \begin{flalign*}
 \texttt{Base::SimpleMatrix<int> initialiseNodeMatrix} & \texttt{(const std::string \&smarts\_q,}&\\

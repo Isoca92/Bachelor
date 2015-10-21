@@ -107,14 +107,19 @@ ChemSpider.
 
 \bibitem{ChEMBL}
 EMBL European Molecular~Biology Laboratory.
-\newblock Chembl.
+\newblock {ChEMBL}.
 \newblock \url{https://www.ebi.ac.uk/chembl/}.
 \newblock Zugriff: 14.10.2015.
 
 \bibitem{ChEMBLrelease}
 EMBL European Molecular~Biology Laboratory.
-\newblock Chembl20 release.
+\newblock {ChEMBL 20 Release}.
 \newblock \url{http://chembl.blogspot.de/2015/02/chembl-20-released.html}.
 \newblock Zugriff: 14.10.2015.
+
+\bibitem{ChEMBLpersonal}
+EMBL European Molecular~Biology Laboratory and C.~Laggner.
+\newblock {Sructural Alerts - ChEMBL 20}.
+\newblock {persönliche Korrespondenz mit C. Laggner}, September 2015.
 
 \end{thebibliography}
