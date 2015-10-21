@@ -1,0 +1,188 @@
+\documentclass[12pt,a4paper,bibliography=totocnumbered,listof=totocnumbered]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\newcommand\NoThen{\renewcommand\algorithmicthen{}}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{mdframed}
+\usepackage{tabularx}
+\usepackage[font=footnotesize]{caption}
+\usepackage{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[right]{eurosym}
+\usepackage[printonlyused]{acronym}
+\usepackage{subfig}
+%\usepackage{floatflt}
+%\usepackage[usenames,dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{paralist}
+\usepackage[normalem]{ulem} % ermöglicht das Unterstreichen von Text
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage[right]{eurosym}
+\usepackage{wrapfig}
+\setlength\belowcaptionskip{-12pt}
+\usepackage[subfigure,titles]{tocloft}
+\usepackage[pdfpagelabels=true]{hyperref}
+\usepackage{sidecap}
+\usepackage{verbatim}
+\usepackage{varwidth}
+\usepackage{placeins}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes,backgrounds}
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing,shapes}
+
+\usepackage{bibgerm}
+\usepackage[numbers,square]{natbib}
+\renewcommand{\cite}{\citep}
+	\usepackage{amssymb, graphicx, amsmath, amsthm}
+	%\theoremstyle{definition}
+	\theoremstyle{remark}
+	\newtheorem{bsp}{Beispiel}[subsection]
+%\usepackage{floatrow}
+%\usepackage{mhchem}
+%\usepackage{chemexec}
+%\usepackage{chemfig}
+%\usepackage{mychemistry}
+\usepackage{listings}
+\usepackage{arydshln}
+\lstset{basicstyle=\footnotesize, captionpos=b, breaklines=true, showstringspaces=false, tabsize=2, frame=lines, numbers=none, numberstyle=\tiny, xleftmargin=2em, framexleftmargin=2em}
+\makeatletter
+\def\l@lstlisting#1#2{\@dottedtocline{1}{0em}{1em}{\hspace{1,5em} Lst. #1}{#2}}
+\makeatother
+
+\geometry{a4paper, top=27mm, left=30mm, right=20mm, bottom=35mm, headsep=10mm, footskip=12mm}
+
+
+\hypersetup{unicode=false, pdftoolbar=true, pdfmenubar=true, pdffitwindow=false, pdfstartview={FitH},
+	pdftitle={Projektdokumentation},
+	pdfauthor={Ohm, Rauterberg, Seidel},
+	pdfsubject={Projektdokumentation},
+	pdfcreator={\LaTeX\ with package \flqq hyperref\frqq},
+	pdfproducer={pdfTeX \the\pdftexversion.\pdftexrevision},
+	pdfkeywords={Projektdokumentation},
+	pdfnewwindow=true,
+	colorlinks=true,linkcolor=black,citecolor=black,filecolor=magenta,urlcolor=black}
+\pdfinfo{/CreationDate (D:201508)}
+
+\begin{document}
+
+\titlespacing{\section}{0pt}{0pt}{-6pt plus 2pt minus 2pt}
+
+% Kopf- und Fusszeile
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\leftmark}{\rightmark}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\thesection\space\contentsname}
+%\lfoot{FuÃŸzeile}
+\cfoot{}
+\rfoot{\ \linebreak Seite \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Vorspann
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\theHsection}{\Roman{section}}
+\pagenumbering{Roman}
+
+% ----------------------------------------------------------------------------------------------------------
+% Titelseite
+% ----------------------------------------------------------------------------------------------------------
+\thispagestyle{empty}
+\input{chapters/titelseite}
+
+% ----------------------------------------------------------------------------------------------------------
+% Zusammenfassung
+% ----------------------------------------------------------------------------------------------------------
+\thispagestyle{empty}
+\input{chapters/abstract}
+
+%
+% Verzeichnisse
+% ----------------------------------------------------------------------------------------------------------
+\renewcommand{\cfttabpresnum}{Tab. }
+\renewcommand{\cftfigpresnum}{Abb. }
+\settowidth{\cfttabnumwidth}{Abb. 10\quad}
+\settowidth{\cftfignumwidth}{Abb. 10\quad}
+\pagenumbering{arabic}
+\setcounter{page}{3}
+\titlespacing{\section}{0pt}{12pt plus 4pt minus 2pt}{2pt plus 2pt minus 2pt}
+\singlespacing %Zeilenabstand
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+%\phantomsection
+%\addcontentsline{toc}{section}{\texorpdfstring{II \hspace{0.35em}Inhaltsverzeichnis}{Inhaltsverzeichnis}}
+%\addtocounter{section}{1}
+\thispagestyle{empty}
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+% ----------------------------------------------------------------------------------------------------------
+% Inhalt
+% ----------------------------------------------------------------------------------------------------------
+% Abstände Überschrift
+\titlespacing{\section}{0pt}{12pt plus 4pt minus 2pt}{3pt}
+\titlespacing{\subsection}{0pt}{12pt plus 4pt minus 2pt}{3pt}
+\titlespacing{\subsubsection}{0pt}{0.1cm}{0.1cm}
+
+% Kopfzeile
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\subsectionmark}[1]{}
+\renewcommand{\subsubsectionmark}[1]{}
+\lhead{Kapitel \thesection}
+\rhead{\rightmark}
+
+\singlespacing
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theHsection}{\arabic{section}}
+
+\setcounter{section}{0}
+\pagenumbering{arabic}
+\setcounter{page}{3}
+\include{chapters/kapitel1}
+\include{chapters/kapitel2}
+\include{chapters/kapitel3}
+\include{chapters/kapitel4}
+\include{chapters/kapitel5}
+\include{chapters/kapitel6}
+
+% Anhang
+% ----------------------------------------------------------------------------------------------------------
+\pagenumbering{Roman}
+\setcounter{page}{1}
+%\lhead{Anhang \thesection}
+
+% Anhang
+%\thispagestyle{empty}
+\appendix
+\input{chapters/anhang}
+\phantomsection
+\renewcommand\bibname{Literaturverzeichnis}
+
+%Beim zweifachen kompilieren wird der toc String falsch initialisiert und ein Fehöer wird geworfen.
+%\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+
+\pagebreak
+\bibliographystyle{unsrt}
+ % Din 1505 nach Lorenzen (Das konkrete Aussehen des Litverzeichnisses ist im header festgelegt)
+\bibliography{bibliography/literatur}  % Pfad zur *.bib-Datei (Dateiendung wird weggelassen)
+\cleardoublepage
+
+\include{_eidversicherung}
+
+\end{document}

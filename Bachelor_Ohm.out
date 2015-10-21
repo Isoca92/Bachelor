@@ -1,0 +1,33 @@
+\BOOKMARK [1][-]{section.1}{Einleitung}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Grundlagen}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{L\366sungsstrategie}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Konzepte}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Struktur}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Realisierung}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Aufarbeitung und Auswahl}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Fingerprintgenerierung}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Vergleich und Aufbau Relation-Matrix}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Subgraphisomorphie Analyse}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Kennzeichnung}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{Evaluation}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{Testen}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Validierung}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.3}{Laufzeitanalyse}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Experimente und Auswertung}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Diskussion der Experimente}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 18
+\BOOKMARK [2][-]{subsection.6.1}{Ungel\366ste Probleme}{section.6}% 19
+\BOOKMARK [1][-]{section.7}{Weiterf\374hrende Arbeit}{}% 20
+\BOOKMARK [1][-]{appendix.A}{Software User Guide}{}% 21
+\BOOKMARK [2][-]{subsection.A.1}{Command Line Syntax}{appendix.A}% 22
+\BOOKMARK [2][-]{subsection.A.2}{Command Line Options}{appendix.A}% 23
+\BOOKMARK [1][-]{appendix.B}{Softwarearchitektur}{}% 24
+\BOOKMARK [1][-]{appendix.C}{Wichtige Module und Klassen}{}% 25
+\BOOKMARK [1][-]{appendix.D}{APIs}{}% 26
+\BOOKMARK [1][-]{appendix.E}{Genutzte Datens\344tze}{}% 27
+\BOOKMARK [2][-]{subsection.E.1}{ZINC-6k-Molek\374lliste}{appendix.E}% 28
+\BOOKMARK [2][-]{subsection.E.2}{SMARTS Datensatz \(ZBH\)}{appendix.E}% 29
+\BOOKMARK [2][-]{subsection.E.3}{SMARTS Filter \(Experimente\)}{appendix.E}% 30
+\BOOKMARK [2][-]{subsection.E.4}{Ergebnisse der Experimente}{appendix.E}% 31
+\BOOKMARK [1][-]{appendix.F}{Implementation}{}% 32
+\BOOKMARK [1][-]{appendix.G}{Literatur}{}% 33

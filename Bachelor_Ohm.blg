@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Bachelor_Ohm.aux
+A level-1 auxiliary file: chapters/kapitel1.aux
+A level-1 auxiliary file: chapters/kapitel2.aux
+A level-1 auxiliary file: chapters/kapitel3.aux
+A level-1 auxiliary file: chapters/kapitel4.aux
+A level-1 auxiliary file: chapters/kapitel5.aux
+A level-1 auxiliary file: chapters/kapitel6.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: _eidversicherung.aux
+Database file #1: bibliography/literatur.bib
+You've used 20 entries,
+            1791 wiz_defined-function locations,
+            564 strings with 6302 characters,
+and the built_in function-call counts, 3394 in all, are:
+= -- 294
+> -- 132
+< -- 1
++ -- 54
+- -- 34
+* -- 153
+:= -- 556
+add.period$ -- 67
+call.type$ -- 20
+change.case$ -- 16
+chr.to.int$ -- 0
+cite$ -- 20
+duplicate$ -- 152
+empty$ -- 384
+format.name$ -- 34
+if$ -- 772
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 13
+newline$ -- 109
+num.names$ -- 23
+pop$ -- 93
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 45
+stack$ -- 0
+substring$ -- 115
+swap$ -- 21
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 26
+width$ -- 22
+write$ -- 216

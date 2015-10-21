@@ -1,0 +1,18 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdftex 2015.8.16)  18 AUG 2015 17:16
+entering extended mode
+**D:/Documents/Dropbox/Annika/Hannah_Annika_Farina/Projekt/Projektbericht_OhmRa
+uterbergSeidel/bibliography/literatur.bib
+
+(D:/Documents/Dropbox/Annika/Hannah_Annika_Farina/Projekt/Projektbericht_OhmRau
+terbergSeidel/bibliography/literatur.bib
+! Undefined control sequence.
+l.13 	howpublished = "\url
+                          {http://www.daylight.com/dayhtml/doc/theory/theory...
+
+? 
+! Emergency stop.
+l.13 	howpublished = "\url
+                          {http://www.daylight.com/dayhtml/doc/theory/theory...
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

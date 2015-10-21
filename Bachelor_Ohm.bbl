@@ -1,0 +1,120 @@
+\begin{thebibliography}{10}
+
+\bibitem{textbook}
+J.~Gasteiger and T.~Engel, editors.
+\newblock {\em {Chemoinformatics: A Textbook}}.
+\newblock Wiley-VCH, 2003.
+
+\bibitem{qsar}
+Roger Perkins, Hong Fang, Weida Tong, and William~J. Welsh.
+\newblock Quantitative structure-activity relationship methods: Perspectives on
+  drug discovery and toxicology.
+\newblock {\em Environmental Toxicology and Chemistry}, 22(8):1666--1679, 2003.
+
+\bibitem{chemoinformatik}
+B.~A. Bunin, B.~Siesel, G.~A. Morales, and J.~Bajorath, editors.
+\newblock {\em {Chemoinformatics: theory, practice, and products}}.
+\newblock Springer, 2007.
+
+\bibitem{introduction}
+Andrew~R. Leach and Valerie~J. Gillet.
+\newblock {\em An Introduction to Chemoinformatics}.
+\newblock Springer Publishing Company, Incorporated, 2007.
+
+\bibitem{randic}
+Milan Randic.
+\newblock Characterization of molecular branching.
+\newblock {\em Journal of the American Chemical Society}, 97(23):6609--6615,
+  1975.
+
+\bibitem{matrices}
+Shihyen Chen, Bin Ma, and Kaizhong Zhang.
+\newblock On the similarity metric and the distance metric.
+\newblock {\em Theor. Comput. Sci.}, 410(24-25):2365--2376, 2009.
+
+\bibitem{Daylightsma}
+Inc. Daylight Chemical Information~Systems.
+\newblock Daylight smarts.
+\newblock \url{http://daylight.com/dayhtml_tutorials/languages/smarts/}.
+\newblock Zugriff: 20.08.2015.
+
+\bibitem{gci}
+M.~Rarey.
+\newblock Grundlagen der chemieinformatik.
+\newblock Vorlesung, Wintersemester 2014.
+
+\bibitem{endlauto}
+H.J. Böckenhauer and J.~Hromkovic.
+\newblock {\em Formale Sprachen: Endliche Automaten, Grammatiken, lexikalische
+  und syntaktische Analyse}.
+\newblock Springer, 2013.
+
+\bibitem{regex}
+Adrian~Horia Dediu, Enrico Formenti, Carlos Martín-Vide, and Bianca Truthe,
+  editors.
+\newblock {\em Language and Automata Theory and Applications - 9th
+  International Conference, {LATA} 2015, Nice, France, March 2-6, 2015,
+  Proceedings}, volume 8977 of {\em Lecture Notes in Computer Science}.
+  Springer, 2015.
+
+\bibitem{Master}
+Andriy Mashychev.
+\newblock {Eine computergestützte Methode zum Vergleich chemischer Muster am
+  Beispiel von SMARTS}.
+\newblock Masterarbeit, Universität Hamburg, 2011.
+
+\bibitem{smiles}
+David Weininger.
+\newblock Smiles, a chemical language and information system. 1. introduction
+  to methodology and encoding rules.
+\newblock {\em Journal of Chemical Information and Computer Sciences},
+  28(1):31--36, 1988.
+
+\bibitem{Daylightsmi}
+Inc. Daylight Chemical Information~Systems.
+\newblock Daylight smiles.
+\newblock \url{http://daylight.com/dayhtml_tutorials/languages/smiles/}.
+\newblock Zugriff: 20.08.2015.
+
+\bibitem{graph}
+Dieter Jungnickel.
+\newblock {\em Graphs, Networks and Algorithms}.
+\newblock Springer, 3rd edition, 2007.
+
+\bibitem{ullmann}
+J.~R. Ullmann.
+\newblock An algorithm for subgraph isomorphism.
+\newblock {\em J. ACM}, 23(1):31--42, 1976.
+
+\bibitem{zinc}
+San~Francisco University~of California.
+\newblock Zinc.
+\newblock \url{http://zinc.docking.org/}.
+\newblock Zugriff: 19.08.2015.
+
+\bibitem{smartsdata}
+Zentrum für Bioinformatik.
+\newblock Smarts dataset.
+\newblock
+  \url{http://www.zbh.uni-hamburg.de/forschung/arbeitsgruppe-algorithmisches-molekulares-design/datasets.html}.
+\newblock Zugriff: 01.08.2015.
+
+\bibitem{thyroxin}
+ChemSpider.
+\newblock Levothyroxine.
+\newblock \url{http://www.chemspider.com/Chemical-Structure.5614.html}.
+\newblock Zugriff: 14.10.2015.
+
+\bibitem{ChEMBL}
+EMBL European Molecular~Biology Laboratory.
+\newblock Chembl.
+\newblock \url{https://www.ebi.ac.uk/chembl/}.
+\newblock Zugriff: 14.10.2015.
+
+\bibitem{ChEMBLrelease}
+EMBL European Molecular~Biology Laboratory.
+\newblock Chembl20 release.
+\newblock \url{http://chembl.blogspot.de/2015/02/chembl-20-released.html}.
+\newblock Zugriff: 14.10.2015.
+
+\end{thebibliography}

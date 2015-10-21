@@ -1,0 +1,60 @@
+%
+% Diskussion und Bewertung
+%
+\section{Fazit}
+Das in dieser Arbeit vorgestellte und implementierte Verfahren ermöglicht eine Lösung des in Kapitel \ref{sssec:einleitung} beschriebene Problems. Mit dem entwickelten Verfahren ist es möglich chemische Muster zu vergleichen.\\
+Die bereits bestehenden Konzepte \cite{Master} konnten im Rahmen dieser Arbeit erweitert und verbessert werden.
+So wurde die Untersuchung zweier Muster auf eine Schnitt-Relation neu entwickelt und implementiert. Das SMARTS-Atomprimiv \texttt{h<n>} wurde mit der expliziten Beschreibung (\texttt{H<n>}) zusammengeführt, sodass kein zusätzlicher Aufwand im Verfahren nötig ist, und das Atomprimitiv dennoch verarbeitet werden kann. 
+
+\subsection{Ungelöste Probleme}\label{ssec:probleme}
+Einige SMARTS-Atomprimitve können von dem vorgestellten Verfahren nicht behandelt werden, was verhindert, dass alle SMARTS-Ausdrücke auf Teilmengen-Relationen überprüft werden können.\\
+Momentan werden bei der Übergabe an das implementierte Verfahren die SMARTS-Ausdrücke überprüft und gegebenenfalls aussortiert. Aussortiert werden SMARTS-Ausdrücke, die eine der folgenen Eigenschaften beinhalten:
+\begin{itemize}
+	\item[] \texttt{@@} oder \texttt{@}: Chiralität an tetraedrischen Kohlenstoffen
+	\item[] \texttt{@<c><n>}: Chiralitätsklasse \textless c\textgreater, Chiralität \textless n\textgreater 
+	\item[] \texttt{@<c><n>?}: Chiralitätsklasse \textless c\textgreater, Chiralität \textless n\textgreater oder nicht spezifiziert
+	\item[] \texttt{\$(SMARTSExp)}: Rekursive Ausdrücke
+\end{itemize}
+Die drei Eigenschaften betreffend der Chiralität sind deshalb problematisch, da sie abhängig von den impliziten Eigenschaften, die aus der Molekülgraphenstruktur resultieren, sind.
+
+Ein besonderer Problemfall sind die rekursiven Ausdrücke (siehe Kapitel \ref{sssec:smarts}) der SMARTS-Sprache. Die Einbeziehung einer Umgebung für ein Atom oder eine Bindung ist für das hier vorgestellte Konzept der Fingerprints als Grundlage der Vergleiche nicht möglich. Die Eigenschaft ist für SMARTS-Ausdrücke extrem relevant, da sie es ermöglicht mit einer Definition der Umgebung ein chemisches Muster genauer und effizient zu beschreiben.
+
+Ein Problem welches unabhängig von der SMARTS-Sprache ist betrifft die Schnitt-Relation. Wie in Formel \eqref{eq:fall2} beschrieben gilt entweder für Knoten, dass es eine Unter- und eine Obermengenrelation in einem möglichen \textit{Mapping} gibt, oder für Kanten.
+Der Fall,
+
+\begin{align}
+\begin{split}
+&\Big( \big( \exists v_Q \in V^Q \exists v_T \in V^T ( v^Q \subset v^T ) \lor \exists e_Q \in E^Q \exists e_T \in E^T ( e^Q \subset e^T ) \big)\\
+& \land \big(\exists v'_Q \in V^Q \exists v'_T \in V^T ( v'^Q \supset v'^T \land v'_Q \neq v_Q \land v'_T \neq v_T)\\
+& \lor \exists e'_Q \in E^Q \exists e'_T \in E^T (e'^Q \supset e'^T \land e'_Q \neq e_Q \land e'_T \neq e_T)\big) \Big)\\
+\land & \forall v''_Q \in V^Q \forall v''_T \in V^T \big( v''_Q \neq v'_Q \neq v_Q \land v''_T \neq v'_T \neq v_T \land v''^Q =,\subseteq,\supseteq v''^T \big) \\
+\land & \forall e''_Q \in E^Q \forall e''_T \in E^T \big( e''_Q \neq e'_Q \neq e_Q \land e''_T \neq e'_T \neq e_T \land e''^Q =,\subseteq,\supseteq e''^T \big) \\
+\end{split}
+\label{eq:fallprob} 
+\end{align}
+
+wird nicht als \textit{Mapping} erkannt, da die Schnitt-Relation Knoten und Kanten der Molekülgraphen unabhängig voneinander beschreibt. Beispiel \ref{bsp:fallprob} zeigt den in \eqref{eq:fallprob} beschriebenen Fall.\\
+
+\begin{bsp}
+	\label{bsp:fallprob}
+\end{bsp}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l | c c c}
+		Anfrage-SMARTS & \texttt{[Cl,I]} & $=$ & \texttt{O} \\
+		Teilmengen-Relation & $\supset$ & $\subset$ & $=$ \\
+		Ziel-SMARTS & \texttt{[Cl]}& $\sim$ & \texttt{O}\\
+	\end{tabular}
+\end{table}
+
+\section{Weiterführende Arbeit} \label{sec:ausblick}
+Das Problem dessen Lösung am interessantesten ist, die der Einbeziehung der rekursiven Ausdrücke. Ein Ansatz wäre es, falls eine Beschreibung eines Anfrage-SMARTS einen rekursiven Ausdruck als Eigenschaft besitzt, für diese zu Überprüfen, ob es im Ziel-SMARTS eine, der Teilmengen-Relation entsprechenden, Beschreibung gibt, eine Umgebung beschreibt die der Teilmengen-Relation entspricht.
+Im ersten Schritt würde ohne Einbezug der rekursiven Ausdrücke ein \textit{Mapping} gesucht werden. Falls es rekursive Beschreibungen von Atomen oder Bindungen gibt, würde im nächsten Schritt überprüft werden, ob das entsprechende Atom oder die entsprechende Bindung des Ziel-SMARTS, einen rekursiven Ausdruck besitzt, der der Teilmengen-Relation entspricht. Dabei wird für Gleichheit und Schnitt-Relation das bestehende Verfahren genutzt. Die zu vergleichenden rekursive Ausdrücke werden an das Verfahren übergeben, und geprüft, ob es ein \textit{Mapping} gibt. Bei Unter- und Obermenge wird falls es für beide Partner des \textit{Mappings} einen rekursiven Ausdruck gibt analog vorgegangen. Falls es für nur für einen \textit{Mapping}-Partner eine rekursiven Beschreibung gibt, gilt:
+
+\textbf{Untermenge:} Der \textit{Mapping}-Partner des Anfrage-SMARTS hat eine rekursive Beschreibung\\
+\textbf{Obermenge:} Der \textit{Mapping}-Partner des Ziel-SMARTS hat eine rekursive Beschreibung
+
+Für die anderen beiden Probleme müsste jeweils ein Konzept entwickelt werden, welches die zu beachtenden Eigenschaften behandeln kann.
+%
+% EOF
+%

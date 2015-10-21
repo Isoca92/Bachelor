@@ -1,0 +1,81 @@
+%
+% Fazit
+%
+
+\section{Fazit}
+..und die Moral der Geschicht? Über C++ ärgern lohnt sich nicht!
+
+% Grafik Uni Siegel
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.30\textwidth]{images/uni-siegel.png}
+	\caption{Siegel der Universität}{Quelle: Universität Hamburg}
+	\label{fig:uni-siegel}
+\end{figure}
+ 
+\begin{equation}
+	\overline{x} = \frac 1n \sum^n_{i=1} x_i
+\end{equation}
+
+\begin{table}
+	\centering
+	\caption{Beispieltabelle 1}
+	\label{tbl:beispieltabelle1}
+		\begin{tabular}{|l|l|r|}
+		\hline
+			\textbf{Farbe} & \textbf{Form} & \textbf{Zahl} \\
+		\hline
+			Rot & Rechteck & 100 \\
+		\hline
+			Blau & Kreis & 99 \\
+		\hline
+			Gelb & Dreieck & 98 \\
+		\hline
+		\end{tabular}
+\end{table}
+\newpage
+\noindent Hier kommt ein Listing \ref{lst:soap}.
+
+
+\begin{center}
+
+\begin{lstlisting}[caption={SOAP Anfrage an einen HalloWelt-Web-Service},label=lst:soap,language=XML,label={lst:soap}]
+
+<?xml version='1.0' encoding='UTF-8'>
+
+<SOAP-ENV:Envelope (*@\label{lst:soapEnv}@*)
+
+xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+
+xmlns:ns1="http://localhost/wsdl/HalloWeltService.wsdl">
+
+
+<SOAP-ENV:Body>(*@\label{lst:soapBody}@*)
+
+<ns1:gruss>
+
+<name xsi:type="xsd:string">
+
+Michael
+
+</name>
+
+</ns1:gruss>
+
+</SOAP-ENV:Body>
+
+
+</SOAP-ENV:Envelope>
+
+\end{lstlisting}
+
+\end{center}
+
+
+%
+% EOF
+%
