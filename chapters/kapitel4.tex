@@ -81,11 +81,11 @@ Neben diesem Beispiel wurde die Validierung mehrfach mit unterschiedlichen Anfra
 \subsection{Laufzeitanalyse}
 Für die Laufzeitanalyse wurde die benötigte Zeit des Verfahrens in Zusammenhang mit der Größe der genutzten SMARTS-Ausdrücke gebracht. Durchgeführt wurde die Laufzeitanalyse auf einem Rechner mit Intel\textregistered~Core\texttrademark~7-3770S CPU 3.10GHz. Dabei ist zu beachten, dass nebenläufige Prozesse nicht ausgeschlossen werden können.
 
-Abbildung \ref{abb:laufzeitgleich} zeigt, wie sich die Laufzeit (in Sekunden) bei Anstieg der Knotenanzahl von Anfrage- und Ziel-SMARTS verhält. Diese Form der Laufzeitanalyse ist für alle vier Teilmengen-Relationen möglich. Schwankungen der Laufzeit sind auf die Komplexität der SMARTS-Ausdrücke zurückzuführen. Je verzweigter die Graphenstruktur ist, desto länger dauert der Aufbau der Relations-Matrix.
+Abbildung \ref{abb:laufzeitgleich} zeigt, wie sich die Laufzeit (in Sekunden) bei Anstieg der Knotenanzahl von Anfrage- und Ziel-SMARTS verhält. Diese Form der Laufzeitanalyse ist für alle vier Teilmengen-Relationen möglich. Schwankungen der Laufzeit sind auf die Komplexität der SMARTS-Ausdrücke zurückzuführen. Je verzweigter die Graphenstruktur ist, desto länger dauert der Aufbau der Relations-Matrix. Deutlich ist zu erkennen, dass die Schnitt-Relation in etwa die doppelte Zeit benötigt. Das liegt daran, dass anschließend an die Untersuchung auf einen Isomorphismus durch den Algorithmus nach Ullmann wiederholt die Schnitt-Relation überprüft.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=13cm]{images/laufzeit_gleich}
+	\includegraphics[width=13cm]{images/Laufzeit_gleich}
 	\caption{Auftragung der Laufzeit in Sekunden, gegen Anzahl der Knoten eines SMARTS-Ausdrucks, wobei Anfrage- und Ziel-SMARTS die gleiche Größe besitzen. Jede Kurve repräsentiert eine Teilmengen-Relation.}
 	\label{abb:laufzeitgleich}
 \end{figure}

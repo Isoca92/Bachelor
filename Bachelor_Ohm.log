@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.24)  22 OCT 2015 00:43
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.10.24)  22 OCT 2015 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2236,12 +2236,12 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 81.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 81.
- <images/laufzeit_gleich.jpg, id=542, 704.3916pt x 542.025pt>
-File: images/laufzeit_gleich.jpg Graphic file (type jpg)
+ <images/Laufzeit_gleich.jpg, id=542, 694.7556pt x 528.7755pt>
+File: images/Laufzeit_gleich.jpg Graphic file (type jpg)
 
-<use images/laufzeit_gleich.jpg>
-Package pdftex.def Info: images/laufzeit_gleich.jpg used on input line 88.
-(pdftex.def)             Requested size: 369.88582pt x 284.62527pt.
+<use images/Laufzeit_gleich.jpg>
+Package pdftex.def Info: images/Laufzeit_gleich.jpg used on input line 88.
+(pdftex.def)             Requested size: 369.88582pt x 281.51643pt.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2250,7 +2250,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 95.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 95.
- [28 <./images/laufzeit_gleich.jpg>]
+ [28 <./images/Laufzeit_gleich.jpg>]
 <images/laufzeit_wachsend.jpg, id=550, 695.7192pt x 530.7027pt>
 File: images/laufzeit_wachsend.jpg Graphic file (type jpg)
 
@@ -2742,7 +2742,7 @@ Package rerunfilecheck Info: File `Bachelor_Ohm.out' has not changed.
 Here is how much of TeX's memory you used:
  32681 strings out of 493315
  596836 string characters out of 6137903
- 753576 words of memory out of 5000000
+ 753578 words of memory out of 5000000
  35190 multiletter control sequences out of 15000+600000
  17342 words of font info for 66 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -2768,7 +2768,7 @@ ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 13/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/201
 3/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2013
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Bachelor_Ohm.pdf (49 pages, 8044081 bytes).
+Output written on Bachelor_Ohm.pdf (49 pages, 8027381 bytes).
 PDF statistics:
  861 PDF objects out of 1000 (max. 8388607)
  735 compressed objects within 8 object streams
