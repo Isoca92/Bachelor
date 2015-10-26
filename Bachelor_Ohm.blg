@@ -10,44 +10,46 @@ A level-1 auxiliary file: chapters/kapitel6.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: _eidversicherung.aux
 Database file #1: bibliography/literatur.bib
-You've used 21 entries,
+Warning--I didn't find a database entry for "smartsviewer"
+You've used 26 entries,
             1791 wiz_defined-function locations,
-            570 strings with 6473 characters,
-and the built_in function-call counts, 3543 in all, are:
-= -- 306
-> -- 140
+            605 strings with 7486 characters,
+and the built_in function-call counts, 4831 in all, are:
+= -- 416
+> -- 212
 < -- 1
-+ -- 57
-- -- 36
-* -- 158
-:= -- 579
-add.period$ -- 70
-call.type$ -- 21
-change.case$ -- 17
++ -- 83
+- -- 57
+* -- 263
+:= -- 790
+add.period$ -- 87
+call.type$ -- 26
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 157
-empty$ -- 402
-format.name$ -- 36
-if$ -- 807
+cite$ -- 26
+duplicate$ -- 198
+empty$ -- 521
+format.name$ -- 57
+if$ -- 1084
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 13
-newline$ -- 114
-num.names$ -- 24
-pop$ -- 99
+int.to.str$ -- 26
+missing$ -- 17
+newline$ -- 141
+num.names$ -- 29
+pop$ -- 109
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 49
+skip$ -- 63
 stack$ -- 0
-substring$ -- 115
-swap$ -- 22
+substring$ -- 225
+swap$ -- 27
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 27
-width$ -- 23
-write$ -- 226
+while$ -- 38
+width$ -- 28
+write$ -- 283
+(There was 1 warning)

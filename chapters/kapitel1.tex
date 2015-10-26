@@ -3,8 +3,7 @@
 %
 \section{Einleitung} \label{sssec:einleitung}
 Die Vorhersage von molekularen Interaktionen ist in der modernen Arzneimittelentwicklung die Grundlage zur Gewinnung neuer Wirkstoffe. \cite{textbook}\\
-Es gibt viele Methoden um das Verhalten von Verbindungen einschätzen zu können. Ein Verfahren welches von Beginn an in der Chemie genutzt wird ist das induktive Lernen \cite{textbook}, bei dem es sich um einen Kreislauf handelt (siehe Abb. \ref{abb:indukt}). Anhand von Experimenten werden Modelle entwickelt mit denen Prognosen aufgestellt werden, die im Anschluss mit neuen Experimenten validiert werden und anschließend wiederholt sich das Vorgehen. Durch die gewonnenen Modelle können, je nach Art des Modells, Einschätzungen über die biologische Aktivität von Molekülen getroffen werden.
-
+Es gibt viele Methoden um das Verhalten von Verbindungen einschätzen zu können. Ein Verfahren, welches von Beginn an in der Chemie genutzt wird, ist das induktive Lernen \cite{textbook}, bei dem es sich um einen Kreislauf handelt (siehe Abb. \ref{abb:indukt}). Anhand von Experimenten werden Modelle entwickelt mit denen Prognosen aufgestellt werden, die im Anschluss mit neuen Experimenten validiert werden. Anschließend wiederholt sich das Vorgehen. Durch die gewonnenen Modelle können, je nach Art des Modells, Einschätzungen über die biologische Aktivität von Molekülen getroffen werden.
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[width=7cm]{images/induktiveslernen}
@@ -13,26 +12,26 @@ Es gibt viele Methoden um das Verhalten von Verbindungen einschätzen zu können. 
 	\label{abb:indukt}
 \end{figure}
 \vspace{0.5cm}
-Eine weitere Methode ist die Quantitative Struktur-Aktivitätsanalyse (QSAR) \cite{qsar}, bei der die Wirkung eines Moleküls durch die molekularen Eigenschaften beschrieben werden kann. Durch QSAR kann also eine Prognose, wie ein Molekül sich bei einer Interaktion verhält, aufgestellt werden.\\
-Der Begriff der pharmakologisch motivierten molekularen Ähnlichkeit \cite{chemoinformatik} ermöglicht die Vorhersage anhand bereits bekannter Verbindungen. Zwei Moleküle werden als ähnlich bezeichnet, wenn sie sich in biologischen Systemen ähnlich verhalten. Besonders bei den letzten beiden vorgestellten Verfahren eignet sich der Einsatz von computergestützte Verfahren.\\
-Computergestützte Verfahren oder Werkzeuge finden in der modernen Chemie immer mehr Anwendung. Sie eignen sich besonders, da mit ihrer Hilfe es ermöglicht werden kann große Mengen an Informationen zu analysieren (z.B. durch QSAR). Die sogenannte Chemieinformatik ist ein Gebiet der Chemie, die mit Hilfe von Methoden der Informatik versucht chemische Probleme zu lösen. \cite{textbook}\cite{chemoinformatik}\cite{introduction}
+Eine weitere Methode ist die Quantitative Struktur-Aktivitätsanalyse (QSAR) \cite{qsar}, bei der die Wirkung eines Moleküls durch die molekularen Eigenschaften beschrieben werden kann. Durch QSAR kann eine Prognose, wie ein Molekül sich bei einer Interaktion verhält, aufgestellt werden.\\
+Der Begriff der pharmakologisch motivierten molekularen Ähnlichkeit \cite{chemoinformatik} ermöglicht die Vorhersage anhand bereits bekannter Verbindungen. Zwei Moleküle werden als ähnlich bezeichnet, wenn sie sich in biologischen Systemen ähnlich verhalten.\\
+Besonders bei den letzten beiden vorgestellten Verfahren eignet sich der Einsatz von computergestützte Verfahren.
+Computergestützte Verfahren oder Werkzeuge finden in der modernen Chemie immer mehr Anwendung. Sie eignen sich besonders, da mit ihrer Hilfe große Mengen an Informationen analysiert werden können (z.B. durch QSAR). Die sogenannte Chemieinformatik ist ein Gebiet der Chemie, die mit Hilfe von Methoden der Informatik versucht chemische Probleme zu lösen. \cite{textbook}\cite{chemoinformatik}\cite{introduction}
 
 Die molekulare Ähnlichkeit von zwei Molekülen kann durch Einsatz von computergestütz-\\ten Methoden auf verschiedene Arten untersucht werden. Sie kann durch topologische Indizes (z.B. Randi\'{c}-Index \cite{randic}), durch Fingerprint Generierung \cite{chemoinformatik}\cite{introduction}, bei der angegeben wird welche strukturellen Eigenschaften oder funktionellen Gruppen ein Molekül enthält, oder auch mit Ähnlichkeits- bzw. Distanzmaßen (z.B. Tanimoto-Koeffizient \cite{matrices}) bestimmt werden. \cite{matrices}
 
-Durch die Bestimmung der molekularen Ähnlichkeit lassen sich nicht nur für einzelne Moleküle Vorhersagen zu den Interaktionen treffen, sondern auch für Molekülmengen, die sich mit chemischen Mustern \cite{Daylightsma}\cite{gci} beschreiben lassen. Die Interaktion einer Verbindung mit anderen erfolgt meist auf Grund von bestimmten Strukturen oder funktionellen Gruppen innerhalb der Verbindung. Diese zu untersuchenden Eigenschaften lassen sich mit chemischen Mustern ausdrücken (z.B. ein Muster, welches alle Moleküle beschreibt, die eine Nitrogruppe enthalten). Diese Muster ermöglichen eine Beschreibung einer Molekülmenge, bestehend aus Molekülen mit den relevanten Eigenschaften. Sie können dazu genutzt werden Moleküle zu filtern. So ist eine Aussortierung von beispielsweise Toxikophoren, oder auch das Auswählen von Verbindungen mit gewünschten Eigenschaften möglich.
+Durch die Bestimmung der molekularen Ähnlichkeit lassen sich nicht nur für einzelne Moleküle Vorhersagen zu den Interaktionen treffen, sondern auch für Molekülmengen, die sich mit chemischen Mustern \cite{Daylightsma}\cite{gci} beschreiben lassen. Die Interaktion einer Verbindung mit anderen erfolgt meist auf Grund von bestimmten Strukturen oder funktionellen Gruppen innerhalb der Verbindung. Diese zu untersuchenden Eigenschaften lassen sich mit chemischen Mustern ausdrücken (z.B. ein Muster, welches alle Moleküle beschreibt, die eine Nitrogruppe enthalten). Diese Muster stellen eine Beschreibung einer Molekülmenge, bestehend aus Molekülen mit den relevanten Eigenschaften, dar. Sie können dazu genutzt werden Moleküle zu filtern. So ist eine Aussortierung von beispielsweise Toxikophoren, oder auch das Auswählen von Verbindungen mit gewünschten Eigenschaften möglich.
 
 Um es in der Chemieinformatik zu ermöglichen Interaktionen vorherzusagen oder zu analysieren, können chemische Verbindungen in eine Graphenstruktur überführt werden, wodurch eine mathematische Analyse möglich wird.\\
-Es handelt sich bei solchen Molekülgraphen \cite{introduction} um ungerichtete endliche markierte Graphen. Dabei werden die Atome als Knoten und die chemischen Bindungen als Kanten gesehen. Die so entstehenden Graphen können anschließend aus der Sicht der Graphentheorie auf gemeinsame Eigenschaften oder Teilstrukturen untersucht werden, um die molekulare Ähnlichkeit zu bewerten. Analog erfolgt die Übertragung von chemischen Mustern in eine Graphenstruktur, welche dann für den Vergleich aus der graphentheoretischen Sicht genutzt werden kann. Dies ist nötig da auch chemische Muster und somit die beschriebenen Molekülmengen Ähnlichkeiten zueinander aufweisen können. Ein Vergleich würde es ermöglichen festzustellen, ob es eine Hierarchie der chemischen Muster gibt, ob es in einer Menge von chemischen Mustern redundante Muster gibt, aber auch um festzustellen, ob sich bestimmte Teilstrukturen oder funktionelle Gruppen in bereits genutzten Mustern wiederfinden. Bislang gibt es in die Chemieinformatik keine Methode um chemische Muster auf ihre Ähnlichkeit zu überprüfen. In der Informatik und den, zu chemischen Mustern äquivalenten, regulären Ausdrücken\footnote[1]{Zeichenkette, die eine Menge von Zeichenketten beschreibt} gibt es Ansätze zur Ähnlichkeitsanalyse, meist basierend auf der Generierung und Vergleich von endlichen Automaten\footnote[2]{Modell zur Beschreibung eines Verhaltens nach Eingabe einer Anfrage, bestehend aus einer endlichen Anzahl an Zuständen und Zustandsübergängen und Aktionen \cite{endlauto}}\cite{regex}.
-Die Komplexität der chemischen Muster verhindert eine Übertragung dieses Ansatzes auf das hier vorgestellte Problem, weshalb es nötig ist ein neues Verfahren zu entwickeln. Ein naiver Ansatz wäre es die Moleküle, die von chemischen Mustern beschrieben werden zu vergleichen. Es kann passieren, dass verschiedene Muster durch Zufall die gleichen Moleküle beschreiben, indem z.B. zwei funktionelle Gruppen, jeweils als chemisches Muster beschrieben, gemeinsam und dennoch unabhängig in einem Molekül auftreten. Bei diesem Ansatz müsste es dementsprechend einen Abgleich geben, der überprüft welche Atome in dem Molekül von den Mustern beschrieben werden. Zudem ermöglicht dieser Vergleich von chemischen Mustern es nicht eine allgemeine Aussage über die Ähnlichkeit zu treffen, da der Vergleich abhängig von der genutzten Molekülmenge ist, die unter Umständen keine Moleküle beinhaltet, die von chemischen Mustern beschrieben werden.
+Es handelt sich bei solchen Molekülgraphen \cite{introduction} um ungerichtete endliche markierte Graphen. Dabei werden die Atome als Knoten und die chemischen Bindungen als Kanten betrachtet. Die so entstehenden Graphen können anschließend im Rahmen der Graphentheorie auf gemeinsame Eigenschaften oder Teilstrukturen untersucht werden, um die molekulare Ähnlichkeit zu bewerten. Analog erfolgt die Übertragung von chemischen Mustern in eine Graphenstruktur, welche dann für den Vergleich aus der graphentheoretischen Sicht genutzt werden kann. Dies ist nötig, da auch chemische Muster und somit die beschriebenen Molekülmengen Ähnlichkeiten zueinander aufweisen können. Ein Vergleich würde es ermöglichen festzustellen, ob es eine Hierarchie der chemischen Muster gibt, ob es in einer Menge von chemischen Mustern redundante Muster gibt, aber auch um festzustellen, ob sich bestimmte Teilstrukturen oder funktionelle Gruppen in bereits genutzten Mustern wiederfinden. Bislang gibt es in die Chemieinformatik keine Methode um chemische Muster auf ihre Ähnlichkeit zu überprüfen. In der Informatik und den, zu chemischen Mustern äquivalenten, regulären Ausdrücken\footnote[1]{Zeichenkette, die eine Menge von Zeichenketten beschreibt} gibt es Ansätze zur Ähnlichkeitsanalyse. Meist basiert die Analyse auf der Generierung und Vergleich von endlichen Automaten\footnote[2]{Modell zur Beschreibung eines Verhaltens nach Eingabe einer Anfrage, bestehend aus einer endlichen Anzahl an Zuständen, Zustandsübergängen und Aktionen \cite{endlauto}}\cite{regex}.
+Die Komplexität der chemischen Muster verhindert eine Übertragung dieses Ansatzes auf das hier vorgestellte Problem, weshalb es nötig ist ein neues Verfahren zu entwickeln. Ein naiver Ansatz wäre es die Moleküle, die von chemischen Mustern beschrieben werden zu vergleichen. Es kann passieren, dass verschiedene Muster durch Zufall die gleichen Moleküle beschreiben, indem z.B. zwei funktionelle Gruppen, jeweils als chemisches Muster beschrieben, gemeinsam und dennoch unabhängig in einem Molekül auftreten. Bei diesem Ansatz muss es einen Abgleich geben, der überprüft welche Atome in dem Molekül von den Mustern beschrieben werden. Zudem ermöglicht dieser Vergleich von chemischen Mustern es nicht eine allgemeine Aussage über die Ähnlichkeit zu treffen, da der Vergleich abhängig von der genutzten Molekülmenge ist, die unter Umständen keine Moleküle beinhaltet, die von chemischen Mustern beschrieben werden.
 
-Eine Lösung zum Vergleich zweier chemischer Muster wird in dieser Arbeit vorgestellt und beschrieben. Der Lösungsansatz wurde im Rahmen einer Masterarbeit von A. Mashychev \cite{Master} entwickelt und in der hier vorgestellten Arbeit optimiert und implementiert.
+Eine Lösung zum Vergleich zweier chemischer Muster wird in dieser Arbeit vorgestellt und beschrieben. Der Lösungsansatz wurde im Rahmen einer Masterarbeit von A. Mashychev \cite{Master} entwickelt und in der hier vorgestellten Arbeit weiterentwickelt und implementiert.
 
 \subsection{Grundlagen}
 Für die in den folgenden Kapiteln beschriebene Arbeit ist es nötig einige Begriffe und Grundlagen zu erklären.
 \subsubsection{SMILES} \label{sssec:smiles}
 Unter einem SMILES (\textit{Simplified Molecular Input Line Entry Specification}) versteht man eine String-Repräsentation von Molekülen. Entwickelt wurde diese Beschreibung mit Hilfe von ASCII-Zeichen und Bindungssymbolen. Der Vorteil von SMILES gegenüber anderen Molekülrepräsentationen ist die Eigenschaft, dass die Molekülbeschreibung in einer Zeile kompakt und effizient gespeichert werden kann.
-Ein effizientes Arbeiten mit SMILES-Strings ist dadurch möglich, dass ein SMILES-String leicht in einen Molekülgraphen überführt werden kann. Ein weiterer Vorteil eines SMILES ist, dass er mit Hilfe einer Kanonisierung in eine eindeutige Form, den \textit{unique} SMILES, überführt werden können.
-Die Grammatik eines SMILES-Strings gliedert sich in fünf grundlegene Einheiten:
+Ein effizientes Arbeiten mit SMILES-Strings ist dadurch möglich, dass ein SMILES-String leicht in einen Molekülgraphen überführt werden kann. Die Grammatik eines SMILES-Strings gliedert sich in fünf grundlegene Einheiten:
 \begin{itemize}
 	\item Atome (mit impliziten und expliziten Eigenschaften)
 	\item Bindungen
@@ -40,11 +39,11 @@ Die Grammatik eines SMILES-Strings gliedert sich in fünf grundlegene Einheiten:
 	\item Unterbrechungen
 	\item Ringe
 \end{itemize}
-Dabei stehen kovalent gebundene Atome benachbart in einer Zeichenkette. Bindungprimitive, die Beschreibungen von chemischen Bindungen, werden dann zwischen den jeweiligen Atomen angegeben. \cite{gci}\cite{smiles}
+Kovalent gebundene Atome stehen benachbart in einer Zeichenkette. Bindungprimitive, die Beschreibungen von chemischen Bindungen, werden zwischen den jeweiligen Atomen angegeben. \cite{gci}\cite{smiles}
 
 \subsubsection*{Atome} \label{sssec:smilesatome}
-Die Atom-Beschreibung innerhalb eines SMILES-String erfolgt über die Angabe des Element-Symbols. Eine Besonderheit ist dabei die Angabe eines Atoms durch \texttt{*}. Das \texttt{*} gilt dabei als nicht spezifiziertes oder unbekanntes Atom, einer sogenannten \textit{Wildcard}. Des weiteren werden Elementen, die im \textit{organic subset}\footnote[1]{Teilmenge der chemischen Elemente bestehend aus B, C, N, O, P, S, F, Cl, Br, I und *. Diese Elemente können ohne \texttt{[]} angegeben werden. Sie besitzen so angegeben die implizite Anzahl an Bindungen zu Wasserstoffen auf grund der kleinst möglichen Valenz, keine Ladung, keine Chiralität und keine isotopischen-Eigenschaften.\cite{Daylightsmi}} enthalten sind von den restlichen Elementen des Periodensystems unterschieden.\\
-Eine weitere Besonderheit betrifft die Atome C, N, P, O, S, As, Se und *. Diese Atome können, indem man die Element-Symbole als Kleinbuchstaben angibt, als aromatische Atome interpretiert werden, um sie von aliphatischen Atomen zu unterscheiden.
+Die Atom-Beschreibung innerhalb eines SMILES-String erfolgt über die Angabe des Element-Symbols. Eine Besonderheit ist dabei die Angabe eines Atoms durch \texttt{*}. Das \texttt{*} gilt dabei als nicht spezifiziertes oder unbekanntes Atom, einer sogenannten \textit{Wildcard}. Des Weiteren werden Elementen, die im \textit{organic subset}\footnote[1]{Teilmenge der chemischen Elemente bestehend aus B, C, N, O, P, S, F, Cl, Br, I und *. Diese Elemente können ohne \texttt{[]} angegeben werden. Sie besitzen in dieser Form die implizite Anzahl an Bindungen zu Wasserstoffen aufgrund der kleinst möglichen Valenz, keine Ladung, keine Chiralität und keine isotopischen Eigenschaften. \cite{Daylightsmi}} enthalten sind von den restlichen Elementen des Periodensystems unterschieden.\\
+Eine weitere Besonderheit betrifft die Atome C, N, P, O, S, As, Se und *. Diese Atome können, durch Angabe der Element-Symbole als Kleinbuchstaben, als aromatische Atome interpretiert werden.
 
 Neben den Element-Symbol, werden Atome mit Hilfe weiterer Eigenschaften, den sogenannten Atomprimitiven, beschrieben.
 Grundsätzlich gilt dabei folgender Syntax für die Angabe einer Atombeschreibung:
@@ -80,11 +79,11 @@ Tabelle \ref{tab:smilesatom} beschreibt die einzelnen Eigenschaften und wie sie 
 \end{tabular}
 
 \subsubsection*{Bindungen}
-Innerhalb SMILES-Strings wird zwischen den, in Tabelle \ref{tab:smilesbond} beschriebenen, Bindungen unterschieden. Beispiel \ref{bsp:smiles1} zeigt drei Beispiele von SMILES und die Moleküle, die sie repräsentieren. \cite{smiles}\\
+Innerhalb eines SMILES-Strings wird zwischen den, in Tabelle \ref{tab:smilesbond} beschriebenen, Bindungen unterschieden. Beispiel \ref{bsp:smiles1} zeigt drei Beispiele von SMILES und die Moleküle, die sie repräsentieren. \cite{smiles}\\
 
 \begin{table}[h]
 	\centering
-	\captionabove{Beschreibung der möglichen Bindungsprimitiven. \texttt{default} beschreibt den Fall, dass zwischen zwei Atombeschreibungen keine Bindung angegegben wird. \texttt{\char`\\} und \texttt{/} beschreiben den Fall einer Konfigurationsisomerie, der \textit{cis-trans-Isomerie}, die im Beispiel \ref{bsp:smiles1} dargestellt ist. \cite{Daylightsmi}}
+	\captionabove{Beschreibung der möglichen Bindungsprimitiven. \texttt{default} beschreibt den Fall, dass zwischen zwei Atombeschreibungen keine Bindung angegegben wird. \texttt{\char`\\} und \texttt{/} beschreiben eine Konfigurationsisomerie, die \textit{cis-trans-Isomerie}, die im Beispiel \ref{bsp:smiles1} dargestellt ist. \cite{Daylightsmi}}
 	\begin{tabular}{| l | l |}
 		\hline SMILES-Syntax & Beschreibung\\
 		\hline \texttt{default} & Einfachbindung \\
@@ -98,7 +97,6 @@ Innerhalb SMILES-Strings wird zwischen den, in Tabelle \ref{tab:smilesbond} besc
 	\label{tab:smilesbond}
 \end{table}
 
-\newpage
 \begin{bsp}
 	\label{bsp:smiles1}
 \end{bsp}
@@ -109,7 +107,7 @@ Innerhalb SMILES-Strings wird zwischen den, in Tabelle \ref{tab:smilesbond} besc
 \end{tabular}
 	
 \subsubsection*{Verzweigungen}
-Eine Verzweigung innerhalb des Molekülgraphen wird innerhalb von \texttt{()} angegeben. Die Ausdrücke können gereiht und geschachtelt werden. Beispiel \ref{bsp:smiles2} zeigt eine solche Verzweigung eines Moleküls. In diesem Molekül sind mindestens zwei Verzweigungen nötig um es zu beschreiben. \cite{gci}\cite{smiles}\\
+Eine Verzweigung innerhalb des Molekülgraphens wird durch \texttt{()} angegeben. Die Ausdrücke können gereiht und geschachtelt werden. Beispiel \ref{bsp:smiles2} zeigt eine solche Verzweigung eines Moleküls. In diesem Molekül sind mindestens zwei Verzweigungen zur Beschreibung nötig. \cite{gci}\cite{smiles}\\
 \begin{bsp}
 	\label{bsp:smiles2}
 \end{bsp}
@@ -127,7 +125,7 @@ Um eine Unterbrechung zu kennzeichnen kann in der SMILES Sprache ein "`\texttt{.
 \end{tabular}
 
 \subsubsection*{Ringe}
-Eine Ringbindung kann mit Hilfe von einem Zahlenpaar angegeben werden. Dabei wird eine Bindung in einem Molekül, die einen Ringschluss hervorrufen würde entfernt und anstelle der Bindung an die beiden beteiligten Atome ein passendes Zahlenpaar angefügt, wie das Beispiel \ref{bsp:smiles3} zeigt. \cite{Daylightsmi}\\
+Eine Ringbindung kann durch die Angabe eines Zahlenpaares dargestellt werden. Dabei wird eine Bindung in einem Molekül, die einen Ringschluss hervorrufen würde entfernt und an die beiden beteiligten Atome ein passendes Zahlenpaar angefügt, wie das Beispiel \ref{bsp:smiles3} zeigt. \cite{Daylightsmi}\\
 \begin{bsp}
 	\label{bsp:smiles3}
 \end{bsp}
@@ -141,10 +139,10 @@ Die Abkürzung SMARTS steht für \textit{SMiles ARbitrary Target Specification} un
 Die SMARTS Sprache ist eine Spezifizierung von SMILES. Daher gilt jeder SMILES ist auch ein valider SMARTS. SMARTS-Ausdrücke besitzen zusätzliche Atom- bzw. Bindungsprimitive, die im Folgenden erklärt werden. \cite{Daylightsma}\cite{gci}
 
 \subsubsection*{Atome}
-In der SMARTS Sprache können deutlich mehr Atom Eigenschaften als in der SMILES Sprache beschrieben werden. Dazu wurden die Atomprimitive beschrieben in Kapitel \ref{sssec:smiles} um die, in Tabelle \ref{tab:smartsatomprimi} dargestellten, Atomprimitive erweitert. \cite{Daylightsma}\cite{gci}\\ 
+Die SMARTS Sprache besitzt eine mächtigere Beschreibung im Vergleich zur SMILES-Sprache. Dazu wurden die Atomprimitive beschrieben in Kapitel \ref{sssec:smiles} um die, in Tabelle \ref{tab:smartsatomprimi} dargestellten, Atomprimitive erweitert. \cite{Daylightsma}\cite{gci}\\ 
 \begin{table}[h]
 	\centering
-	\captionabove{Beschreibung der für SMARTS hinzukommenden Atomprimitiven. \texttt{n} und \texttt{c} sind hierbei natürliche Zahlen. Die Zeile "`default-Wert"' gibt an ob und was für einen Wert ein Atomprimitiv einnimmt, wenn \texttt{n} und \texttt{c} nicht angegeben sind. \cite{Daylightsma}}
+	\captionabove{Beschreibung der, für SMARTS hinzukommenden, Atomprimitive. \texttt{n} und \texttt{c} sind hierbei natürliche Zahlen. Die Zeile "`default-Wert"' gibt den Wert an den ein Atomprimitiv einnimmt, wenn \texttt{n} und \texttt{c} nicht angegeben sind. \cite{Daylightsma}}
 	\begin{tabular}{| l | l | l |}
 		\hline Syntax & Beschreibung & default-Wert \\
 		\hline \texttt{a} & aromatisches Atom & - \\
@@ -165,11 +163,11 @@ In der SMARTS Sprache können deutlich mehr Atom Eigenschaften als in der SMILES 
 \end{table}
 
 \subsubsection*{Bindungen}
-Bei den Bindungsprimitiven der SMARTS Sprache gibt es auch eine Erweiterung zur SMILES Sprache (siehe Tabelle \ref{tab:smartsbondprimi}).\\
+Die Bindungsprimitiven der SMARTS Sprache werden um die in Tabelle \ref{tab:smartsbondprimi} dargestellten Eigenschaften erweitert.\\
 
 \begin{table}[h]
 	\centering
-	\captionabove{Beschreibung der für SMARTS hinzukommenden Bindungsprimitiven. \texttt{default} beschreibt den Fall, das zwischen zwei Atombeschreibungen keine Bindung angegegben wird. \cite{Daylightsma}\cite{gci}}
+	\captionabove{Beschreibung der für SMARTS hinzukommenden Bindungsprimitiven. \texttt{default} beschreibt den Fall, dass zwischen zwei Atombeschreibungen keine Bindung angegegben wird. \cite{Daylightsma}\cite{gci}}
 	\begin{tabular}{| l | l |}
 		\hline SMARTS-Syntax & Beschreibung \\ 
 		\hline \texttt{default} & Einfach- oder aromatische Bindung \\ 
@@ -182,7 +180,7 @@ Bei den Bindungsprimitiven der SMARTS Sprache gibt es auch eine Erweiterung zur 
 \end{table}
 
 \subsubsection*{Logische Operatoren}
-Atom- und Bindungsprimitive können in der SMARTS Sprache mit Hilfe von logischen Operatoren verknüpft werden. Im der Tabelle \ref{tab:smartslogprimi} sind die Operatoren aufgelistet.\\
+Atom- und Bindungsprimitive können in der SMARTS Sprache mit Hilfe von logischen Operatoren verknüpft werden. In der Tabelle \ref{tab:smartslogprimi} sind die Operatoren aufgelistet.\\
 \begin{table}[h]
 	\centering
 	\captionabove{Beschreibung der logischen Operatoren in der SMATRTS Sprache, wobei es sich bei \texttt{SMARTSExp} um ein Atom- oder Bindungsprimitiv handelt. \cite{gci}}
@@ -197,21 +195,21 @@ Atom- und Bindungsprimitive können in der SMARTS Sprache mit Hilfe von logischen
 \end{table}
 
 \subsubsection*{Unterbrechungen}
-Auch in der SMARTS Sprache sind Atom-Unterbrechungen, also nicht miteinander verbundene Atome mit Hilfe eines "`\texttt{.}"' möglich. Bei der SMARTS Sprache ist es zusätzlich noch möglich durch Setzung von Klammern ein unterschiedliches Betrachten von SMARTS-Ausdrücken zu ermöglichen (siehe Tabelle \ref{tab:smartsunterbrprimi}).\\
+Auch in der SMARTS Sprache sind Atom-Unterbrechungen, also nicht miteinander verbundene Atome mit Hilfe eines "`\texttt{.}"' möglich. Bei der SMARTS Sprache ist es zusätzlich noch möglich, durch Setzung von Klammern, ein unterschiedliches Betrachten von SMARTS-Ausdrücken zu ermöglichen (siehe Tabelle \ref{tab:smartsunterbrprimi}).\\
 \begin{table}[h]
 	\centering
 	\captionabove{Beschreibung für mögliche Unterbrechungen innerhalb der SMATRTS Sprache. Bei \texttt{SMARTSExp} handelt es sich um ein Atomprimitiv. \cite{gci}}
 	\begin{tabular}{| l | l |}
 		\hline SMARTS-Syntax & Beschreibung \\ 
 		\hline \texttt{<SMARTSExp1>.<SMARTSExp2>} & \texttt{<SMARTSExp1>} und \texttt{<SMARTSExp2>}\\ & können, müssen aber nicht verbunden sein\\
-		\texttt{(<SMARTSExp1>).(<SMARTSExp2>)} & \texttt{<SMARTSExp1>} und \texttt{<SMARTSExp2>}\\ & matchen in verschiedenen (nicht kovalent\\ & verbundenen) Fragmenten\\
-		\texttt{(<SMARTSExp1>).<SMARTSExp2>} & \texttt{<SMARTSExp1>} und \texttt{<SMARTSExp2>}\\ & matchen unabhängig voneinander\\ \hline
+		\texttt{(<SMARTSExp1>).(<SMARTSExp2>)} & \texttt{<SMARTSExp1>} und \texttt{<SMARTSExp2>}\\ & treffen in verschiedenen (nicht kovalent\\ & verbundenen) Fragmenten\\
+		\texttt{(<SMARTSExp1>).<SMARTSExp2>} & \texttt{<SMARTSExp1>} und \texttt{<SMARTSExp2>}\\ & treffen unabhängig voneinander\\ \hline
 	\end{tabular}
 	\label{tab:smartsunterbrprimi}
 \end{table}
 
 \subsubsection*{Rekursive Ausdrücke}
-Ein weiterer Zusatz der SMARTS Sprache ist die Erweiterung der Beschreibung von Atomeigenschaften, durch rekursive Ausdrücke. Unter rekursiven Ausdrücken versteht man die Beschreibung der Atomumgebung durch einen weiteren SMARTS-Ausdruck in der Form \texttt{\$(SMARTSExp)}. \cite{Daylightsma}\cite{gci}\\
+Ein weiterer Zusatz der SMARTS Sprache ist die Erweiterung der Beschreibung von Atom\-eigenschaften, durch rekursive Ausdrücke. Unter rekursiven Ausdrücken versteht man die Beschreibung der Atomumgebung durch einen weiteren SMARTS-Ausdruck in der Form \texttt{\$(SMARTSExp)}. \cite{Daylightsma}\cite{gci}\\
 \begin{bsp}
 \end{bsp}
 \label{bsp:smarts1}
@@ -221,8 +219,8 @@ Ein weiterer Zusatz der SMARTS Sprache ist die Erweiterung der Beschreibung von 
 
 \newpage
 \subsubsection{Subgraph-Isomorphie}
-Ein weiterer Begriff der vorab erläutert werden muss ist der der Subgraph-Isomorphie. Die Subgraph-Isomorphie ist ein $\mathcal{NP}$-vollständiges Graphenproblem der theoretischen Informatik. \cite{introduction}\cite{gci}\cite{graph}\\
-Gegeben sei ein Graph $G=(V,E)$. $V$ beschreibt die Menge an Knoten, die im Graphen $G$ enthalten sind und $E$ die Menge an Kanten des Graphen, so dass gilt:
+Ein weiterer Begriff, der vorab erläutert werden muss, ist der der Subgraph-Isomorphie. Die Subgraph-Isomorphie ist ein $\mathcal{NP}$-vollständiges Graphenproblem der theoretischen Informatik. \cite{introduction}\cite{gci}\cite{graph}\\
+Gegeben sei ein Graph $G=(V,E)$. $V$ beschreibt die Menge an Knoten, die im Graphen $G$ enthalten sind und $E$ die Menge an Kanten des Graphens, so dass gilt:
 \begin{align}
 E \subseteq \{(v_i,v_j) | v_i,v_j \in V, v_i \neq v_j\}
 \end{align}
@@ -244,8 +242,8 @@ Die Isomorphie ist ein Fachbegriff der Graphentheorie und wird geschrieben als $
 	(v_i,v_j) \in E_F \Leftrightarrow (m(v_i),m(v_j)) \in E_G.
 \end{align}
 Die Abbildung $m$ wird dann als Isomorphismus von $F$ nach $G$ bezeichnet.
-Unter der Graphenisomorphie bezeichnet man einen Isomorphismus zweiter Graphen gleicher Größe.
-Besitzt Graph $F$ eine geringerer Anzahl an Knoten und Kanten als $G$ spricht man von Subgraph-Isomorphie, falls $F$ zu einem Teilgraphen von $G$ isomorph ist, also gilt
+Unter der Graphenisomorphie bezeichnet man einen Isomorphismus zweier Graphen gleicher Größe.
+Besitzt Graph $F$ eine geringerer Anzahl an Knoten und Kanten als $G$, spricht man von Subgraph-Isomorphie, falls $F$ zu einem Teilgraphen von $G$ isomorph ist, also gilt
 \begin{align}
 	 V_F \to V_{G'},V_{G'} \subseteq V_G 
 \end{align}

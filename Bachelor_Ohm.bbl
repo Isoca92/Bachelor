@@ -81,10 +81,23 @@ Dieter Jungnickel.
 \newblock {\em Graphs, Networks and Algorithms}.
 \newblock Springer, 3rd edition, 2007.
 
+\bibitem{naomi}
+S.~Urbaczek, A.~Kolodzik, J.R. Fischer, T.~Lipperrt, S.~Heuser, I.~Groth,
+  T.~Schulz-Gasch, and M.~Rarey.
+\newblock Naomi: On the almost trivial task of reading molecules from different
+  file formats.
+\newblock {\em J.Chem.Inf.Model}, 51:3199--3027, 2011.
+
 \bibitem{ullmann}
 J.~R. Ullmann.
 \newblock An algorithm for subgraph isomorphism.
 \newblock {\em J. ACM}, 23(1):31--42, 1976.
+
+\bibitem{smartsviewsoftware}
+ZBH~Center for Bioinformatics~Hamburg.
+\newblock {SMARTSviewer}.
+\newblock \url{http://smartsview.de/}.
+\newblock Zugriff: 20.10.2015.
 
 \bibitem{zinc}
 San~Francisco University~of California.
@@ -93,7 +106,7 @@ San~Francisco University~of California.
 \newblock Zugriff: 19.08.2015.
 
 \bibitem{smartsdata}
-Zentrum für Bioinformatik.
+ZBH~Center for Bioinformatics~Hamburg.
 \newblock Smarts dataset.
 \newblock
   \url{http://www.zbh.uni-hamburg.de/forschung/arbeitsgruppe-algorithmisches-molekulares-design/datasets.html}.
@@ -121,5 +134,25 @@ EMBL European Molecular~Biology Laboratory.
 EMBL European Molecular~Biology Laboratory and C.~Laggner.
 \newblock {Sructural Alerts - ChEMBL 20}.
 \newblock {persönliche Korrespondenz mit C. Laggner}, September 2015.
+
+\bibitem{sln}
+R.~Webster Homer, Jon Swanson, Robert~J. Jilek, Tad Hurst, and Robert~D. Clark.
+\newblock {SYBYL} line notation {(SLN):} {A} single notation to represent
+  chemical structures, queries, reactions, and virtual libraries.
+\newblock {\em Journal of Chemical Information and Modeling},
+  48(12):2294--2307, 2008.
+
+\bibitem{smartsview}
+Karen Schomburg, Hans-Christian Ehrlich, Katrin Stierand, and Matthias Rarey.
+\newblock From structure diagrams to visual chemical patterns.
+\newblock {\em Journal of Chemical Information and Modeling}, 50(9):1529--1535,
+  2010.
+\newblock PMID: 20795706.
+
+\bibitem{painssln}
+Simon Saubern, Rajarshi Guha, and Jonathan~B. Baell.
+\newblock {KNIME Workflow to Assess PAINS Filters in SMARTS Format. Comparison
+  of RDKit and Indigo Cheminformatics Libraries}.
+\newblock {\em Molecular Informatics}, 30(10):847--850, 2011.
 
 \end{thebibliography}

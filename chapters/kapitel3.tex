@@ -5,27 +5,36 @@
 Das Programm \textit{SmartsSmarts} wurde, wie in Kapitel \ref{ssec:struktur} beschrieben, in sechs Schritten realisiert. Im folgenden Kapitel sollen diese Schritte erläutert werden.
 
 Grundlage des Programms zum Vergleich von chemischen Mustern sind die in Kapitel \ref{sssec:smarts} vorgestellten SMARTS-Ausdrücke.
-Dem Programm werden neben einem Anfrage-SMARTS und Ziel-SMARTS zudem die zu untersuchende Teilmengen-Relation übergeben. Anschließend werden die folgenden Schritte durchgeführt.
+Dem Programm werden neben einem Anfrage-SMARTS und Ziel-SMARTS zudem die zu untersuchende Teilmengen-Relation übergeben.
+
+\subsection{Genutze Software}
+Das in dieser Arbeit vorgestellte Verfahren wurde im Rahmen der NAOMI-Softwartebibliothek \cite{naomi} des Zentrums für Bioinformatik (ZBH) der Universität Hamburg implementiert. Aus den folgende Modulen wurden Funktionen und Klassen genutzt:
+\begin{enumerate}
+	\setlength\itemsep{0em}\setlength\parskip{0em}
+	\item \texttt{Chemistry}
+	\item \texttt{SmartsParser}
+	\item \texttt{Molecule}
+	\item \texttt{SmartsMatcher}
+\end{enumerate}
+An welchen Stellen das \textit{SmartsSmarts}-Programm die Module nutzt wird in Abbildung \ref{fig:softwarestruk} (Kapitel \ref{sec:softwarearch}) gezeigt.
 
 \subsection{Aufarbeitung und Auswahl}\label{ssec:vorverarbeitung}
-Der Anfrage- und Ziel-SMARTS wird zunächst in eine Form gebracht, die es ermöglicht im letzten Schritt des Verfahrens das \textit{Mapping} zu erzeugen. Die dazu genutzten \textit{Label} sind eindeutige Identifikationsnummern, die als \texttt{:ID} an die Knoten eines SMARTS-Ausdrucks gefügt werden können. Dabei wird jedes Label einmalig an das Vergleichspaar aus Anfrage- und Ziel-SMARTS vergeben. Bestehende \textit{Label} bleiben bestehen.\\
-Anschließend werden für Anfrage- und Ziel-SMARTS überprüft, ob ein Vergleich grund-\\sätzlich anhand der Knoten-Anzahl und der gegebenen Relation der Muster möglich ist (siehe Tabelle \ref{tab:anzahlcheck}). Für die Schnitt-Relation ($\cap$) ist zu beachten, dass Anfrage- und Ziel-SMARTS die gleiche Anzahl an Knoten haben müssen, damit ein nicht leerer Schnitt vorliegt. Grund dafür ist, dass die Schnitt-Menge zweier SMARTS-Muster ein SMARTS-Ausdruck beschreiben, welcher eine Untermenge von Anfrage- und Ziel-SMARTS sein soll. Wären die beiden Muster unterschiedlich groß, wäre der nicht leere Schnitt maximal so groß wie der kleinere SMARTS-Ausdruck. Für das größere Muster kann also keine Untermengen-Relation vorliegen.\\
+Der Anfrage- und Ziel-SMARTS wird zunächst in eine Form gebracht, die es ermöglicht im letzten Schritt des Verfahrens das \textit{Mapping} zu erzeugen. Die dazu genutzten \textit{Label} sind eindeutige Identifikationsnummern, die als \texttt{:ID} an die Knoten eines SMARTS-Ausdrucks gefügt werden können. Dabei wird jedes Label einmalig an das Vergleichspaar aus Anfrage- und Ziel-SMARTS vergeben. Bestehende \textit{Label} werden übernommen.\\
+Anschließend werden für Anfrage- und Ziel-SMARTS überprüft, ob ein Vergleich grund-\\sätzlich anhand der Knoten-Anzahl und der gegebenen Relation möglich ist (siehe Tabelle \ref{tab:anzahlcheck}). Für die Schnitt-Relation ($\cap$) ist zu beachten, dass Anfrage- und Ziel-SMARTS die gleiche Anzahl an Knoten haben müssen, damit ein nicht leerer Schnitt vorliegt. Grund dafür ist, dass die Schnitt-Menge zweier SMARTS-Muster ein SMARTS-Ausdruck beschreiben, welcher eine Untermenge von Anfrage- und Ziel-SMARTS sein soll. Wären die beiden Muster unterschiedlich groß, wäre der nicht leere Schnitt maximal so groß wie der kleinere SMARTS-Ausdruck. Für das größere Muster kann also keine Untermengen-Relation vorliegen.\\
 
 \begin{table}[h]
 	\centering
-	\captionabove{Anzahlüberprüfung der Knoten von Anfrage-SMARTS ($Query$) und Ziel-SMARTS ($Target$)}
+	\captionabove{Anzahlüberprüfung der Knoten des Anfrage-SMARTS ($Query$) und Ziel-SMARTS ($Target$)}
 	\begin{tabular}{| c | l |}
 		\hline Relation & Bedingung \\
-		\hline $=$ & $QueryNodeCount = TargetNodeCount$ \\
+		\hline $=$ and $\cap$ & $QueryNodeCount = TargetNodeCount$ \\
 		$\subseteq$ & $QueryNodeCount >= TargetNodeCount$ \\
 		$\supseteq$ & $QueryNodeCount <= TargetNodeCount$ \\
-		$\cap$ & $QueryNodeCount = TargetNodeCount$ \\
 		\hline
 	\end{tabular}
 	\label{tab:anzahlcheck}
 \end{table}
 
-\newpage
 \subsection{Fingerprintgenerierung}
 Die Basis für die Untersuchung auf eine bestimmte Teilmengen-Relation wird in diesem Schritt gewonnen. Anhand der Fingerprints von Knoten und Kanten können zwei chemische Muster miteinander verglichen werden.
 In Kapitel \ref{sssec:valenz} und \ref{sssec:fprint} wurde bereits das Konzept des Fingerprints beschrieben.
@@ -39,7 +48,6 @@ Für Knoten werden, wie Tabelle \ref{tab:smartvalenz} zeigt, Eigenschaften ausgel
 		\hline Eigenschaft & abgeleitet aus SMARTS-Atomprimitiv \\
 		\hline Element & \texttt{*}, \texttt{a}, \texttt{A} und alle Elementnamen \\
 		Atomnummer & \texttt{\#n} \\
-		Atomgewicht & \texttt{<n>} \\
 		Atomvalenz & \texttt{v<n>} \\
 		Anzahl der Einfachbindungen & \texttt{D<n>}, \texttt{H<n>} \\
 		Anzahl der Doppelbindungen & \texttt{D<n>} \\
@@ -56,16 +64,20 @@ Für Knoten werden, wie Tabelle \ref{tab:smartvalenz} zeigt, Eigenschaften ausgel
 	\end{tabular}
 	\label{tab:smartvalenz}
 \end{table}
+Die Generierung erfolgt durch eine sequentielle Abfrage und Abgleich aller Eigenschaften und dementsprechender Bit-Setzung. Ausgegangen wird von einem Bit-Array bei dem jedes Bit auf "`0"' gesetzt ist. Im ersten Schritt werden, wie im Algorithmus \ref{alg:fingerprint1} beschrieben, die Bits, der Valenzzustände, die nicht durch die Atomnamen-Eigenschaften des Knotens beschrieben sind auf "`1"' gesetzt. Zudem wird in diesem schritt bereits die Aromazität untersucht, die im späteren Verlauf genutzt wird.
 
-Die Generierung erfolgt durch eine sequentielle Abfrage und Abgleich aller Eigenschaften und dementsprechender Bit-Setzung. Ausgegangen wird von einem Bit-Array bei dem jedes Bit auf "`1"' gesetzt ist. Im ersten Schritt werden, wie im Algorithmus \ref{alg:fingerprint1} beschrieben, die Bits, der Valenzzustände, die nicht durch die Atomnamen-Eigenschaften des Knotens beschrieben sind auf "`0"' gesetzt. Zudem wird in diesem schritt bereits die Aromazität für später untersucht.
+Die Eigenschaft der Atommasse (\texttt{<n>}) kann anhand des Fingerprints nicht verglichen werden, da die Menge an möglichen Atommassen nicht im Umfang der Valenzzustände enthalten ist. Diese Eigenschaft zwischen zwei zu vergleichenden Knoten wird vor der Fingerprintgenerierung abgeglichen. Die Trennstellen-Eigenschaft der SMARTS-Sprache ist in dem hier entwickelte Konzept nicht berücksichtigt.
 
 \begin{algorithm}[H]
-\caption{Fingerprintgenerierung Teil 1 \cite{Master}} \label{alg:fingerprint1}
+\caption{Fingerprintgenerierung Ausschnitt 1 \cite{Master}} \label{alg:fingerprint1}
 \begin{algorithmic}[1]
 \Procedure{TakePropertyFingerprint}{$node$}
 
 \State $node\_is\_aliphatic =$ \texttt{true}
 \State $node\_is\_aromatic =$ \texttt{true}
+\ForAll{$\big(i \in [1,nof\_valenceStates]\big)$}
+	\State $sec\_temp\_bit\_array[i] =$ \texttt{true}
+\EndFor
 \ForAll{$\big(node\_Symbol = \Call{GetNodesSymbol}{node}\big)$} \Comment Abbildung Atomname
 		
 	\ForAll{$\big(i \in [1,nof\_valenceStates]\big)$}
@@ -121,11 +133,11 @@ Die Generierung erfolgt durch eine sequentielle Abfrage und Abgleich aller Eigen
 \end{algorithmic}
 \end{algorithm}
 
-Die meisten Eigenschaften können anschließend durch einen Abgleich von Graphen-Eigen-\\schaften und Valenzzuständen im Bit Array weiter geprüft werden und gegebenenfalls weitere Bits auf "0" gesetzt werden.
+Die meisten Eigenschaften können anschließend durch einen Abgleich von Graphen-Eigen\-schaften und Valenzzuständen im Bit Array weiter geprüft werden und gegebenenfalls weitere Bits auf "0" gesetzt werden.
 Im Algorithmus \ref{alg:fingerprint2} und Algorithmus \ref{alg:fingerprint3} sind die Verarbeitung der Eigenschaften der Bindungen (\texttt{D<n>}) und der Aromazität beschrieben, da diese nicht direkt aus der Graphenstruktur abzulesen sind.
 
 \begin{algorithm}[H]
-\caption{Fingerprintgenerierung Teil 2 \cite{Master}} \label{alg:fingerprint2}
+\caption{Fingerprintgenerierung Ausschnitt 2 \cite{Master}} \label{alg:fingerprint2}
 \begin{algorithmic}[1]
 	\ForAll{$\big(i \in [1,nof\_valenceStates]\big)$}
 		\State $temp\_bit\_array[i] =$ \texttt{false}
@@ -157,9 +169,8 @@ Im Algorithmus \ref{alg:fingerprint2} und Algorithmus \ref{alg:fingerprint3} sin
 	\State $bit\_array = bit\_array \land temp\_bit\_array$
 \end{algorithmic}
 \end{algorithm}
-
 \begin{algorithm}[H]
-	\caption{Fingerprintgenerierung Teil 3 \cite{Master}} \label{alg:fingerprint3}
+	\caption{Fingerprintgenerierung Ausschnitt 3 \cite{Master}} \label{alg:fingerprint3}
 	\begin{algorithmic}[1]
 		\ForAll{$\big(i \in [1,nof\_valenceStates]\big)$} \Comment{Abbildung Aromazität}
 		\NoThen
@@ -179,12 +190,11 @@ Im Algorithmus \ref{alg:fingerprint2} und Algorithmus \ref{alg:fingerprint3} sin
 		\EndFor
 	\end{algorithmic}
 \end{algorithm}
-
-Für die Kanten wird der Fingerprint wie in Tabelle \ref{tab:smartsbind} beschrieben generiert, wobei alle eigenschaften direkt aus der Graphenstruktur abzulesen sind.\\
+Für die Kanten können die Eigenschaften zur Fingerprintgenerierung direkt aus der Graphenstruktur abgelesen werden. Tabelle \ref{tab:smartsbind} stellt dabei die Eigenschaften, die der Fingerprint enthält in Zusammenhang mit den darstellenden SMARTS-Bindungsprimitiven.\\
 
 \begin{table}[h]
 	\centering
-	\captionabove{Eigenschaften zur Generierung des Fingerprints einer Bindung und dazugehörige Bindungsprimitive}
+	\captionabove{Für die Fingerprintgenerierung genutzte Eigenschaften einer Bindung und dazugehörige Bindungsprimitive}
 	\begin{tabular}{| l | l |}
 		\hline Eigenschaft & SMARTS-Bindungsprimitive \\ 
 		\hline Einfachbindung & \texttt{-}, \texttt{/}, \texttt{\char`\\}, $\sim$\\
@@ -196,14 +206,13 @@ Für die Kanten wird der Fingerprint wie in Tabelle \ref{tab:smartsbind} beschrie
 	\label{tab:smartsbind}
 \end{table}
 
-Nicht alle Eigenschaften eines SMARTS-Ausdruck können in dem hier vorgestellten Verfahren verarbeitet werden. Zum Beispiel können die in Kapitel \ref{sssec:smarts} beschriebenen Rekursionen, die für SMARTS-Ausdrücke genutzt werden, um Umgebungen von SMARTS-Primitiven zu definieren nicht beachtet werden. Weitere nicht unterstützte\\ SMARTS-Primitve sind im Kapitel \ref{ssec:probleme}. Lösungsansätze werden in Kapitel \ref{sec:ausblick} beschrieben.
+Nicht alle Eigenschaften eines SMARTS-Ausdruck können in dem hier vorgestellten Verfahren verarbeitet werden. Zum Beispiel können die in Kapitel \ref{sssec:smarts} beschriebenen Rekursionen, die für SMARTS-Ausdrücke genutzt werden, um Umgebungen von SMARTS-Primitiven zu definieren nicht beachtet werden. Für weitere nicht unterstützte SMARTS-Primitve siehe Kapitel \ref{ssec:probleme}. Lösungsansätze werden in Kapitel \ref{sec:ausblick} beschrieben.
 
-\subsection{Vergleich und Aufbau Relation-Matrix}\label{ssec:relmatr}
+\subsection{Vergleich und Aufbau Relation-Matrix} \label{ssec:relmatr}
 Für die Untersuchung auf einen Subgraphisomorphismus von zwei chemischen Mustern benötigt man Initial-Matrizen für Knoten und Kanten, die die möglichen bijektiven Abbildungen der einzelnen Elemente repräsentieren.
-Anschließend wird die Initial-Matrix der Knoten und die der Kanten zusammen mit den Adjazenzmatrizen\footnote[1]{Matrix zugehörig zu einen Graphen, die durch "`1"' angeben, dass eine Kante zwischen zwei Knoten besteht oder durch "`0"', dass es keine Kante zwischen zwei Knoten gibt. Dabei besitzt sie für jeden Knoten eine Zeile ($i$) und eine Spalte ($j$). Ein Element ($i,j$) gibt die Adjazenz vom $i$ten und $j$ten Knoten an \cite{graph}} der beiden chemischen Mustern an einen Algorithmus zur Berechnung des Isomorphismus übergeben. In dieser Arbeit wurde dazu der Algorithmus nach Ullmann \cite{ullmann} verwendet.
-
+Anschließend wird die Initial-Matrix der Knoten und die der Kanten zusammen mit den Adjazenzmatrizen\footnote[1]{Matrix zugehörig zu einen Graphen, die durch "`1"' angeben, dass eine Kante zwischen zwei Knoten besteht oder durch "`0"', dass es keine Kante zwischen zwei Knoten gibt. Dabei besitzt sie für jeden Knoten eine Zeile ($i$) und eine Spalte ($j$). Ein Element ($i,j$) gibt die Adjazenz vom $i$-ten und $j$-ten Knoten an \cite{graph}} der beiden chemischen Mustern an einen Algorithmus zur Berechnung des Isomorphismus übergeben. In dieser Arbeit wurde dazu der Algorithmus nach Ullmann \cite{ullmann} verwendet.\\
 Anhand der Fingerprints, die für alle Bestandteile der beiden zu untersuchenden SMARTS-Ausdrücke erstellt wurden, können Rückschlüsse auf die Teilmengen-Relationen gezogen werden.\\
-Für den Vergleich werden einfache Bit-Operationen genutzt. Die Tabelle \ref{tab:bitop} zeigt welche Bit-Operationen dazu ausgeführt werden müssen, um die Teilmengen-Relationen zu überprüfen. Anschließend können mit den Ergebnissen der Vergleiche die Initial-Matrizen initialisiert werden. In diesem Kontext werden sie als Relations-Matrizen bezeichnet, da sie Rückschlüsse auf Teilmengen-Relationen geben.\\
+Für den Vergleich werden Bit-Operationen genutzt. Die Tabelle \ref{tab:bitop} zeigt welche Bit-Operationen dazu ausgeführt werden müssen, um die Teilmengen-Relationen zu überprüfen. Anschließend können mit den Ergebnissen der Vergleiche die Initial-Matrizen initialisiert werden. In diesem Kontext werden sie als Relations-Matrizen bezeichnet, da sie Rückschlüsse auf Teilmengen-Relationen geben.\\
 
 \begin{table}[h]
 	\centering
@@ -232,35 +241,52 @@ Wird für zwei Knoten oder zwei Kanten festgestellt, dass die angegebene Teilmeng
 	\label{abb:matrix}
 \end{figure}
 
-\newpage
 Zur Überprüfung der Teilmengen-Relation $Query\cap Target$ kann keine einfache Bit-Opera-\\tion durchgeführt werden. Durch Zuhilfenahme der in Tabelle \ref{tab:bitop} beschriebenen Bit-Operationen können zwei Elemente auf $Query\cap Target$ geprüft werden. Zwei chemische Muster haben einen wie in Kapitel \ref{sssec:rel} nicht leeren Schnitt in zwei Fällen:
 
-Sei $G^Q(V^Q,E^Q)$ die Graphenrepräsentation des Anfrage-SMARTS und $G^T(V^T,E^T)$ die Graphenrepräsentation des Ziel-SMARTS. Weiter sei ein Knoten $v \in V$ bestehend aus der Menge an logischen Alternativen $LA_v$, sowie eine Kante $e \in E$ bestehend aus der Menge an logischen Alternativen $LA_e$ dann muss für ein mögliches \textit{Mapping} gelten:
+Sei $G^Q(V^Q,E^Q)$ die Graphenrepräsentation des Anfrage-SMARTS und $G^T(V^T,E^T)$ die Graphenrepräsentation des Ziel-SMARTS. Weiter sei ein Knoten $v \in V$ bestehend aus der Menge an logischen Alternativen $LA_v$, sowie eine Kante $e \in E$ bestehend aus der Menge an logischen Alternativen $LA_e$. Für ein mögliches \textit{Mapping} $M_{QT}$ bestehend aus Knoten-Paaren $(v_Q, v_T)$ und den impliziten Kanten-Paaren $(e_Q, e_T)$ muss gelten:
 \begin{align}
 \begin{split}
-	& \Big[ \exists v_Q \in V^Q \exists v_T \in V^T \Big( (\exists a_Q \in LA_{v_Q} \exists a_T \in LA_{v_T} \big( a_Q =,\subseteq,\supseteq a_T \big)\\	
-	& \land  \exists a'_Q \in LA_{v^Q} \neq a_Q \exists a'_T \in LA_{v^T} \neq a_T \big( a_Q' \neq a_T' \big) \Big)\\	
-	& \land \forall v_Q' \in V^Q \forall v_T' \in V^T \Big(  v'_Q \neq v_Q \land v'_T \neq v_T \land v_Q' =, \subseteq, \supseteq v_T' \Big)\Big]\\	
-	\lor & \Big[ \exists e_Q \in E^Q \exists e_T \in E^T \Big( (\exists a_Q \in LA_{e_Q} \exists a_T \in LA_{e_T} \big( a_Q =,\subseteq,\supseteq a_T \big)\\	
-	& \land  \exists a'_Q \in LA_{e^Q} \neq a_Q \exists a'_T \in LA_{e^T} \neq a_T \big( a_Q' \neq a_T' \big) \Big)\\	
-	& \land \forall e_Q' \in E^Q \forall e_T' \in E^T \Big(  e'_Q \neq e_Q \land e'_T \neq e_T \land e_Q' =, \subseteq, \supseteq e_T' \Big)\Big]\\
+	& \Big[\forall (v_Q,v_T) \in M_{QT}:\Big(LA_{v_Q}=,\cap,\subset,\supset LA_{v_T}\Big)\\
+	& \land \forall (e_Q,e_T) \in M_{QT}:\Big(LA_{e_Q}=,\cap,\subset,\supset LA_{e_T}\Big)\Big]\\	
+	\land & \Big[\exists (v'_Q,v'_T) \in M_{QT}:\Big(LA_{v'_Q} \neq LA_{v'_T} \land LA_{v'_Q} \not\subset LA_{v'_T} \land LA_{v'_Q} \not\supset LA_{v'_T}\Big)\\
+	& \lor \exists (e'_Q,e'_T) \in M_{QT}:\Big(LA_{e'_Q} \neq LA_{e'_T} \land LA_{e'_Q} \not\subset LA_{e'_T} \land LA_{e'_Q} \not\supset LA_{e'_T}\Big)\Big]
 	\label{eq:fall1} 
 \end{split}
 \end{align} 
 
+%\begin{align}
+%\begin{split}
+%& \Big[ \exists v_Q \in V^Q \exists v_T \in V^T :\Big( \exists a_Q \in LA_{v_Q} \exists a_T \in LA_{v_T} :\big( a_Q =,\subseteq,\supseteq a_T \big)\\	
+%& \land  \exists a'_Q \in LA_{v^Q} \neq a_Q \exists a'_T \in LA_{v^T} \neq a_T :\big( a_Q' \neq a_T' \big) \Big)\\	
+%& \land \forall v_Q' \in V^Q \forall v_T' \in V^T :\Big(  v'_Q \neq v_Q \land v'_T \neq v_T \land v_Q' =, \subseteq, %\supseteq v_T' \Big)\Big]\\	
+%\lor & \Big[ \exists e_Q \in E^Q \exists e_T \in E^T :\Big( \exists a_Q \in LA_{e_Q} \exists a_T \in LA_{e_T} :\big( a_Q =,\subseteq,\supseteq a_T \big)\\	
+%& \land  \exists a'_Q \in LA_{e^Q} \neq a_Q \exists a'_T \in LA_{e^T} \neq a_T : \big( a_Q' \neq a_T' \big) \Big)\\	
+%& \land \forall e_Q' \in E^Q \forall e_T' \in E^T :\Big(  e'_Q \neq e_Q \land e'_T \neq e_T \land e_Q' =, \subseteq, \supseteq e_T' \Big)\Big]
+%\label{eq:fall1alt} 
+%\end{split}
+%\end{align} 
 oder
-
 \begin{align}
 \begin{split}
-	&\Big( \big( \exists v_Q \in V^Q \exists v_T \in V^T ( v^Q \subset v^T ) \land \exists v'_Q \in V^Q \exists v'_T \in V^T (v'_Q \neq v_Q \land v'_T \neq v_T \land v'^Q \supset v'^T) \big)\\
-	& \lor \big( \exists e_Q \in E^Q \exists e_T \in E^T ( e^Q \subset e^T ) \land \exists e'_Q \in E^Q \exists e'_T \in E^T (e'_Q \neq e_Q \land e'_T \neq e_T \land e'^Q \supset e'^T) \big) \Big)\\
-	\land & \forall v''_Q \in V^Q \forall v''_T \in V^T \big( v''_Q \neq v'_Q \neq v_Q \land v''_T \neq v'_T \neq v_T \land v''^Q =,\subseteq,\supseteq v''^T \big) \\
-	\land & \forall e''_Q \in E^Q \forall e''_T \in E^T \big( e''_Q \neq e'_Q \neq e_Q \land e''_T \neq e'_T \neq e_T \land e''^Q =,\subseteq,\supseteq e''^T \big) \\
-	\end{split}
-	\label{eq:fall2} 
+& \Big(\forall (v_Q,v_T) \in M_{QT}: \big(LA_{v_Q} =,\cap,\subset,\supset LA_{v_T}\big)\\
+&\land \forall (e_Q,e_T) \in M_{QT}: \big(LA_{e_Q} =,\cap,\subset,\supset LA_{e_T}\big)\Big)\\
+\land &\Big[\Big( \exists (v'_Q,v'_T),(v''_Q,v''_T) \in M_{QT}\backslash \{(v_Q,v_T)\}:\\
+& \big((v'_Q,v'_T)\neq(v''_Q,v''_T) \land LA_{v'_Q} \subset LA_{v'_T} \land LA_{v''_Q} \supset LA_{v''_T} \big) \Big)\\
+&\lor \Big( \exists (e'_Q,e'_T),(e''_Q,e''_T) \in M_{QT}\backslash \{(e_Q,e_T)\}:\\
+& \big((e'_Q,e'_T)\neq(e''_Q,e''_T) \land LA_{e'_Q} \subset LA_{e'_T} \land LA_{e''_Q} \supset LA_{e''_T} \big) \Big)\Big]
+\end{split}
+\label{eq:fall2} 
 \end{align}
-
-Beispiel \ref{bsp:intersecone} zeigt, zwei SMARTS-Ausdrücke bei denen für jeweils den ersten Knoten Formel \eqref{eq:fall1} gilt. Für alle weiteren Knoten und Kanten muss dann einheitlich $\subseteq, \supseteq oder =$ gelten.\\
+%\begin{align}
+%\begin{split}
+%	&\Big( \big( \exists v_Q \in V^Q \exists v_T \in V^T ( v^Q \subset v^T ) \land \exists v'_Q \in V^Q \exists v'_T \in V^T (v'_Q \neq v_Q \land v'_T \neq v_T \land v'^Q \supset v'^T) \big)\\
+%	& \lor \big( \exists e_Q \in E^Q \exists e_T \in E^T ( e^Q \subset e^T ) \land \exists e'_Q \in E^Q \exists e'_T \in E^T (e'_Q \neq e_Q \land e'_T \neq e_T \land e'^Q \supset e'^T) \big) \Big)\\
+%	\land & \forall v''_Q \in V^Q \forall v''_T \in V^T \big( v''_Q \neq v'_Q \neq v_Q \land v''_T \neq v'_T \neq v_T \land v''^Q =,\subseteq,\supseteq v''^T \big) \\
+%	\land & \forall e''_Q \in E^Q \forall e''_T \in E^T \big( e''_Q \neq e'_Q \neq e_Q \land e''_T \neq e'_T \neq e_T \land e''^Q =,\subseteq,\supseteq e''^T \big) \\
+%	\end{split}
+%	\label{eq:fall2alt} 
+%\end{align}
+Beispiel \ref{bsp:intersecone} zeigt, zwei SMARTS-Ausdrücke für die Formel \eqref{eq:fall1} gilt. Ein Knoten erfüllt die Eigenschaft des zweiten Teils der Formel. Die restlichen Knoten erfüllen den ersten Teil.\\
 
 \begin{bsp}
 	\label{bsp:intersecone}
@@ -274,7 +300,7 @@ Beispiel \ref{bsp:intersecone} zeigt, zwei SMARTS-Ausdrücke bei denen für jeweil
 	\end{tabular}
 \end{table}
 
-Beispiel \ref{bsp:intersectwo} zeigt, zwei SMARTS-Ausdrücke bei denen Formel \eqref{eq:fall2} gilt. Für mindestens einen Knoten gilt $\supseteq$, in diesem Beispiel ist es jeweils der letzte Knoten. Des weiteren gilt für mindestens ein Knoten- oder Bindungspaar $\subseteq$, in diesem Beispiel die jeweils ersten beiden Knoten und die Bindung.\\
+Beispiel \ref{bsp:intersectwo} zeigt, zwei SMARTS-Ausdrücke bei denen Formel \eqref{eq:fall2} gilt. Für mindestens einen Knoten gilt $\supset$, in diesem Beispiel ist es jeweils der letzte Knoten. Des weiteren gilt für mindestens ein Knoten- oder Bindungspaar $\subset$, in diesem Beispiel die jeweils ersten beiden Knoten und die Bindung.\\
 
 \begin{bsp}
 \label{bsp:intersectwo}
@@ -282,21 +308,21 @@ Beispiel \ref{bsp:intersectwo} zeigt, zwei SMARTS-Ausdrücke bei denen Formel \eq
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c c}
-		Anfrage-SMARTS & \texttt{[C;!R]} & \texttt{=} & \texttt{O} \\
-		Teilmengen-Relation & $\subset$ & $\subset$ & $\supset$ \\
+		Anfrage-SMARTS & \texttt{[C;!R]} & $\sim$ & \texttt{O} \\
+		Teilmengen-Relation & $\subset$ & $=$ & $\supset$ \\
 		Ziel-SMARTS & \texttt{[\#6] }& $\sim$ & \texttt{[OH]}\\
 	\end{tabular}
 \end{table}
 
 \subsection{Subgraphisomorphie Analyse}
-Anhand der im eben beschriebenen generierten Relations-Matrizen von Knoten und Kanten ist es nun möglich zwei Muster auf eine Subgraphisomorphismus zu untersuchen.
+Anhand der Relations-Matrizen von Knoten und Kanten ist es nun möglich zwei Muster auf eine Subgraphisomorphismus zu untersuchen.
 
 Mit der für die Knoten erzeugten Relations-Matrix, den jeweiligen Adjazenz-Matrizen und der Information zur Vereinbarkeit der Kanten durch die entsprechende Relations-Matrix wird durch den Algorithmus nach Ullmann ein Isomorphismus gesucht und die gefundenen bijektiven Abbildungen in Form von Permutationsmatrizen ausgegeben.
 
-Bei der Überprüfung auf eine Schnitt-Relation werden die Permutationsmatrizen in einem weiteren Schritt erneut auf diese Teilmengen-Relation geprüft. In diesem Schritt wird für die resultierende bijektive Abbildung geprüft, ob Formel \eqref{eq:fall1} und Formel \eqref{eq:fall2} gelten.
+Bei der Überprüfung auf eine Schnitt-Relation werden die Permutationsmatrizen in einem weiteren Schritt erneut auf diese Teilmengen-Relation geprüft. In diesem Schritt wird für die resultierende bijektive Abbildung geprüft, ob Formel \eqref{eq:fall1} oder Formel \eqref{eq:fall2} gelten.
 
 \subsection{Kennzeichnung}
-Zur eindeutigen Zuordnung der gefundenen Isomorphismen wurde anschließend eine Än-\\derung der \textit{Label} des Ziel-SMARTS erzeugt, die als Abbildung des Anfrage-SMARTS dienen. Durch diese Kennzeichnung der Knoten eines Anfrage-SMARTS in einem Ziel-SMARTS wird bei der Ausgabe deutlich welche Knoten eine Abbildung darstellen. Beispiel \ref{bsp:labelmapping} zeigt für die vier möglichen Teilmengen-Relationen die Ausgabe der gefundenen \textit{Mappings}.\\
+Zur eindeutigen Zuordnung der gefundenen Isomorphismen wurde anschließend eine Än-\\derung der \textit{Label} des Ziel-SMARTS erzeugt, die als Abbildung des Anfrage-SMARTS dienen. Durch diese Kennzeichnung der Knoten eines Anfrage-SMARTS in einem Ziel-SMARTS wird bei der Ausgabe deutlich welche Knoten eine Abbildung darstellen. Beispiel \ref{bsp:labelmapping} zeigt für die vier möglichen Teilmengen-Relationen die Ausgabe der gefundenen \textit{Mappings}. Abbildung \ref{abb:solution} zeigt eine Visualisierung (erzeugt mit SMARTSviewer \cite{smartsview}\cite{smartsviewsoftware}) der Ergebnisse.\\
 
 \begin{bsp}
 	\label{bsp:labelmapping}
@@ -315,7 +341,20 @@ Zur eindeutigen Zuordnung der gefundenen Isomorphismen wurde anschließend eine Ä
 		\textbf{Obermenge:} & Anfrage-SMARTS & \texttt{[S:1][C:2]\#[N:3]}\\
 		& Ziel-SMARTS & \texttt{[S:1](=[O:5])(=[O:6])[C:2]\#[N:3]}\\
 	\end{tabular}
-\end{table}	
+\end{table}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=10cm]{images/gleichmapping}\\
+	\vspace{0.3cm}
+	\includegraphics[width=11cm]{images/schnittmapping}\\
+	\vspace{0.3cm}
+	\includegraphics[width=12cm]{images/untermapping}\\
+	\vspace{0.3cm}
+	\includegraphics[width=10cm]{images/obermapping}
+	\caption{Visualisierung der gefundenen \textit{Mappings} aus Beispiel \ref{bsp:labelmapping}.}
+	\label{abb:solution}
+\end{figure}
 %
 % EOF
 %

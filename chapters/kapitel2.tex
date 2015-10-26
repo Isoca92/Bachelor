@@ -11,8 +11,7 @@
 \def\ZM{(0:5cm) ellipse (2.0cm and 1.0cm)}
 
 \section{Lösungsstrategie}
-In dieser Arbeit wird ein Verfahren vorgestellt, das es ermöglicht zwei chemische Muster auf eine Teilmengen-Relation zu untersuchen. Dabei wird zwischen Anfrage- und Zielmuster unterschieden. Wird eine Teilemengen-Relation festgestellt so erfolgt die Ausgabe der Lösung durch ein eindeutiges \textit{Mapping} des Anfrage- und Zielmusters. Dieses \textit{Mapping} ordnet den Atomen Anfragemusters das dazugehörigen Atom des Zielmusters zu.
-
+In dieser Arbeit wird ein Verfahren vorgestellt, das es ermöglicht zwei chemische Muster auf eine Teilmengen-Relation zu untersuchen. Dabei wird zwischen Anfrage- und Zielmuster unterschieden. Wird eine Teilemengen-Relation festgestellt so erfolgt die Ausgabe der Lösung durch ein eindeutiges \textit{Mapping} des Anfrage- und Zielmusters. Dieses \textit{Mapping} ordnet den Atomen Anfragemusters das dazugehörigen Atom des Zielmusters zu.\\
 Mit dieser Lösung kann herausgefunden werden, ob unterschiedlich definierte Muster dennoch Molekülmengen beschreiben, die eine Teilmengen-Relation entsprechen. Somit können, wie im Kapitel \ref{sssec:einleitung} beschrieben, zum Beispiel bei einer Beschreibung der gleichen Molekülmenge redundante Muster identifiziert werden.
 
 Im folgenden Kapitel soll ein Überblick über die entwickelten Konzepte \cite{Master} und die Struktur der Lösung des in Kapitel \ref{sssec:einleitung} vorgestellten Problems gegeben werden.
@@ -40,7 +39,7 @@ Die genaue Definition dieser Teilmengen-Relationen soll in diesem Abschnitt besc
 	\end{tikzpicture}
 \end{center}
 \subsubsection*{Gleichheit}
-Wenn zwei Beschreibungen von chemische Muster in allen atomaren und strukturellen Eigenschaften übereinstimmen, dass heißt die beschriebenen Molekülmengen verhalten sich wie im folgenden dargestellten Venn-Diagramm,\\
+Wenn zwei Beschreibungen von chemische Muster in allen atomaren und strukturellen Eigenschaften übereinstimmen, dass heißt die beschriebenen Molekülmengen verhalten sich wie im folgenden Venn-Diagramm,\\
 \begin{center}
 \begin{tikzpicture}
 \begin{scope}[fill opacity=0.3]
@@ -62,7 +61,7 @@ dann gilt:\\
 \end{align}
 
 \subsubsection*{Untermenge}
-Wenn das Anfragemuster in seinen atomaren und strukturellen Eigenschaften im Vergleich zum Zielmuster spezifizierter oder gleich weit spezifiziert ist, sich die Molekülmengen der beiden chemischen Muster wie folgt verhalten,\\
+Wenn das Anfragemuster in seinen atomaren und strukturellen Eigenschaften im Vergleich zum Zielmuster spezifizierter oder gleich weit spezifiziert ist. Verhalten sich die Molekülmengen der beiden chemischen Muster wie folgt,\\
 
 \begin{figure}[h]
     \begin{center}
@@ -108,13 +107,13 @@ Wenn das Anfragemuster in seinen atomaren und strukturellen Eigenschaften im Ver
 	\end{center}
 \end{figure}
 
-dann gilt:
+Es gilt:
 \begin{align}
 	A \subseteq Z
 \end{align}
 
 \subsubsection*{Obermenge}
-Wenn das Anfragemuster in seinen atomaren und strukturellen Eigenschaften im Vergleich zum Zielmuster allgemeiner oder gleich weit spezifiziert ist, sich die Molekülmengen der beiden chemischen Muster also wie folgt verhalten,\\
+Wenn das Anfragemuster in seinen atomaren und strukturellen Eigenschaften im Vergleich zum Zielmuster allgemeiner oder gleich weit spezifiziert ist, verhalten sich die Molekülmengen der beiden chemischen Muster wie folgt,\\
 
 \begin{figure}[h]
 	\begin{center}
@@ -160,14 +159,14 @@ Wenn das Anfragemuster in seinen atomaren und strukturellen Eigenschaften im Ver
 	\end{center}
 \end{figure}
 
-dann gilt:
+Es gilt:
 \begin{align}
 	A \supseteq Z
 \end{align}
 
 \subsubsection*{Schnitt}
 Zwei chemische Muster haben in zwei Fällen einen gemeinsamen, nicht leeren Schnitt.
-Entweder wenn sie durch logische Alternative einen Überlappung von atomaren oder strukturellen Eigenschaften besitzen, oder es innerhalb des Anfragemusters Teilstrukturen gibt, die eine Untermenge des Zielmusters beschreiben sowie Teilstrukturen, die eine Obermenge des Zielmusters beschreiben. Verhalten sich also die beiden chemischen Muster in ihrer Molekülmenge wie folgt,\\
+Entweder wenn sie durch logische Alternative einen Überlappung von atomaren oder strukturellen Eigenschaften besitzen, oder es innerhalb des Anfragemusters Teilstrukturen gibt, die eine Untermenge des Zielmusters beschreiben sowie Teilstrukturen, die eine Obermenge des Zielmusters beschreiben. Verhalten sich die beiden chemischen Muster in ihrer Molekülmenge wie folgt,\\
 
 \begin{center}
 \begin{tikzpicture}
@@ -194,12 +193,11 @@ dann gilt:
 \subsubsection{Valenzzustände} \label{sssec:valenz}
 Um zwei chemische Muster auf, die in Kapitel \ref{sssec:rel} vorgestellten, Teilmengen-Relationen zu überprüfen, muss es ermöglicht werden die Menge an Eigenschaften, die Atome und Bindungen beschreiben miteinander vergleichen zu können. Für die komplexen Atombeschreibungen muss dafür der Begriff des Valenzzustandes eingeführt werden. Allgemein versteht man unter einem Valenzzustand einen relevanten Zustand den ein zu untersuchendes Element einnehmen kann.
 Durch den anschließenden Vergleich der chemisch möglichen Valenzzustände von zwei zu untersuchenden Atomenbeschreibungen ist dann eine Untersuchung auf Teilmengen-Relationen möglich.
-
 In der hier vorgestellten Lösung besteht die Menge der Eigenschaften, die ein Valenzzustand eines Atoms beschreiben kann aus:
 \begin{itemize}
+	\setlength\itemsep{0em}\setlength\parskip{0em}
 	\item Atomname
 	\item Atomnummer
-	\item Atomgewicht
 	\item Atomvalenz
 	\item Anzahl der Einfachbindungen
 	\item Anzahl der Doppelbindungen
@@ -214,7 +212,7 @@ In der hier vorgestellten Lösung besteht die Menge der Eigenschaften, die ein Va
 Anhand dieser Eigenschaften ist es möglich die komplexe Struktur der Atombeschreibungen eines chemischen Musters zu kategorisieren und zu analysieren.
 
 \subsubsection{Fingerprint} \label{sssec:fprint}
-Anhand der Menge von chemisch möglichen Valenzzuständen eines in chemischem Mustern vorkommenden Atoms, kann ein Fingerprint generiert werden. Ein Fingerprint ist eine Repräsentation aller, durch die oben beschriebenen Eigenschaften möglichen Valenzzustände. Dieser Fingerprint in Form eines Bit-Arrays (siehe Abb. \ref{abb:bitarrayatom}) gibt an, ob eine Atombeschreibung ein Valenzzustand beschreibt (Bit auf "`1"' gesetzt) oder nicht (Bit auf "`0"' gesetzt).
+Anhand der Menge von chemisch möglichen Valenzzuständen eines, in chemischem Mustern vorkommenden, Atoms kann ein Fingerprint generiert werden. Ein Fingerprint ist eine Repräsentation aller, durch die oben beschriebenen Eigenschaften, möglichen Valenzzustände. Dieser Fingerprint in Form eines Bit-Arrays (siehe Abb. \ref{abb:bitarrayatom}) gibt an, ob eine Atombeschreibung ein Valenzzustand beschreibt (Bit auf "`1"' gesetzt) oder nicht (Bit auf "`0"' gesetzt).
 
 \begin{figure}[h]
 	\centering
@@ -247,12 +245,15 @@ Anhand der Menge von chemisch möglichen Valenzzuständen eines in chemischem Must
 
 Der Fingerprint für den Vergleich zwischen zwei Bindungen kann ohne den Begriff der Valenzzustände erstellt werden. Benötigt wird ein Bit-Array bestehend aus fünf Bits, die die folgenden Bindungen beschreiben:
 \begin{itemize}
+	\setlength\itemsep{0em}\setlength\parskip{0em}
 	\item[1. Bit:] Einfachbindung
 	\item[2. Bit:] Doppelbindung
 	\item[3. Bit:] Dreifachbindung
 	\item[4. Bit:] Ringbindung
 	\item[5. Bit:] Aromatische Bindung
 \end{itemize}
+
+Abbildung \ref{abb:bitarraybond} zeigt schematisch, wie dieses Bit-Array für den Fingerprint einer Bindung aufgebaut ist. Hier wird beispielsweise eine Bindung, die sowohl eine Einfach-, Doppel- oder Ringbindung beschreibt dargestellt.
 
 \begin{figure}[h]
 	\centering
@@ -272,19 +273,17 @@ Der Fingerprint für den Vergleich zwischen zwei Bindungen kann ohne den Begriff 
 	\label{abb:bitarraybond}
 \end{figure}
 
-Abbildung \ref{abb:bitarraybond} zeigt schematisch, wie dieses Bit-Array für den Fingerprint einer Bindung aufgebaut ist. Hier wird beispielsweise eine Bindung, die sowohl eine Einfach-, Doppel- oder Ringbindung beschreibt dargestellt.
-
 \newpage
 \subsection{Struktur} \label{ssec:struktur}
 Anhand der in Kapitel \ref{ssec:konzepte} erläuterten Konzepte ist es möglich das Verfahren zur Untersuchung auf Teilmengen-Relationen zu realisieren.
 Es gliedert sich in sechs grundlegende Schritte.
 Ein groben Überblick über die Struktur wird im Folgenden anhand der Abbildung \ref{abb:workflow} gegeben. Die Schritte sind in Kapitel \ref*{realisierung} detailiert beschrieben. 
  
-Die Eingaben des Verfahrens beinhalten ein Anfragemuster mit Atomen (durch "`VA"' mit eindeutiger Identifikationsnummer in der Abbildung \ref{abb:workflow} beschrieben) sowie Bindungen (durch "`EA"' und eindeutiger Nummer beschrieben). Das Anfrage-Muster hat eine beliebige Größe (Ausgegrauter Bereich ab Atom "`VA2"'). Das Zielmuster hat die Atome- ("`VZ"') und Bindungsbezeichnung ("`EZ"') und hat ebenfalls eine beliebige Größe. Zu den beiden Mustern wird noch eine der vier möglichen Teilmengen-Relation angegeben.
+Die Eingaben des Verfahrens beinhalten ein Anfragemuster mit Atomen (durch "`VA"' mit eindeutiger Identifikationsnummer in der Abbildung \ref{abb:workflow} beschrieben), sowie Bindungen (durch "`EA"' und eindeutiger Nummer beschrieben). Das Anfragemuster hat eine beliebige Größe (Ausgegrauter Bereich ab Atom "`VA2"'). Das Zielmuster hat die Atome- ("`VZ"') und Bindungsbezeichnung ("`EZ"') und hat ebenfalls eine beliebige Größe. Zu den beiden Mustern wird eine der vier möglichen Teilmengen-Relation angegeben.
 
-Im ersten Schritt werden die Muster aufbereitet und gefiltert. Die Aufbereitung erfolgt durch die eindeutige Kennzeichnung jedes Atoms (Knoten) der Muster durch ein . Anschließend wird je nach Teilmengen-Relation überprüft, ob ein Vergleich der gegebenen Muster möglich ist (siehe Abbildung \ref{abb:workflow} Schritt 1).
+Im ersten Schritt werden die Muster aufbereitet und gefiltert. Die Aufbereitung erfolgt durch die eindeutige Kennzeichnung jedes Atoms (Knoten) der Muster durch ein \textit{Label}. Anschließend wird je nach Teilmengen-Relation überprüft, ob ein Vergleich der gegebenen Muster möglich ist (siehe Abbildung \ref{abb:workflow} Schritt 1).
 
-Der zweite Schritt wird ausgeführt, falls die Überprüfung der Muster positiv war. Ansonsten erfolgt keine Ausgabe, da keine bijektive Abbildung gefunden wurde. In ihm werden für alle Atome und Bindungen der Muster Fingerprints erstellt.
+Der zweite Schritt wird ausgeführt, falls die Überprüfung der Muster positiv war. Ansonsten erfolgt keine Ausgabe, da keine bijektive Abbildung gefunden wurde. In ihm werden für alle Atome und Bindungen der beiden Muster Fingerprints erstellt.
 
 Im dritten Schritt werden anhand der gegebenen Teilmengen-Relation die Fingerprints verglichen. Die Fingerprints der Knoten des Anfragemusters werden mit allen Fingerprints der Knoten des Zielmusters paarweise verglichen (in Abbildung \ref{abb:workflow} entsprechen die grünen Pfeile einer positiven Überprüfung einer Teilmengen-Relation, rote Pfeile einer negativen Überprüfung).
 

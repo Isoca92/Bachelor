@@ -1,7 +1,7 @@
 \select@language {ngerman}
 \select@language {ngerman}
 \contentsline {section}{\numberline {1}Einleitung}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}Grundlagen}{6}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.1}Grundlagen}{5}{subsection.1.1}
 \contentsline {subsubsection}{\numberline {1.1.1}SMILES}{6}{subsubsection.1.1.1}
 \contentsline {subsubsection}{\numberline {1.1.2}SMARTS}{9}{subsubsection.1.1.2}
 \contentsline {subsubsection}{\numberline {1.1.3}Subgraph-Isomorphie}{11}{subsubsection.1.1.3}
@@ -12,32 +12,29 @@
 \contentsline {subsubsection}{\numberline {2.1.3}Fingerprint}{15}{subsubsection.2.1.3}
 \contentsline {subsection}{\numberline {2.2}Struktur}{16}{subsection.2.2}
 \contentsline {section}{\numberline {3}Realisierung}{18}{section.3}
-\contentsline {subsection}{\numberline {3.1}Aufarbeitung und Auswahl}{18}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Fingerprintgenerierung}{19}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Vergleich und Aufbau Relation-Matrix}{22}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Subgraphisomorphie Analyse}{24}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Kennzeichnung}{24}{subsection.3.5}
-\contentsline {section}{\numberline {4}Evaluation}{25}{section.4}
-\contentsline {subsection}{\numberline {4.1}Testen}{25}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Validierung}{25}{subsection.4.2}
-\contentsline {subsubsection}{\numberline {4.2.1}Durchf\"uhrung}{25}{subsubsection.4.2.1}
-\contentsline {subsubsection}{\numberline {4.2.2}Resultate}{27}{subsubsection.4.2.2}
-\contentsline {subsection}{\numberline {4.3}Laufzeitanalyse}{28}{subsection.4.3}
+\contentsline {subsection}{\numberline {3.1}Genutze Software}{18}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Aufarbeitung und Auswahl}{18}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Fingerprintgenerierung}{19}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Vergleich und Aufbau Relation-Matrix}{22}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Subgraphisomorphie Analyse}{24}{subsection.3.5}
+\contentsline {subsection}{\numberline {3.6}Kennzeichnung}{24}{subsection.3.6}
+\contentsline {section}{\numberline {4}Evaluation}{26}{section.4}
+\contentsline {subsection}{\numberline {4.1}Validierung}{26}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Durchf\"uhrung}{26}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Resultate}{27}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Laufzeitanalyse}{28}{subsection.4.2}
 \contentsline {section}{\numberline {5}Experimente und Auswertung}{30}{section.5}
 \contentsline {subsection}{\numberline {5.1}Diskussion der Experimente}{32}{subsection.5.1}
 \contentsline {section}{\numberline {6}Fazit}{35}{section.6}
 \contentsline {subsection}{\numberline {6.1}Ungel\"oste Probleme}{35}{subsection.6.1}
-\contentsline {section}{\numberline {7}Weiterf\"uhrende Arbeit}{36}{section.7}
+\contentsline {section}{\numberline {7}Weiterf\"uhrende Arbeit}{37}{section.7}
 \contentsline {section}{\numberline {A}Software User Guide}{I}{appendix.A}
 \contentsline {subsection}{\numberline {A.1}Command Line Syntax}{I}{subsection.A.1}
 \contentsline {subsection}{\numberline {A.2}Command Line Options}{I}{subsection.A.2}
-\contentsline {section}{\numberline {B}Softwarearchitektur}{III}{appendix.B}
-\contentsline {section}{\numberline {C}Wichtige Module und Klassen}{IV}{appendix.C}
-\contentsline {section}{\numberline {D}APIs}{VI}{appendix.D}
-\contentsline {section}{\numberline {E}Genutzte Datens\"atze}{VIII}{appendix.E}
-\contentsline {subsection}{\numberline {E.1}ZINC-6k-Molek\"ulliste}{VIII}{subsection.E.1}
-\contentsline {subsection}{\numberline {E.2}SMARTS Datensatz (ZBH)}{VIII}{subsection.E.2}
-\contentsline {subsection}{\numberline {E.3}SMARTS Filter (Experimente)}{VIII}{subsection.E.3}
-\contentsline {subsection}{\numberline {E.4}Ergebnisse der Experimente}{VIII}{subsection.E.4}
-\contentsline {section}{\numberline {F}Implementation}{VIII}{appendix.F}
-\contentsline {section}{\numberline {G}Literatur}{X}{appendix.G}
+\contentsline {section}{\numberline {B}Softwarearchitektur}{IV}{appendix.B}
+\contentsline {section}{\numberline {C}Wichtige Module und Klassen}{V}{appendix.C}
+\contentsline {section}{\numberline {D}Tests}{IX}{appendix.D}
+\contentsline {section}{\numberline {E}APIs}{IX}{appendix.E}
+\contentsline {section}{\numberline {F}Genutzte Datens\"atze}{XI}{appendix.F}
+\contentsline {section}{\numberline {G}Implementation}{XI}{appendix.G}
+\contentsline {section}{\numberline {H}Literatur}{XIII}{appendix.H}
