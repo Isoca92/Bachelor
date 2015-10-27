@@ -64,7 +64,7 @@ Für Knoten werden, wie Tabelle \ref{tab:smartvalenz} zeigt, Eigenschaften ausgel
 	\end{tabular}
 	\label{tab:smartvalenz}
 \end{table}
-Die Generierung erfolgt durch eine sequentielle Abfrage und Abgleich aller Eigenschaften und dementsprechender Bit-Setzung. Ausgegangen wird von einem Bit-Array bei dem jedes Bit auf "`0"' gesetzt ist. Im ersten Schritt werden, wie im Algorithmus \ref{alg:fingerprint1} beschrieben, die Bits, der Valenzzustände, die nicht durch die Atomnamen-Eigenschaften des Knotens beschrieben sind auf "`1"' gesetzt. Zudem wird in diesem schritt bereits die Aromazität untersucht, die im späteren Verlauf genutzt wird.
+Die Generierung erfolgt durch eine sequentielle Abfrage und Abgleich aller Eigenschaften und dementsprechender Bit-Setzung. Ausgegangen wird von einem Bit-Array bei dem jedes Bit auf "`0"' gesetzt ist. Im ersten Schritt werden, wie im Algorithmus \ref{alg:fingerprint1} beschrieben, die Bits der Valenzzustände, die nicht durch die Atomnamen-Eigenschaften des Knotens beschrieben sind, auf "`1"' gesetzt. Zudem wird in diesem Schritt bereits die Aromazität untersucht, die im späteren Verlauf genutzt wird.
 
 Die Eigenschaft der Atommasse (\texttt{<n>}) kann anhand des Fingerprints nicht verglichen werden, da die Menge an möglichen Atommassen nicht im Umfang der Valenzzustände enthalten ist. Diese Eigenschaft zwischen zwei zu vergleichenden Knoten wird vor der Fingerprintgenerierung abgeglichen. Die Trennstellen-Eigenschaft der SMARTS-Sprache ist in dem hier entwickelte Konzept nicht berücksichtigt.
 
@@ -190,7 +190,7 @@ Im Algorithmus \ref{alg:fingerprint2} und Algorithmus \ref{alg:fingerprint3} sin
 		\EndFor
 	\end{algorithmic}
 \end{algorithm}
-Für die Kanten können die Eigenschaften zur Fingerprintgenerierung direkt aus der Graphenstruktur abgelesen werden. Tabelle \ref{tab:smartsbind} stellt dabei die Eigenschaften, die der Fingerprint enthält in Zusammenhang mit den darstellenden SMARTS-Bindungsprimitiven.\\
+Für die Kanten können die Eigenschaften zur Fingerprintgenerierung direkt aus der Graphenstruktur abgelesen werden. Tabelle \ref{tab:smartsbind} stellt dabei die Eigenschaften, die der Fingerprint enthält, in Zusammenhang mit den darstellenden SMARTS-Bindungsprimitiven.\\
 
 \begin{table}[h]
 	\centering
@@ -210,7 +210,7 @@ Nicht alle Eigenschaften eines SMARTS-Ausdruck können in dem hier vorgestellten 
 
 \subsection{Vergleich und Aufbau Relation-Matrix} \label{ssec:relmatr}
 Für die Untersuchung auf einen Subgraphisomorphismus von zwei chemischen Mustern benötigt man Initial-Matrizen für Knoten und Kanten, die die möglichen bijektiven Abbildungen der einzelnen Elemente repräsentieren.
-Anschließend wird die Initial-Matrix der Knoten und die der Kanten zusammen mit den Adjazenzmatrizen\footnote[1]{Matrix zugehörig zu einen Graphen, die durch "`1"' angeben, dass eine Kante zwischen zwei Knoten besteht oder durch "`0"', dass es keine Kante zwischen zwei Knoten gibt. Dabei besitzt sie für jeden Knoten eine Zeile ($i$) und eine Spalte ($j$). Ein Element ($i,j$) gibt die Adjazenz vom $i$-ten und $j$-ten Knoten an \cite{graph}} der beiden chemischen Mustern an einen Algorithmus zur Berechnung des Isomorphismus übergeben. In dieser Arbeit wurde dazu der Algorithmus nach Ullmann \cite{ullmann} verwendet.\\
+Anschließend wird die Initial-Matrix der Knoten und die der Kanten zusammen mit den Adjazenzmatrizen\footnote[1]{Matrix zugehörig zu einen Graphen, die durch "`1"' angeben, dass eine Kante zwischen zwei Knoten besteht oder durch "`0"', dass es keine Kante zwischen zwei Knoten gibt. Dabei besitzt sie für jeden Knoten eine Zeile ($i$) und eine Spalte ($j$). Ein Element ($i,j$) gibt die Adjazenz vom $i$-ten und $j$-ten Knoten an. \cite{graph}} der beiden chemischen Mustern an einen Algorithmus zur Berechnung des Isomorphismus übergeben. In dieser Arbeit wurde dazu der Algorithmus nach Ullmann \cite{ullmann} verwendet.\\
 Anhand der Fingerprints, die für alle Bestandteile der beiden zu untersuchenden SMARTS-Ausdrücke erstellt wurden, können Rückschlüsse auf die Teilmengen-Relationen gezogen werden.\\
 Für den Vergleich werden Bit-Operationen genutzt. Die Tabelle \ref{tab:bitop} zeigt welche Bit-Operationen dazu ausgeführt werden müssen, um die Teilmengen-Relationen zu überprüfen. Anschließend können mit den Ergebnissen der Vergleiche die Initial-Matrizen initialisiert werden. In diesem Kontext werden sie als Relations-Matrizen bezeichnet, da sie Rückschlüsse auf Teilmengen-Relationen geben.\\
 
@@ -300,7 +300,7 @@ Beispiel \ref{bsp:intersecone} zeigt, zwei SMARTS-Ausdrücke für die Formel \eqre
 	\end{tabular}
 \end{table}
 
-Beispiel \ref{bsp:intersectwo} zeigt, zwei SMARTS-Ausdrücke bei denen Formel \eqref{eq:fall2} gilt. Für mindestens einen Knoten gilt $\supset$, in diesem Beispiel ist es jeweils der letzte Knoten. Des weiteren gilt für mindestens ein Knoten- oder Bindungspaar $\subset$, in diesem Beispiel die jeweils ersten beiden Knoten und die Bindung.\\
+Beispiel \ref{bsp:intersectwo} zeigt zwei SMARTS-Ausdrücke bei denen Formel \eqref{eq:fall2} gilt. Für mindestens einen Knoten gilt $\supset$, in diesem Beispiel ist es jeweils der letzte Knoten. Des Weiteren gilt für mindestens ein Knoten- oder Bindungspaar $\subset$, in diesem Beispiel die jeweils ersten beiden Knoten und die Bindung.\\
 
 \begin{bsp}
 \label{bsp:intersectwo}

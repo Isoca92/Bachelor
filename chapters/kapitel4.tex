@@ -50,8 +50,8 @@ Die Schnitt-Relation kann mit dieser Methode nicht validiert werden, da nicht ge
 \end{figure}
 
 \subsubsection{Resultate}
-Nachdem durch die Validierung Fehlverhalten aufgedeckt und behoben wurden, war es möglich die Validierung erfolgreich durchzuführen. Bei einem Beispiel des Validierungsverfahrens wurde als Anfrage-SMARTS \texttt{N$\sim$[\#6]} zusammen mit der Angabe, dass alle vier Teilmengen-Relationen an das Programm \textit{SmartsSmarts} übergeben. Als Ziel-SMARTS wurden die SMARTS-Ausdrücke als Liste übergeben.
-Es wurden 4 Untermengen-\textit{Mappings} und 109 Obermengen-\textit{Mappings} gefunden, welche alle durch die Validierung bestätigt werden konnten. Die Fälle, bei denen ohne \textit{Mapping} dennoch beide SMARTS-Ausdrücke ein Molekül getroffen haben, wurden wie beschrieben manuell überprüft. Es konnte kein fehlendes \textit{Mapping} festgestellt werden.\\
+Nachdem durch die Validierung Fehlverhalten aufgedeckt und behoben wurden, war es möglich die Validierung erfolgreich durchzuführen. Bei einem Beispiel des Validierungsverfahrens wurde als Anfrage-SMARTS \texttt{N$\sim$[\#6]} zusammen mit der Angabe, dass alle vier Teilmengen-Relationen überprüft werden sollen, an das Programm \textit{SmartsSmarts} übergeben. Als Ziel-SMARTS wurden die SMARTS-Ausdrücke als Liste übergeben.
+Es wurden vier Untermengen-\textit{Mappings} und 109 Obermengen-\textit{Mappings} gefunden, welche alle durch die Validierung bestätigt werden konnten. Die Fälle, bei denen ohne \textit{Mapping} dennoch beide SMARTS-Ausdrücke ein Molekül getroffen haben, wurden wie beschrieben manuell überprüft. Es konnte kein fehlendes \textit{Mapping} festgestellt werden.\\
 Neben diesem Beispiel wurde die Validierung mehrfach mit unterschiedlichen Anfrage-SMARTS erfolgreich durchgeführt.
 
 \newpage
@@ -78,7 +78,7 @@ Für die Unter- und Obermenge lässt sich der Fall untersuchen, bei dem die Knoten
 \end{figure}
 
 \vspace{0.5cm}
-Diese Laufzeitanalyse lässt  visuell auf eine lineare oder quadratische Laufzeit schließen. Der genutzte Algorithmus nach Ullmann benötigt im schlimmsten Fall, bei einem Anfrag-SMARTS mit Knotenanzahl $n$ und einem Ziel-SMARTS mit Knotenanzahl $m$, eine Laufzeit, die in $\mathcal{O}(m^nn^2)$ liegt. Bei dem Aufbau der Relations-Matrix werden $nm$ Vergleiche, und bei dem Aufbau der Kanten-Verträglichkeit $(n-1)(m-1)$ Vergleiche benötigt. Insgesamt liegt die Laufzeit des entwickelten Verfahrens in $\mathcal{O}(m^nn^2)$.
+Diese Laufzeitanalyse lässt  visuell auf eine lineare oder quadratische Laufzeit schließen. Der genutzte Algorithmus nach Ullmann benötigt im schlimmsten Fall, bei einem Anfrag-SMARTS mit Knotenanzahl $n$ und einem Ziel-SMARTS mit Knotenanzahl $m$, eine Laufzeit, die in $\mathcal{O}(m^nn^2)$ liegt. Bei dem Aufbau der Relations-Matrix werden $nm$ Vergleiche und bei dem Aufbau der Kanten-Verträglichkeit $(n-1)(m-1)$ Vergleiche benötigt. Insgesamt liegt die Laufzeit des entwickelten Verfahrens in $\mathcal{O}(m^nn^2)$.
 %
 % EOF
 %

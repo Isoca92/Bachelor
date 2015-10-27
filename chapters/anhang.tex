@@ -46,7 +46,7 @@ Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Paramete
 \noindent \hspace*{10mm}\textbf{\texttt{-l }}\textit{querySMARTS}\\
 \noindent \hspace*{10mm}\textbf{\texttt{--querylist }}\textit{querySMARTS}\\
 \\ \textbf{Hinweis:}\\
-Die SMARTS Input-Datei darf pro Zeile nur einen SMARTS-String beinhalten
+Die SMARTS Input-Datei darf pro Zeile nur einen SMARTS-String beinhalten.
 
 \subsubsection*{-t (Ziel-SMARTS Input)}
 Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Parameter ein Name einer Datei erforderlich, welche SMARTS-Strings beinhaltet.\\
@@ -54,10 +54,10 @@ Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Paramete
 \noindent \hspace*{10mm}\textbf{\texttt{-t }}\textit{targetSMARTS}\\
 \noindent \hspace*{10mm}\textbf{\texttt{--target }}\textit{targetSMARTS}\\
 \\ \textbf{Hinweis:}\\
-Die SMARTS Input-Datei darf pro Zeile nur einen SMARTS-String beinhalten
+Die SMARTS Input-Datei darf pro Zeile nur einen SMARTS-String beinhalten.
 
 \subsubsection*{-r (Teilmengen-Relation)}
-Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Parameter ein String erforderlich, welcher in Form eines vier-elementigen Bitstrings für Schnitt-Relation) vorliegt.\\
+Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Parameter ein String erforderlich, welcher in Form eines vier-elementigen Bitstrings für Schnitt-Relation vorliegt.\\
 \textbf{Syntax:}\\
 \noindent \hspace*{10mm}\textbf{\texttt{-r }}\textit{"Bitstring"}\\
 \noindent \hspace*{10mm}\textbf{\texttt{--relationship }}\textit{"Bitstring"}
@@ -82,7 +82,7 @@ Der Bitstring muss folgenden Syntax einhalten:
 \subsubsection*{-v (Validierung (Entwickleroption))}
 Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Parameter ein Dateiname erforderlich, welche Molekülbeschreibungen beinhaltet. Mögliche Dateiformate sind:  \texttt{.mol2}, \texttt{.pdb}, \texttt{.sdf}, \texttt{.smi}, \texttt{.smiles}\\
 Die Optionen \texttt{-s} (oder \texttt{-l}), \texttt{-t} und  \texttt{-r} sind bei dieser Option erforderlich.
-Es handelt sich bei dieser Option um eine Entwickleroption, mit der die Validierung des Programms ausgeführt wird.\\
+Es handelt sich bei dieser Option um eine Entwickleroption mit der die Validierung des Programms ausgeführt wird.\\
 \textbf{Syntax:}\\
 \noindent \hspace*{10mm}\textbf{\texttt{-v }}\textit{molecules}\\
 \noindent \hspace*{10mm}\textbf{\texttt{--validation}} \textit{molecules}
@@ -98,7 +98,7 @@ Beim Aufruf des Programmes müssen die Optionen \texttt{-s} (oder \texttt{-l}), \
 \end{figure}
 \vspace{3mm}
 
-In Abbildung \ref{fig:softwarestruk} ist die Softwarestruktur des Programms \textit{SmartSmarts} (rot) schematisch dargestellt. Ausgehend von den Eingabedateien (Input) wird durch die nummerierten Pfeile der Ablauf des Programms dargestellt. Es wird gezeigt, welche Module (grün) und Klassen (orange) des Programms sich gegenseitig nutzen. Welche Module aus der NAOMI-Softwarebibliothek (blau) an welchen Stellen des \textit{SmartsSmarts} Programms genutzt werden ist durch Hochzahlen gekennzeichnet. Im folgenden Kapitel werden die wichtigsten Module und Klassen erläutert.
+In Abbildung \ref{fig:softwarestruk} ist die Softwarestruktur des Programms \textit{SmartSmarts} (rot) schematisch dargestellt. Ausgehend von den Eingabedateien (Input) wird durch die nummerierten Pfeile der Ablauf des Programms dargestellt. Es wird gezeigt, welche Module (grün) und Klassen (orange) des Programms sich gegenseitig nutzen. Welche Module aus der NAOMI-Softwarebibliothek (blau) an welchen Stellen des \textit{SmartsSmarts} Programms genutzt werden, ist durch Hochzahlen gekennzeichnet. Im folgenden Kapitel werden die wichtigsten Module und Klassen erläutert.
 
 \newpage
 \section{Wichtige Module und Klassen}
@@ -139,7 +139,7 @@ In Abbildung \ref{fig:softwarestruk} ist die Softwarestruktur des Programms \tex
 \end{flalign*}
 \begin{framed}
 \textbf{Eingabe:} Anfrage-SMARTS, Ziel-SMARTS und Teilmengen-Relation in Form eines Bitstrings\\
-\textbf{Beschreibung:} Berechnet für einen Anfrage- und Ziel-SMARTS ob es einen oder mehrere Isomorphismen gibt, und gibt diese in Form einer Permutationsmatrix aus.\\
+\textbf{Beschreibung:} Berechnet für einen Anfrage- und Ziel-SMARTS, ob es einen oder mehrere Isomorphismen gibt, und gibt diese in Form einer Permutationsmatrix aus.\\
 \textbf{Ausgabe:} Liste von Permutationsmatrizen, die die gefundenen \textit{Mappings} repräsentieren
 \end{framed} 
 \begin{flalign*}
@@ -299,7 +299,7 @@ const std::string &relation);
 "`SmartsSmartsUllmann.hpp"'
 
 \textbf{Beschreibung:}\\
-Prüft für eine Teilmengen-Relation, einen Anfrage- und Ziel-SMARTS ob es einen oder mehrere Isomorphismen gibt und gibt diesen in Form eines \texttt{std::vector<Base::SimpleMatrix<int>>} zurück.
+Prüft für einen Anfrage-, Ziel-SMARTS und eine Teilmengen-Relation, ob es einen oder mehrere Isomorphismen gibt und gibt diesen in Form eines\\ \texttt{std::vector<Base::SimpleMatrix<int>>} zurück.
 
 \textbf{Prototyp:}
 \begin{lstlisting}

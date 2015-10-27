@@ -19,7 +19,7 @@ Computergestützte Verfahren oder Werkzeuge finden in der modernen Chemie immer m
 
 Die molekulare Ähnlichkeit von zwei Molekülen kann durch Einsatz von computergestütz-\\ten Methoden auf verschiedene Arten untersucht werden. Sie kann durch topologische Indizes (z.B. Randi\'{c}-Index \cite{randic}), durch Fingerprint Generierung \cite{chemoinformatik}\cite{introduction}, bei der angegeben wird welche strukturellen Eigenschaften oder funktionellen Gruppen ein Molekül enthält, oder auch mit Ähnlichkeits- bzw. Distanzmaßen (z.B. Tanimoto-Koeffizient \cite{matrices}) bestimmt werden. \cite{matrices}
 
-Durch die Bestimmung der molekularen Ähnlichkeit lassen sich nicht nur für einzelne Moleküle Vorhersagen zu den Interaktionen treffen, sondern auch für Molekülmengen, die sich mit chemischen Mustern \cite{Daylightsma}\cite{gci} beschreiben lassen. Die Interaktion einer Verbindung mit anderen erfolgt meist auf Grund von bestimmten Strukturen oder funktionellen Gruppen innerhalb der Verbindung. Diese zu untersuchenden Eigenschaften lassen sich mit chemischen Mustern ausdrücken (z.B. ein Muster, welches alle Moleküle beschreibt, die eine Nitrogruppe enthalten). Diese Muster stellen eine Beschreibung einer Molekülmenge, bestehend aus Molekülen mit den relevanten Eigenschaften, dar. Sie können dazu genutzt werden Moleküle zu filtern. So ist eine Aussortierung von beispielsweise Toxikophoren, oder auch das Auswählen von Verbindungen mit gewünschten Eigenschaften möglich.
+Durch die Bestimmung der molekularen Ähnlichkeit lassen sich nicht nur für einzelne Moleküle Vorhersagen zu den Interaktionen treffen, sondern auch für Molekülmengen, die sich mit chemischen Mustern \cite{Daylightsma}\cite{gci} beschreiben lassen. Die Interaktion einer Verbindung mit anderen erfolgt meist aufgrund von bestimmten Strukturen oder funktionellen Gruppen innerhalb der Verbindung. Diese zu untersuchenden Eigenschaften lassen sich mit chemischen Mustern ausdrücken (z.B. ein Muster, welches alle Moleküle beschreibt, die eine Nitrogruppe enthalten). Diese Muster stellen eine Beschreibung einer Molekülmenge, bestehend aus Molekülen mit den relevanten Eigenschaften, dar. Sie können dazu genutzt werden Moleküle zu filtern. So ist eine Aussortierung von beispielsweise Toxikophoren oder auch das Auswählen von Verbindungen mit gewünschten Eigenschaften möglich.
 
 Um es in der Chemieinformatik zu ermöglichen Interaktionen vorherzusagen oder zu analysieren, können chemische Verbindungen in eine Graphenstruktur überführt werden, wodurch eine mathematische Analyse möglich wird.\\
 Es handelt sich bei solchen Molekülgraphen \cite{introduction} um ungerichtete endliche markierte Graphen. Dabei werden die Atome als Knoten und die chemischen Bindungen als Kanten betrachtet. Die so entstehenden Graphen können anschließend im Rahmen der Graphentheorie auf gemeinsame Eigenschaften oder Teilstrukturen untersucht werden, um die molekulare Ähnlichkeit zu bewerten. Analog erfolgt die Übertragung von chemischen Mustern in eine Graphenstruktur, welche dann für den Vergleich aus der graphentheoretischen Sicht genutzt werden kann. Dies ist nötig, da auch chemische Muster und somit die beschriebenen Molekülmengen Ähnlichkeiten zueinander aufweisen können. Ein Vergleich würde es ermöglichen festzustellen, ob es eine Hierarchie der chemischen Muster gibt, ob es in einer Menge von chemischen Mustern redundante Muster gibt, aber auch um festzustellen, ob sich bestimmte Teilstrukturen oder funktionelle Gruppen in bereits genutzten Mustern wiederfinden. Bislang gibt es in die Chemieinformatik keine Methode um chemische Muster auf ihre Ähnlichkeit zu überprüfen. In der Informatik und den, zu chemischen Mustern äquivalenten, regulären Ausdrücken\footnote[1]{Zeichenkette, die eine Menge von Zeichenketten beschreibt} gibt es Ansätze zur Ähnlichkeitsanalyse. Meist basiert die Analyse auf der Generierung und Vergleich von endlichen Automaten\footnote[2]{Modell zur Beschreibung eines Verhaltens nach Eingabe einer Anfrage, bestehend aus einer endlichen Anzahl an Zuständen, Zustandsübergängen und Aktionen \cite{endlauto}}\cite{regex}.
@@ -42,10 +42,10 @@ Ein effizientes Arbeiten mit SMILES-Strings ist dadurch möglich, dass ein SMILES
 Kovalent gebundene Atome stehen benachbart in einer Zeichenkette. Bindungprimitive, die Beschreibungen von chemischen Bindungen, werden zwischen den jeweiligen Atomen angegeben. \cite{gci}\cite{smiles}
 
 \subsubsection*{Atome} \label{sssec:smilesatome}
-Die Atom-Beschreibung innerhalb eines SMILES-String erfolgt über die Angabe des Element-Symbols. Eine Besonderheit ist dabei die Angabe eines Atoms durch \texttt{*}. Das \texttt{*} gilt dabei als nicht spezifiziertes oder unbekanntes Atom, einer sogenannten \textit{Wildcard}. Des Weiteren werden Elementen, die im \textit{organic subset}\footnote[1]{Teilmenge der chemischen Elemente bestehend aus B, C, N, O, P, S, F, Cl, Br, I und *. Diese Elemente können ohne \texttt{[]} angegeben werden. Sie besitzen in dieser Form die implizite Anzahl an Bindungen zu Wasserstoffen aufgrund der kleinst möglichen Valenz, keine Ladung, keine Chiralität und keine isotopischen Eigenschaften. \cite{Daylightsmi}} enthalten sind von den restlichen Elementen des Periodensystems unterschieden.\\
+Die Atom-Beschreibung innerhalb eines SMILES-String erfolgt über die Angabe des Element-Symbols. Eine Besonderheit ist dabei die Angabe eines Atoms durch \texttt{*}. Das \texttt{*} gilt dabei als nicht spezifiziertes oder unbekanntes Atom, einer sogenannten \textit{Wildcard}. Des Weiteren werden Elementen, die im \textit{organic subset}\footnote[1]{Teilmenge der chemischen Elemente bestehend aus B, C, N, O, P, S, F, Cl, Br, I und *. Diese Elemente können ohne \texttt{[]} angegeben werden. Sie besitzen in dieser Form die implizite Anzahl an Bindungen zu Wasserstoffen aufgrund der kleinst möglichen Valenz, keine Ladung, keine Chiralität und keine isotopischen Eigenschaften. \cite{Daylightsmi}} enthalten sind, von den restlichen Elementen des Periodensystems unterschieden.\\
 Eine weitere Besonderheit betrifft die Atome C, N, P, O, S, As, Se und *. Diese Atome können, durch Angabe der Element-Symbole als Kleinbuchstaben, als aromatische Atome interpretiert werden.
 
-Neben den Element-Symbol, werden Atome mit Hilfe weiterer Eigenschaften, den sogenannten Atomprimitiven, beschrieben.
+Neben den Element-Symbol werden Atome mit Hilfe weiterer Eigenschaften, den sogenannten Atomprimitiven, beschrieben.
 Grundsätzlich gilt dabei folgender Syntax für die Angabe einer Atombeschreibung:
 \begin{center}
 	\texttt{[<mass>symbol<chiral><hcount><sign<charge>>]}
@@ -55,7 +55,7 @@ Tabelle \ref{tab:smilesatom} beschreibt die einzelnen Eigenschaften und wie sie 
 
 \begin{table}[h]
 	\centering
-	\captionabove{Beschreibung der möglichen Atomprimitive. \texttt{Symbol} beschreibt, wie in Kapitel \ref{sssec:smilesatome} erläuter das Element-Symbol. \texttt{@} gibt an, dass die folgenen Atome gegen den Uhrzeigersinn gelistet sind, bei \texttt{@@} sind sie im Uhrzeigersinn gelistet. \texttt{n} ist bei den Atomprimitiven eine natürliche Zahl. \cite{gci}}
+	\captionabove{Beschreibung der möglichen Atomprimitive. \texttt{Symbol} beschreibt, wie in Kapitel \ref{sssec:smilesatome} erläuter, das Element-Symbol. \texttt{@} gibt an, dass die folgenen Atome gegen den Uhrzeigersinn gelistet sind, bei \texttt{@@} sind sie im Uhrzeigersinn gelistet. \texttt{n} ist bei den Atomprimitiven eine natürliche Zahl. \cite{gci}}
 	\begin{tabular}{| l | l | l |}
 		\hline Atomprimitiv & SMILES-Syntax & Beschreibung\\
 		\hline \texttt{<mass>} & \texttt{<n>} & Masse des Atoms \\
@@ -125,7 +125,7 @@ Um eine Unterbrechung zu kennzeichnen kann in der SMILES Sprache ein "`\texttt{.
 \end{tabular}
 
 \subsubsection*{Ringe}
-Eine Ringbindung kann durch die Angabe eines Zahlenpaares dargestellt werden. Dabei wird eine Bindung in einem Molekül, die einen Ringschluss hervorrufen würde entfernt und an die beiden beteiligten Atome ein passendes Zahlenpaar angefügt, wie das Beispiel \ref{bsp:smiles3} zeigt. \cite{Daylightsmi}\\
+Eine Ringbindung kann durch die Angabe eines Zahlenpaares dargestellt werden. Dabei wird eine Bindung in einem Molekül, die einen Ringschluss hervorrufen würde, entfernt und an die beiden beteiligten Atome ein passendes Zahlenpaar angefügt, wie das Beispiel \ref{bsp:smiles3} zeigt. \cite{Daylightsmi}\\
 \begin{bsp}
 	\label{bsp:smiles3}
 \end{bsp}
@@ -163,7 +163,7 @@ Die SMARTS Sprache besitzt eine mächtigere Beschreibung im Vergleich zur SMILES-
 \end{table}
 
 \subsubsection*{Bindungen}
-Die Bindungsprimitiven der SMARTS Sprache werden um die in Tabelle \ref{tab:smartsbondprimi} dargestellten Eigenschaften erweitert.\\
+Die Bindungsprimitiven der SMARTS Sprache werden um die, in Tabelle \ref{tab:smartsbondprimi} dargestellten, Eigenschaften erweitert.\\
 
 \begin{table}[h]
 	\centering
@@ -209,7 +209,7 @@ Auch in der SMARTS Sprache sind Atom-Unterbrechungen, also nicht miteinander ver
 \end{table}
 
 \subsubsection*{Rekursive Ausdrücke}
-Ein weiterer Zusatz der SMARTS Sprache ist die Erweiterung der Beschreibung von Atom\-eigenschaften, durch rekursive Ausdrücke. Unter rekursiven Ausdrücken versteht man die Beschreibung der Atomumgebung durch einen weiteren SMARTS-Ausdruck in der Form \texttt{\$(SMARTSExp)}. \cite{Daylightsma}\cite{gci}\\
+Ein weiterer Zusatz der SMARTS Sprache ist die Erweiterung der Beschreibung von Atom\-eigenschaften durch rekursive Ausdrücke. Unter rekursiven Ausdrücken versteht man die Beschreibung der Atomumgebung durch einen weiteren SMARTS-Ausdruck in der Form \texttt{\$(SMARTSExp)}. \cite{Daylightsma}\cite{gci}\\
 \begin{bsp}
 \end{bsp}
 \label{bsp:smarts1}

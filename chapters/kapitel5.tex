@@ -2,7 +2,7 @@
 % Diskussion und Bewertung
 %
 \section{Experimente und Auswertung}\label{sec:experimente}
-Nach Abschluss der Validierung wurde das vorgestellte und implementierte Verfahren auf echten Daten getestet, die einen möglichen Anwendungsbereich des Verfahrens darstellen. In dem hier vorgestellten Experimenten handelt es sich um einen Anwendungsbereich, bei dem Filter, bestehend aus SMARTS-Ausdrücken, auf Überlappungen überprüft werden. Es wurden acht verschiedene SMARTS-Filter miteinander zu verglichen. Diese Filter wurden von im Rahmen der Datenbank ChEMBL \cite{ChEMBL}\cite{ChEMBLrelease}\cite{ChEMBLpersonal} aus den folgenen Quellen zusammengetragen:
+Nach Abschluss der Validierung wurde das vorgestellte und implementierte Verfahren auf echten Daten getestet, die einen möglichen Anwendungsbereich des Verfahrens darstellen. In dem hier vorgestellten Experimenten handelt es sich um einen Anwendungsbereich bei dem Filter, bestehend aus SMARTS-Ausdrücken, auf Überlappungen überprüft werden. Es wurden acht verschiedene SMARTS-Filter miteinander verglichen. Diese Filter wurden im Rahmen der Datenbank ChEMBL \cite{ChEMBL}\cite{ChEMBLrelease}\cite{ChEMBLpersonal} aus den folgenen Quellen zusammengetragen:
 \begin{enumerate}
 	\item Bristol-Myers Squibb HTS Deck Filters (\textbf{BMS})
 	\item University of Dundee NTD Screening Library Filters (\textbf{Dundee})
@@ -63,13 +63,13 @@ Diese Sammlungen von SMARTS-Ausdrücken werden als sogenannte \textit{structural 
 	\end{center}
 \end{center}
 \end{minipage}}
-\caption{Erster Teil der Experimente: Dargestellt ist für wie viele Ziel-SMARTS ein \textit{Mapping} zu den Anfrage-SMARTS der einzelnen SMARTS-Filter (BMS, Dundee, Glaxo und Inpharmatica) gefunden wurde. Die \textit{Mappings} sind Farbig markiert, je nachdem aus welchen anderen Filtern sie stammen. Zu beachten sind die unterschiedlichen Skalierungen (vgl. Tabelle \ref{tab:experiments}).}
+\caption{Erster Teil der Experimente: Dargestellt ist für wie viele Ziel-SMARTS ein \textit{Mapping} zu den Anfrage-SMARTS der einzelnen SMARTS-Filter (BMS, Dundee, Glaxo und Inpharmatica) gefunden wurde. Die \textit{Mappings} sind farbig markiert, je nachdem aus welchen anderen Filtern sie stammen. Zu beachten sind die unterschiedlichen Skalierungen (vgl. Tabelle \ref{tab:experiments}).}
 \label{abb:experiments1}
 \end{figure}
 
 \newpage
 \subsection{Diskussion der Experimente}
-Anhand der Ergebnisse, die für die Vergleiche der SMARTS-Filter gewonnen wurden, können Rückschlüsse auf die Art der \textit{structural alters} gezogen werden. Im Folgenden wird auf die Ergebnisse von jedem Filter eingegangen. Zudem wird anschließend ein chemisches Muster gezeigt, welches in jedem Filter (ohne PAINS) in einer allgemeinen, oder spezifizierten Form vorlag.
+Anhand der Ergebnisse, die für die Vergleiche der SMARTS-Filter gewonnen wurden, können Rückschlüsse auf die Art der \textit{structural alters} gezogen werden. Im Folgenden wird auf die Ergebnisse von jedem Filter eingegangen. Zudem wird anschließend ein chemisches Muster gezeigt, welches in jedem Filter (ohne PAINS) in einer allgemeinen oder spezifizierten Form vorlag.
 
 \textbf{BMS} (vgl. Abbildung \ref{abb:experiments1})\\
 Nach Durchführung der Vergleiche von dem Filter BMS mit allen anderen Filtern wird deutlich, dass bei den Vergleichen vor allem eine Untermengen-Relation festgestellt wurde. Es lässt darauf schließen, dass BMS im Vergleich zu den anderen (insbesondere zu Dundee) Filter nutzt, die spezifizierter eingesetzt werden.
@@ -84,7 +84,7 @@ Bei den Vergleichen mit dem Set von Glaxo wurden über 100 \textit{Mappings} gefu
 Für Inpharmatica wurden beinahe ausgewogen Ober- und Untermengen-\textit{Mappings gefunden}. Besonders auffällig ist die hohe Anzahl von Ziel-SMARTS, für die ein \textit{Mapping} der Schnitt-Relation gefunden wurde. Zurückzuführen lässt sich dieses Verhalten darauf, dass die SMARTS-Ausdrücke, die der Filter Inpharmatica nutzt, häufig Teilstrukturen besitzen die allgemeiner sind, sowie welche die spezifischer sind.
 
 \textbf{LINT} (vgl. Abbildung \ref{abb:experiments2})\\
-Anhand der Ergebnisse der Vergleiche mit dem SMARTS-Filter LINT kann davon ausgegangen werden, dass die genutzten SMARTS-Ausdrücke größtenteils allgemeiner gehalten sind. Da der SMARTS-Filter nur 48 SMARTS-Ausdrücke nutzt und somit der kleinste Filter ist konnte mit diesem Ergebnis gerechnet werden.
+Anhand der Ergebnisse der Vergleiche mit dem SMARTS-Filter LINT kann davon ausgegangen werden, dass die genutzten SMARTS-Ausdrücke größtenteils allgemeiner gehalten sind. Da der SMARTS-Filter nur 48 SMARTS-Ausdrücke nutzt und somit der kleinste Filter ist, konnte mit diesem Ergebnis gerechnet werden.
 
 \textbf{MLSMR} (vgl. Abbildung \ref{abb:experiments2})\\
 Ähnlich zu dem SMARTS-Filter Inpharmatica wurde auch bei dem Filter MLSMR eine Ausgewogenheit von gefundenen \textit{Mappings} zwischen Unter- und Obermenge festgestellt. Zudem wurde zu über 100 Ziel-SMARTS eine Gleichheit-Relation festgestellt. MSLSMR scheint damit einen SMARTS-Filter zu nutzen, der einen guten Repräsentanten der anderen Filter darstellen könnte.
@@ -116,7 +116,7 @@ Anhand der Ergebnisse der Vergleiche mit dem SMARTS-Filter LINT kann davon ausge
 		\end{center}
 	\end{center}
 \end{minipage}}
-\caption{Zweiter Teil der Experimente: Dargestellt ist für wie viele Ziel-SMARTS ein \textit{Mapping} zu den Anfrage-SMARTS der einzelnen SMARTS-Filter (LINT, MLSMR, PAINS, SureChEMBL) gefunden wurde. Die \textit{Mappings} sind Farbig markiert, je nachdem aus welchen anderen Filtern sie stammen. Zu beachten sind die unterschiedlichen Skalierungen (vgl. Tabelle \ref{tab:experiments}).}
+\caption{Zweiter Teil der Experimente: Dargestellt ist für wie viele Ziel-SMARTS ein \textit{Mapping} zu den Anfrage-SMARTS der einzelnen SMARTS-Filter (LINT, MLSMR, PAINS, SureChEMBL) gefunden wurde. Die \textit{Mappings} sind farbig markiert, je nachdem aus welchen anderen Filtern sie stammen. Zu beachten sind die unterschiedlichen Skalierungen (vgl. Tabelle \ref{tab:experiments}).}
 \label{abb:experiments2}
 \end{figure}
 \newpage
@@ -127,7 +127,7 @@ Die interessantesten Ergebnisse ergaben die Vergleiche mit dem SMARTS-Filter PAI
 Es wurde bei dem vorgehenden Vergleich auf redundante ein gleicher SMARTS-Ausdruck in der Liste festgestellt. SureChEMBL nutzt einen Filter, der ausgewogen Unter- und Obermengen-\textit{Mappings} aufweist. Dabei ist dieser SMARTS-Filter derjenige der dem Filter PAINS am ähnlichsten ist. SureChEMBL nutzt mit 148 SMARTS-Ausdrücken einen eher großen Filter, der dennoch in ungefähr gleichen Teilen eine Untermenge sowie eine Obermenge der anderen Filter darstellt. Dadurch lässt sich sagen, dass SureChEMBL einen SMARTS-Filter nutzt, der ein breites Spektrum von SMARTS-Ausdrücken nutzt.
 
 \textbf{Zusammenfassung}\\
-Abschließend lässt sich sagen, dass mit Hilfe des entwickelten Verfahrens Rückschlüsse auf die Art der genutzten Filter gezogen werden können. So Weisen die Filter Glaxo, MLSMR und SureChEMBL eine große Ähnlichkeit zueinander auf. Bei anderen Sets wie LINT und Dundee wurde vor allem die Untermenge als häufigste Relation festgestellt, was darauf hinweist, dass diese Sets Moleküle im Vergleich grob herausfiltern. BMS und Inpharmatica hingegen, für die vor allem \textit{Mappings} gefunden wurden, die zu einer Obermenge gehören weisen darauf hin, dass Moleküleigenschaften im Vergleich zu anderen Sets spezifizierter beschrieben sind, und somit weniger Moleküle herausgefiltert werden. PAINS lässt sich kaum mit den anderen Filtern vergleichen, was auf die Konvertierung von SLNs zur SMARTS zurückzuführen ist. Filter, die ausgewogen Unter- und Obermengen-\textit{Mappings} zu anderen Filtern besitzen, scheinen gute Repräsentanten der Filter zu sein. Festgestellt wurde, dass Filter mit einer großen Menge an SMARTS-Ausdrücken, häufig auch spezifiziertere SMARTS-Ausdrücke nutzen. Bis aus der Filter PAINS weisen alle Filter eine hohe Ähnlichkeit zueinander auf. Abbildung \ref{abb:experimentsbsp} zeigt für alle Filter (außer PAINS) ein Muster, welches in einer ähnlichen Form in allen Filtern zu finden ist und verdeutlicht die Unterschiede der Filter.
+Abschließend lässt sich sagen, dass mit Hilfe des entwickelten Verfahrens Rückschlüsse auf die Art der genutzten Filter gezogen werden können. So weisen die Filter Glaxo, MLSMR und SureChEMBL eine große Ähnlichkeit zueinander auf. Bei anderen Sets wie LINT und Dundee wurde vor allem die Untermenge als häufigste Relation festgestellt, was darauf hinweist, dass diese Sets Moleküle im Vergleich grob herausfiltern. BMS und Inpharmatica hingegen für die vor allem \textit{Mappings} gefunden wurden, die zu einer Obermenge gehören, weisen darauf hin, dass Moleküleigenschaften im Vergleich zu anderen Sets spezifizierter beschrieben sind und somit weniger Moleküle herausgefiltert werden. PAINS lässt sich kaum mit den anderen Filtern vergleichen, was auf die Konvertierung von SLNs zur SMARTS zurückzuführen ist. Filter, die ausgewogen Unter- und Obermengen-\textit{Mappings} zu anderen Filtern besitzen, scheinen gute Repräsentanten der Filter zu sein. Festgestellt wurde, dass Filter mit einer großen Menge an SMARTS-Ausdrücken häufig auch spezifiziertere SMARTS-Ausdrücke nutzen. Bis auf der Filter PAINS weisen alle Filter eine hohe Ähnlichkeit zueinander auf. Abbildung \ref{abb:experimentsbsp} zeigt für alle Filter (außer PAINS) ein Muster, welches in einer ähnlichen Form in allen Filtern zu finden ist und verdeutlicht die Unterschiede der Filter.
 
 \begin{figure}[h!]
 	\begin{minipage}{7cm}
@@ -146,7 +146,7 @@ Abschließend lässt sich sagen, dass mit Hilfe des entwickelten Verfahrens Rücksc
 		\textbf{SureChEMBL: } & \texttt{SC\#N} & $\Leftrightarrow$ & \includegraphics[width=2cm]{images/smartsglaxo}
 	\end{tabular}
 	\end{minipage}
-	\caption{Beispiel eines Musters, welches in allgemeiner oder spezifizierten Form in den Filtern BMS, Dundee, Glaxo, Inpharmatica, LINT, MLSMR und SureChEMBL vorkommt.}
+	\caption{Beispiel eines Musters, welches in allgemeiner oder spezifizierten Form in den Filtern BMS, Dundee, Glaxo, Inpharmatica, LINT, MLSMR und SureChEMBL vorkommt. (Graphiken mit SMARTSviewer generiert)}
 	\label{abb:experimentsbsp}
 \end{figure}
 %
