@@ -1,16 +1,16 @@
 \section{Evaluation}
 
 \subsection{Validierung}\label{ssec:validierung}
-Nachdem die Korrektheit der einzelnen Funktionen getestet wurde (vgl. Anhand \ref{ssec:test}), erfolgte anschließende eine Validierung des implementierten Verfahrens.
+Nachdem die Korrektheit der einzelnen Funktionen getestet wurde (vgl. Anhang \ref{ssec:test}), erfolgte eine anschließende Validierung des implementierten Verfahrens.
 
-Die Validierung erfolgt durch den Vergleich von Molekülmengen. Es wurden 6~000 Moleküle aus der ZINC-Datenbank \cite{zinc} genutzt (siehe Anhang \ref{ssec:zinc}).\\
-Die genutzten SMARTS-Ausdrücke \cite{smartsdata} wurden vom Zentrum für Bioinformatik Hamburg veröffentlicht. Der Datensatz beinhaltet 1~469 SMARTS-Ausdrücke (siehe Anhang \ref{ssec:aasmarts}). Da das implementierte Verfahren nicht alle SMARTS-Primitive verarbeiten kann (siehe Kapitel \ref{ssec:probleme}) konnten nur 1~038 SMARTS-Ausdrücke für die Validierung genutzt werden.
+Die Validierung erfolgte durch den Vergleich von Molekülmengen. Es wurden 6~000 Moleküle aus der ZINC-Datenbank \cite{zinc} genutzt (siehe Anhang \ref{ssec:zinc}).\\
+Die genutzten SMARTS-Ausdrücke \cite{smartsdata} wurden vom Zentrum für Bioinformatik Hamburg veröffentlicht. Der Datensatz beinhaltet 1~469 SMARTS-Ausdrücke (siehe Anhang \ref{ssec:aasmarts}). Da das implementierte Verfahren nicht alle SMARTS-Primitive verarbeiten kann (siehe Kapitel \ref{ssec:probleme}), konnten 1~038 SMARTS-Ausdrücke für die Validierung genutzt werden.
 
 \subsubsection{Durchführung}
-Das implementierte Verfahren wurde validiert indem die Molekülmengen der SMARTS-Ausdrücken verglichen wurden.
+Das implementierte Verfahren wurde validiert, indem die Molekülmengen der SMARTS-Ausdrücken verglichen wurden.
 Das Vorgehen gliedert sich dabei in zwei Schritte.\\
-Im ersten Schritt wird für zwei SMARTS-Ausdrück und einer Teilmengen-Relation über\-prüft, ob ein \textit{Mapping} gefunden wurde.\\
-Schritt zwei überprüft das Verhalten von Anfrage- und Ziel-SMARTS im Bezug auf das Treffen (\textit{Matching}) von Molekülen. Wenn ein \textit{Mapping} gefunden wird, wird über die Molekülliste iteriert und geprüft ob Anfrage- und Ziel-SMARTS ihrer Teilmengen-Relation entsprechend das gleiche Molekül treffen. Tabelle \ref{tab:validierung} zeigt welche Bedingungen für welche Teilmengen-Relation erfüllt sein muss.\\
+Im ersten Schritt wird für zwei SMARTS-Ausdrücke und einer Teilmengen-Relation über\-prüft, ob ein \textit{Mapping} gefunden wurde.\\
+Schritt zwei überprüft das Verhalten von Anfrage- und Ziel-SMARTS im Bezug auf das Treffen (\textit{Matching}) von Molekülen. Wenn ein \textit{Mapping} gefunden wird, wird über die Molekülliste iteriert und geprüft, ob Anfrage- und Ziel-SMARTS ihrer Teilmengen-Relation entsprechend das gleiche Molekül treffen. Tabelle \ref{tab:validierung} zeigt welche Bedingungen für welche Teilmengen-Relation erfüllt sein muss.\\
 
 \begin{table}[h]
 	\centering
@@ -27,9 +27,9 @@ Schritt zwei überprüft das Verhalten von Anfrage- und Ziel-SMARTS im Bezug auf d
 	\label{tab:validierung}
 \end{table}
 
-Falls kein \textit{Mapping} gefunden wird, wird ebenfalls über die Molekülliste iteriert und für jedes Molekül geprüft, ob beide SMARTS-Ausdrücken das zu überprüfende Molekül treffen. Ist dies der Fall werden die beiden SMARTS-Ausdrücke zusammen mit der Teilmengen-Relation ausgegeben, um manuell ausschließen zu können, dass ein \textit{Mapping} nicht gefunden wurde. Solch ein Fall tritt auf, wenn innerhalb eines Moleküls unterschiedliche Atome durch den SMARTS-Ausdruck beschrieben werden.
+Falls kein \textit{Mapping} gefunden wird, wird ebenfalls über die Molekülliste iteriert und für jedes Molekül geprüft, ob beide SMARTS-Ausdrücke das zu überprüfende Molekül treffen. Ist dies der Fall, werden die beiden SMARTS-Ausdrücke zusammen mit der Teilmengen-Relation ausgegeben, um manuell ausschließen zu können, dass ein \textit{Mapping} nicht gefunden wurde. Solch ein Fall tritt auf, wenn innerhalb eines Moleküls unterschiedliche Atome durch den SMARTS-Ausdruck beschrieben werden.
 
-Die Schnitt-Relation kann mit dieser Methode nicht validiert werden, da nicht gewährleistet ist, dass der Teil des Schnittes des gefundenen \textit{Mappings} ein Molekül trifft. Bei Beispiel \ref{bsp:validschnitt} und Abbildung \ref{abb:thyroxin} tritt der Fall ein, dass anhand der Molekülmenge eine Validierung nicht möglich ist. Beispiel \ref{bsp:validschnitt} zeigt ein \textit{Mapping} der Schnitt-Relation, wird nun das \textit{Matching}-Verhalten der beiden SMARTS-Ausdrücke in Bezug auf das Molekül aus Abbildung \ref{abb:thyroxin} verglichen, wird festgestellt, dass trotz eines gefundenen \textit{Mappings} die Molekülmenge nicht vergleichbar ist.\\
+Die Schnitt-Relation kann mit dieser Methode nicht validiert werden, da nicht gewährleistet ist, dass der Teil des Schnittes des gefundenen \textit{Mappings} ein Molekül trifft. Bei Beispiel \ref{bsp:validschnitt} und Abbildung \ref{abb:thyroxin} tritt der Fall ein, dass anhand der Molekülmenge eine Validierung nicht möglich ist. Beispiel \ref{bsp:validschnitt} zeigt ein \textit{Mapping} der Schnitt-Relation. Wird nun das \textit{Matching}-Verhalten der beiden SMARTS-Ausdrücke in Bezug auf das Molekül aus Abbildung \ref{abb:thyroxin} verglichen, wird festgestellt, dass trotz eines gefundenen \textit{Mappings} die Molekülmenge nicht vergleichbar ist.\\
 
 \begin{bsp}
 	\label{bsp:validschnitt}
@@ -50,7 +50,7 @@ Die Schnitt-Relation kann mit dieser Methode nicht validiert werden, da nicht ge
 \end{figure}
 
 \subsubsection{Resultate}
-Nachdem durch die Validierung Fehlverhalten aufgedeckt und behoben wurden, war es möglich die Validierung erfolgreich durchzuführen. Bei einem Beispiel des Validierungsverfahrens wurde als Anfrage-SMARTS \texttt{N$\sim$[\#6]} zusammen mit der Angabe, dass alle vier Teilmengen-Relationen überprüft werden sollen, an das Programm \textit{SmartsSmarts} übergeben. Als Ziel-SMARTS wurden die SMARTS-Ausdrücke als Liste übergeben.
+Nachdem durch die Validierung eventuelle Fehlverhalten aufgedeckt und behoben wurden, war es möglich die Validierung erfolgreich durchzuführen. Bei einem Beispiel des Validierungsverfahrens wurde als Übergabeparameter der Anfrage-SMARTS \texttt{N$\sim$[\#6]} zusammen mit der Angabe, dass alle vier Teilmengen-Relationen überprüft werden sollen, an das Programm \textit{SmartsSmarts} übergeben. Als Ziel-SMARTS wurden die SMARTS-Ausdrücke als Liste übergeben.
 Es wurden vier Untermengen-\textit{Mappings} und 109 Obermengen-\textit{Mappings} gefunden, welche alle durch die Validierung bestätigt werden konnten. Die Fälle, bei denen ohne \textit{Mapping} dennoch beide SMARTS-Ausdrücke ein Molekül getroffen haben, wurden wie beschrieben manuell überprüft. Es konnte kein fehlendes \textit{Mapping} festgestellt werden.\\
 Neben diesem Beispiel wurde die Validierung mehrfach mit unterschiedlichen Anfrage-SMARTS erfolgreich durchgeführt.
 
@@ -58,7 +58,7 @@ Neben diesem Beispiel wurde die Validierung mehrfach mit unterschiedlichen Anfra
 \subsection{Laufzeitanalyse}
 Für die Laufzeitanalyse wurde die benötigte Zeit des Verfahrens in Zusammenhang mit der Größe der genutzten SMARTS-Ausdrücke gebracht. Durchgeführt wurde die Laufzeitanalyse auf einem Rechner mit Intel\textregistered~Core\texttrademark~7-3770S CPU 3.10GHz. Dabei ist zu beachten, dass nebenläufige Prozesse nicht ausgeschlossen werden können.
 
-Abbildung \ref{abb:laufzeitgleich} zeigt, wie sich die Laufzeit (in Sekunden) bei Anstieg der Knotenanzahl von Anfrage- und Ziel-SMARTS verhält, wenn ein \textit{Mapping} gefunden wird. Diese Form der Laufzeitanalyse ist für alle vier Teilmengen-Relationen möglich. Schwankungen der Laufzeit sind auf die Komplexität der SMARTS-Ausdrücke zurückzuführen. Je verzweigter die Graphenstruktur ist, desto länger dauert der Aufbau der Relations-Matrix. Deutlich ist zu erkennen, dass die Schnitt-Relation etwa die doppelte Zeit benötigt. Das liegt daran, dass anschließend an die Untersuchung auf einen Isomorphismus durch den Algorithmus nach Ullmann wiederholt die Schnitt-Relation überprüft wird.
+Abbildung \ref{abb:laufzeitgleich} zeigt, wie sich die Laufzeit (in Sekunden) bei Anstieg der Knotenanzahl von Anfrage- und Ziel-SMARTS verhält, wenn ein \textit{Mapping} gefunden wird. Diese Form der Laufzeitanalyse ist für alle vier Teilmengen-Relationen möglich. Schwankungen der Laufzeit sind auf die Komplexität der SMARTS-Ausdrücke zurückzuführen. Je verzweigter die Graphenstruktur ist, desto länger dauert der Aufbau der Relations-Matrix. Deutlich ist zu erkennen, dass die Schnitt-Relation etwa die doppelte Zeit benötigt. Das liegt daran, dass nach der Untersuchung auf einen Isomorphismus durch den Algorithmus nach Ullmann die Schnitt-Relation erneut überprüft wird.
 
 \begin{figure}[h!]
 	\centering
@@ -67,18 +67,18 @@ Abbildung \ref{abb:laufzeitgleich} zeigt, wie sich die Laufzeit (in Sekunden) be
 	\label{abb:laufzeitgleich}
 \end{figure}
 
-Für die Unter- und Obermenge lässt sich der Fall untersuchen, bei dem die Knoten-Anzahl der SMARTS-Ausdrücke unabhängig voneinander variiert. Abbildung \ref{abb:laufzeitwachs} verdeutlicht den Laufzeitanstieg (in Sekunden) bei einer ansteigenden Größe der Anfrage-SMARTS zusammen mit einer gleichbleibenden Größe der Ziel-SMARTS. Die Größe der gleichbleibenden SMARTS-Ausdrücke liegt bei einer Überprüfung auf eine Untermengen-Relation konstant bei einem Knoten. Wird auf eine Obermengen-Relation geprüft, so sind die SMARTS-Ausdrücke konstant bei einer Länge von 21 Knoten.
+Für die Unter- und Obermenge lässt sich der Fall untersuchen, bei dem die Knoten-Anzahl der SMARTS-Ausdrücke unabhängig voneinander variiert. Abbildung \ref{abb:laufzeitwachs} verdeutlicht die Zunahme der Laufzeit (in Sekunden) bei einer ansteigenden Größe der Anfrage-SMARTS zusammen mit einer gleichbleibenden Größe der Ziel-SMARTS. Die Größe der gleichbleibenden SMARTS-Ausdrücke liegt bei einer Überprüfung auf eine Untermengen-Relation konstant bei einem Knoten. Wird auf eine Obermengen-Relation geprüft, so sind die SMARTS-Ausdrücke konstant bei einer Länge von 21 Knoten.
 
 \newpage
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=13cm]{images/laufzeit_wachsend}
-	\caption{Auftragung der Laufzeit in Sekunden, gegen Anzahl der Knoten des Ziel-SMARTS. Der Anfrage-SMARTS besteht konstant auf einem (Untermenge) bzw. konstant auf 21 (Obermenge) Knoten.}
+	\caption{Auftragung der Laufzeit in Sekunden gegen Anzahl der Knoten des Ziel-SMARTS. Der Anfrage-SMARTS besteht konstant auf einem (Untermenge) bzw. konstant auf 21 (Obermenge) Knoten.}
 	\label{abb:laufzeitwachs}
 \end{figure}
 
 \vspace{0.5cm}
-Diese Laufzeitanalyse lässt  visuell auf eine lineare oder quadratische Laufzeit schließen. Der genutzte Algorithmus nach Ullmann benötigt im schlimmsten Fall, bei einem Anfrag-SMARTS mit Knotenanzahl $n$ und einem Ziel-SMARTS mit Knotenanzahl $m$, eine Laufzeit, die in $\mathcal{O}(m^nn^2)$ liegt. Bei dem Aufbau der Relations-Matrix werden $nm$ Vergleiche und bei dem Aufbau der Kanten-Verträglichkeit $(n-1)(m-1)$ Vergleiche benötigt. Insgesamt liegt die Laufzeit des entwickelten Verfahrens in $\mathcal{O}(m^nn^2)$.
+Diese Laufzeitanalyse ergibt eine annähernd lineare Regression. Der genutzte Algorithmus nach Ullmann benötigt im schlimmsten Fall, bei einem Anfrage-SMARTS mit einer Knotenanzahl $n$ und einem Ziel-SMARTS mit der Knotenanzahl $m$, eine Laufzeit, die in $\mathcal{O}(m^nn^2)$ liegt. Bei dem Aufbau der Relations-Matrix werden $nm$ Vergleiche und bei dem Aufbau der Kanten-Verträglichkeit $(n-1)(m-1)$ Vergleiche benötigt. Insgesamt lässt sich die asymptotische \textit{Worst-case} Laufzeit des entwickelten Verfahrens auf $\mathcal{O}(m^nn^2)$ abschätzen.
 %
 % EOF
 %
