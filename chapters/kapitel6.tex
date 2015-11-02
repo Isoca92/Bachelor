@@ -13,17 +13,17 @@ Momentan werden bei der Übergabe an das implementierte Verfahren die SMARTS-Ausd
 \begin{itemize}
 	\item[] \texttt{@@} oder \texttt{@}: Chiralität an tetraedrischen Kohlenstoffen
 	\item[] \texttt{@<c><n>}: Chiralitätsklasse \textless c\textgreater, Chiralität \textless n\textgreater 
-	\item[] \texttt{@<c><n>?}: Chiralitätsklasse \textless c\textgreater, Chiralität \textless n\textgreater oder nicht spezifiziert
+	\item[] \texttt{@<c><n>?}: Chiralitätsklasse \textless c\textgreater, Chiralität \textless n\textgreater~oder nicht spezifiziert
 	\item[] \texttt{\$(SMARTSExp)}: Rekursive Ausdrücke
 \end{itemize}
 Die drei Eigenschaften betreffend der Chiralität sind deshalb problematisch, da sie abhäng\-ig von den impliziten Eigenschaften sind, die aus der Molekülgraphenstruktur resultieren.
 
 Ein besonderer Problemfall betrifft die rekursiven Ausdrücke (siehe Kapitel \ref{sssec:smarts}) der SMARTS-Sprache. Die Einbeziehung einer Umgebung für ein Atom oder eine Bindung ist für das hier vorgestellte Konzept der Fingerprints als Grundlage der Vergleiche nicht möglich. Die Eigenschaft ist für SMARTS-Ausdrücke extrem relevant, da sie es ermöglicht mit einer Definition der Umgebung ein chemisches Muster genauer und effizient zu beschreiben.
 
-Es besteht das Problem, dass ein Abgleich der Atommasse durch die Fingerprintgenerierung nicht möglich ist. Die Atommasse-Eigenschaft, die in den Valenzzuständen beinhaltet ist, beschreibt lediglich die Masse der Elemente in ihrer natürlichen Form. Gewichtsangaben von Isotopen liegen in dem genutzten Konzept der Valenzzustände nicht vor.
+Es besteht das Problem, dass ein Abgleich der Atommasse durch die Fingerprintgenerierung nicht möglich ist. Die Atommasse-Eigenschaft, die in den Valenzzuständen beinhaltet ist, beschreibt lediglich die Masse der Elemente in ihrer natürlichen Form. Gewichtsangaben von Isotopen liegen in dem genutzten Konzept der Valenzzustände nicht vor. Überprüft wird bislang nur die Atommasse der ersten logischen Alternative eines Knotens. Bei Atommasse-Angaben weiterer Alternativen wird der SMARTS-Ausdruck übersprungen.
 
-Ein Problem, welches unabhängig von der SMARTS-Sprache ist, betrifft die Schnitt-Relation. Wie in Formel \eqref{eq:fall2} beschrieben gilt entweder für Knoten oder Kanten, dass es eine Unter- und eine Obermengenrelation in einem möglichen \textit{Mapping} gibt.
-Formel \eqref{eq:fallprob} beschreibt den Fall bei dem kein \textit{Mapping} erkannt wird, da die Schnitt-Relation Knoten und Kanten der Molekülgraphen unabhängig voneinander beschreibt. Beispiel \ref{bsp:fallprob} zeigt den in \eqref{eq:fallprob} beschriebenen Fall.
+Ein Problem, welches unabhängig von der SMARTS-Sprache ist, betrifft die Schnitt-Relation. Wie in Formel \eqref{eq:fall2} beschrieben, gilt entweder für Knoten oder Kanten, dass es eine Unter- und eine Obermengenrelation in einem möglichen \textit{Mapping} gibt.
+Formel \eqref{eq:fallprob} beschreibt den Fall, bei dem kein \textit{Mapping} erkannt wird, da die Schnitt-Relation Knoten und Kanten der Molekülgraphen unabhängig voneinander beschreibt. Beispiel \ref{bsp:fallprob} zeigt den in \eqref{eq:fallprob} beschriebenen Fall.
 \begin{align}
 \tag{3}
 \begin{split}
@@ -67,15 +67,18 @@ Untersucht wurden die SMARTS-Ausdrücke auf Gleichheit und Schnitt-Relation. Beis
 
 \newpage
 \section{Weiterführende Arbeit} \label{sec:ausblick}
-Das Problem dessen Lösung am interessantesten ist, ist die der Einbeziehung der rekursiven Ausdrücke. Ein Ansatz wäre es, falls eine Beschreibung eines Anfrage-SMARTS einen rekursiven Ausdruck besitzt, diese als Eigenschaft zu vergleichen. Eine Überprüfung, ob es im Ziel-SMARTS eine, der Teilmengen-Relation entsprechende, rekursive Beschreibung gibt, würde diesen Vergleich realisieren.
-Im ersten Schritt würde ohne Einbezug der rekursiven Ausdrücke ein \textit{Mapping} gesucht werden. Falls es rekursive Beschreibungen von Atomen oder Bindungen gibt, würde im nächsten Schritt überprüft werden, ob das entsprechende Atom oder die entsprechende Bindung des Ziel-SMARTS einen rekursiven Ausdruck besitzt, der der Teilmengen-Relation entspricht. Dabei wird für Gleichheit und Schnitt-Relation das bestehende Verfahren genutzt. Die zu vergleichenden rekursive Ausdrücke werden an das Verfahren übergeben, und geprüft, ob es ein \textit{Mapping} gibt. Bei Unter- und Obermenge wird, falls es für beide Partner des \textit{Mappings} einen rekursiven Ausdruck gibt, analog vorgegangen. Falls es nur für einen \textit{Mapping}-Partner eine rekursiven Beschreibung gibt, gilt:\\
+Das Problem, dessen Lösung am interessantesten ist, ist das der Einbeziehung der rekursiven Ausdrücke. Ein Ansatz wäre es, falls eine Beschreibung eines Anfrage-SMARTS einen rekursiven Ausdruck besitzt, diese als Eigenschaft zu vergleichen. Eine Überprüfung, ob es im Ziel-SMARTS eine der Teilmengen-Relation entsprechende rekursive Beschreibung gibt, würde diesen Vergleich realisieren.
+Im ersten Schritt würde ohne Einbezug der rekursiven Ausdrücke ein \textit{Mapping} gesucht werden. Falls es rekursive Beschreibungen von Atomen oder Bindungen gibt, würde im nächsten Schritt überprüft werden, ob das entsprechende Atom oder die entsprechende Bindung des Ziel-SMARTS einen rekursiven Ausdruck besitzt, der der Teilmengen-Relation entspricht. Dabei wird für Gleichheit und Schnitt-Relation das bestehende Verfahren genutzt. Die zu vergleichenden rekursiven Ausdrücke werden an das Verfahren übergeben, und geprüft, ob es ein \textit{Mapping} gibt. Bei Unter- und Obermenge wird, falls es für beide Partner des \textit{Mappings} einen rekursiven Ausdruck gibt, analog vorgegangen. Falls es nur für einen \textit{Mapping}-Partner eine rekursiven Beschreibung gibt, gilt:
+
 \textbf{Untermenge:} Der \textit{Mapping}-Partner des Anfrage-SMARTS hat eine rekursive Beschreibung.\\
 \textbf{Obermenge:} Der \textit{Mapping}-Partner des Ziel-SMARTS hat eine rekursive Beschreibung.
 
-Für die Probleme bezüglich der nicht beachteten SMARTS-Primitive müsste ein Konzept entwickelt werden, welches die zu beachtenden Eigenschaften behandeln kann. Ein Ansatz wäre für die Chiralität die Information als kurze String-Repräsentation zu speichern und diese zu vergleichen. Ähnlich zum Ansatz für die rekursiven Ausdrücke, kann so gegebenenfalls die Eigenschaft abgeglichen werden.
+Die Einbeziehung der Eigenschaft der Atommasse könnte durch eine bool'sche Beschreibung innerhalb der Valenzzustände realisiert werden. Diese würde angeben, ob es sich um ein Isotop (unterschiedliche Atommasse) des betrachteten Elements handelt.
 
-Das Fehlverhalten welches für Beispiel \ref{bsp:problemring} festgestellt wurde, konnte bereits eingegrenzt werden. Es wurde keine Gleichheit festgestellt, da für die Knoten \texttt{[N,S,O]} und  \texttt{[O,S,N]} keine Gleichheit festgestellt werden konnte. Übergibt man nur diese beiden Knoten an das Programm wird eine Gleichheit festgestellt. Auch wenn die Ringbindung (gekennzeichnet durch das Zahlenpaar "`1"') entfernt wird, wird eine Gleichheit der beiden SMARTS-Ausdrücke festgestellt. Das Problem liegt also an den beiden Knoten \texttt{[N,S,O]} und  \texttt{[O,S,N]} in Zusammenhang mit einem Ringschluss. Es wurde weiter festgestellt, dass solange die erste logische Alternative in beiden Knoten gleich ist, das Problem nicht auftritt.\\
-Das Problem tritt also auf wenn es in beiden SMARTS-Ausdrücken einen Knoten gibt, mit den gleichen logischen Alternativen. Diese Knoten müssen in einem Ring enthalten sein. Zudem muss an der ersten Position der Knoten unterschiedliche logische Alternativen stehen. Bis zu diesem Zeitpunkt konnte noch kein Lösungsansatz entwickelt werden.
+Für die Probleme bezüglich der nicht beachteten SMARTS-Primitive müsste ein Konzept entwickelt werden, welches die zu beachtenden Eigenschaften behandeln kann. Ein Ansatz wäre für die Chiralität die Information als kurze String-Repräsentation zu speichern und diese zu vergleichen. Ähnlich zum Ansatz für die rekursiven Ausdrücke kann so gegebenenfalls die Eigenschaft abgeglichen werden.
+
+Das Fehlverhalten, welches für Beispiel \ref{bsp:problemring} festgestellt wurde, konnte bereits eingegrenzt werden. Es wurde keine Gleichheit festgestellt, da für die Knoten \texttt{[N,S,O]} und \texttt{[O,S,N]} keine Gleichheit festgestellt werden konnte. Übergibt man nur diese beiden Knoten an das Programm wird eine Gleichheit festgestellt. Auch wenn die Ringbindung (gekennzeichnet durch das Zahlenpaar "`1"') entfernt wird, wird eine Gleichheit der beiden SMARTS-Ausdrücke festgestellt. Das Problem liegt also an den beiden Knoten \texttt{[N,S,O]} und \texttt{[O,S,N]} in Zusammenhang mit einem Ringschluss. Es wurde weiter festgestellt, dass das Problem nicht auftritt, solange die erste logische Alternative in beiden Knoten gleich ist.\\
+Das Problem tritt also auf, wenn es in beiden SMARTS-Ausdrücken einen Knoten mit den gleichen logischen Alternativen gibt. Diese Knoten müssen in einem Ring enthalten sein. Zudem müssen an der ersten Position der Knoten unterschiedliche logische Alternativen stehen. Bis zu diesem Zeitpunkt konnte noch kein Lösungsansatz entwickelt werden.
 %
 % EOF
 %

@@ -5,10 +5,10 @@
 Das Programm \textit{SmartsSmarts} wurde, wie in Kapitel \ref{ssec:struktur} beschrieben, in sechs Schritten realisiert. Im folgenden Kapitel sollen diese Schritte erläutert werden.
 
 Grundlage des Programms zum Vergleich von chemischen Mustern sind die in Kapitel \ref{sssec:smarts} vorgestellten SMARTS-Ausdrücke.
-Dem Programm werden neben dem Anfrage-SMARTS und Ziel-SMARTS zusätzlich die zu untersuchende Teilmengen-Relation übergeben.
+Dem Programm werden neben dem Anfrage- und Ziel-SMARTS zusätzlich die zu untersuchende Teilmengen-Relation übergeben.
 
-\subsection{Genutze Software}
-Das in dieser Arbeit vorgestellte Verfahren wurde im Rahmen der NAOMI-Softwarebibliothek \cite{naomi} des Zentrums für Bioinformatik (ZBH) der Universität Hamburg implementiert. Aus den folgende Modulen wurden Funktionen und Klassen genutzt:
+\subsection{Genutzte Software}
+Das in dieser Arbeit vorgestellte Verfahren wurde im Rahmen der NAOMI-Softwarebiblio\-thek \cite{naomi} des Zentrums für Bioinformatik (ZBH) der Universität Hamburg implementiert. Aus den folgenden Modulen wurden Funktionen und Klassen genutzt:
 \begin{enumerate}
 	\setlength\itemsep{0em}\setlength\parskip{0em}
 	\item \texttt{Chemistry}
@@ -19,15 +19,15 @@ Das in dieser Arbeit vorgestellte Verfahren wurde im Rahmen der NAOMI-Softwarebi
 An welchen Stellen das \textit{SmartsSmarts}-Programm die Module nutzt, wird in Abbildung \ref{fig:softwarestruk} (Kapitel \ref{sec:softwarearch}) gezeigt.
 
 \subsection{Aufarbeitung und Auswahl}\label{ssec:vorverarbeitung}
-Der Anfrage- und Ziel-SMARTS wird zunächst in eine Form gebracht, die es im letzten Schritt des Verfahrens ermöglicht das \textit{Mapping} zu erzeugen. Die dazu genutzten \textit{Label} sind eindeutige Identifikationsnummern, die als \texttt{:ID} an die Knoten eines SMARTS-Ausdrucks angefügt werden können. Dabei wird jedes Label einmalig an das Vergleichspaar aus Anfrage- und Ziel-SMARTS vergeben. Bestehende \textit{Label} werden übernommen.\\
-Anschließend wird für Anfrage- und Ziel-SMARTS überprüft, ob ein Vergleich grund-\\sätzlich anhand der Knoten-Anzahl und der gegebenen Relation möglich ist (siehe Tabelle \ref{tab:anzahlcheck}). Für die Schnitt-Relation ($\cap$) ist zu beachten, dass Anfrage- und Ziel-SMARTS die gleiche Anzahl an Knoten haben müssen, damit ein nicht leerer Schnitt vorliegt. Der Grund dafür ist, dass die Schnitt-Menge zweier SMARTS-Muster ein SMARTS-Ausdruck beschreiben, welcher eine Untermenge von Anfrage- und Ziel-SMARTS sein soll. Wären die beiden Muster unterschiedlich groß, wäre der nicht leere Schnitt maximal so groß wie der kleinere SMARTS-Ausdruck. Für das größere Muster kann also keine Untermengen-Relation vorliegen.\\
+Die Anfrage- und Ziel-SMARTS werden zunächst in eine Form gebracht, die es im letzten Schritt des Verfahrens ermöglicht das \textit{Mapping} zu erzeugen. Die dazu genutzten \textit{Label} sind eindeutige Identifikationsnummern, die als \texttt{:ID} an die Knoten eines SMARTS-Ausdrucks angefügt werden können. Dabei wird jedes Label einmalig an das Vergleichspaar aus Anfrage- und Ziel-SMARTS vergeben. Bestehende \textit{Label} werden übernommen.\\
+Anschließend wird für Anfrage- und Ziel-SMARTS überprüft, ob ein Vergleich grund-\\sätzlich anhand der Knoten-Anzahl und der gegebenen Relation möglich ist (siehe Tabelle \ref{tab:anzahlcheck}). Für die Schnitt-Relation ($\cap$) ist zu beachten, dass Anfrage- und Ziel-SMARTS die gleiche Anzahl an Knoten haben müssen, damit ein nicht leerer Schnitt vorliegt. Der Grund dafür ist, dass die Schnittmenge zweier SMARTS-Muster einen SMARTS-Ausdruck beschreibt, welcher eine Untermenge von Anfrage- und Ziel-SMARTS sein soll. Wären die beiden Muster unterschiedlich groß, wäre der nicht leere Schnitt maximal so groß wie der kleinere SMARTS-Ausdruck. Für das größere Muster kann also keine Untermengen-Relation vorliegen.\\
 
 \begin{table}[h]
 	\centering
 	\captionabove{Anzahlüberprüfung der Knoten des Anfrage-SMARTS ($Query$) und Ziel-SMARTS ($Target$)}
 	\begin{tabular}{| c | l |}
 		\hline Relation & Bedingung \\
-		\hline $=$ and $\cap$ & $QueryNodeCount = TargetNodeCount$ \\
+		\hline $=$ und $\cap$ & $QueryNodeCount = TargetNodeCount$ \\
 		$\subseteq$ & $QueryNodeCount >= TargetNodeCount$ \\
 		$\supseteq$ & $QueryNodeCount <= TargetNodeCount$ \\
 		\hline
@@ -46,7 +46,7 @@ Für Knoten werden, wie Tabelle \ref{tab:smartvalenz} zeigt, Eigenschaften ausgel
 	\captionabove{Eigenschaften der Valenzzustände für Atome und ihre zugehörigen SMARTS-Atomprimitive}
 	\begin{tabular}{| l | l |}
 		\hline Eigenschaft & abgeleitet aus SMARTS-Atomprimitiv \\
-		\hline Element & \texttt{*}, \texttt{a}, \texttt{A} und alle Elementnamen \\
+		\hline Element & \texttt{*}, \texttt{a}, \texttt{A} und alle Element-Symbole \\
 		Atomnummer & \texttt{\#n} \\
 		Atomvalenz & \texttt{v<n>} \\
 		Anzahl der Einfachbindungen & \texttt{D<n>}, \texttt{H<n>} \\
@@ -54,10 +54,10 @@ Für Knoten werden, wie Tabelle \ref{tab:smartvalenz} zeigt, Eigenschaften ausgel
 		Anzahl der Dreifachbindungen & \texttt{D<n>} \\
 		Formalladung & \texttt{+<n>}, \texttt{-<n>} \\
 		Anzahl der gebundenen Wasserstoffatome & \texttt{D<n>}, \texttt{H<n>} \\
-		ob das Atom aromatisch ist & \texttt{*}, \texttt{a}, \texttt{A} und alle Atomnamen \\
-		Anzahl der Ringe eines SSSR in dem & \texttt{R<n>} \\
-		sich das Atom befindet  & \\
-		Größe des kleinsten SSSR-Ring in dem & \texttt{r<n>} \\
+		ob das Atom aromatisch ist & \texttt{*}, \texttt{a}, \texttt{A} und alle Element-Symbole \\
+		Anzahl der Ringe eines SSSR, in dem & \texttt{R<n>} \\
+		sich das Atom befindet & \\
+		Größe des kleinsten SSSR-Rings, in dem & \texttt{r<n>} \\
 		sich das Atom befindet & \\
 		Anzahl der Bindungen in Ringen & \texttt{x<n>} \\
 		\hline
@@ -85,9 +85,9 @@ Die Eigenschaft der Atommasse (\texttt{<n>}) kann anhand des Fingerprints nicht 
 	\EndFor
 	
 	\NoThen	
-	\If{$\big(node\_symbol \ne SMARTS\_ANY\_ATOM\big)$}
+	\If{$\big(node\_symbol~!= SMARTS\_ANY\_ATOM\big)$}
 		\ForAll{$\big(i \in [1,nof\_valenceStates]\big)$}
-			\If{$\big(node\_symbol = \Call{GetSymbol}{valencestates[i]}\big)$}
+			\If{$\big(node\_symbol == \Call{GetSymbol}{valencestates[i]}\big)$}
 				\State $temp\_bit\_array[i] =$ \texttt{true}
 			\EndIf
 			\NoThen
@@ -119,11 +119,11 @@ Die Eigenschaft der Atommasse (\texttt{<n>}) kann anhand des Fingerprints nicht 
 		\EndIf
 	\EndIf
 	\NoThen
-	\If{$\big(\Call{NodeIsAliphatic}{node} != \texttt{true}\big)$}
+	\If{$\big(\Call{NodeIsAliphatic}{node}~!= \texttt{true}\big)$}
 		\State $node\_is\_aliphatic =$ \texttt{false}
 	\EndIf
 	\NoThen
-	\If{$\big(\Call{NodeIsAromatic}{node} != \texttt{true}\big)$}
+	\If{$\big(\Call{NodeIsAromatic}{node}~!= \texttt{true}\big)$}
 		\State $node\_is\_aliphatic =$ \texttt{false}
 	\EndIf
 	\State $sec\_temp\_bit\_array = temp\_bit\_array \land sec\_temp\_bit\_array$
@@ -133,8 +133,8 @@ Die Eigenschaft der Atommasse (\texttt{<n>}) kann anhand des Fingerprints nicht 
 \end{algorithmic}
 \end{algorithm}
 
-Die meisten Eigenschaften können anschließend durch einen Abgleich von Graphen-Eigen\-schaften und Valenzzuständen im Bit Array weiter geprüft werden und gegebenenfalls weitere Bits auf "0" gesetzt werden.
-Im Algorithmus \ref{alg:fingerprint2} und Algorithmus \ref{alg:fingerprint3} sind die Verarbeitung der Eigenschaften der Bindungen (\texttt{D<n>}) und der Aromazität beschrieben, da diese nicht direkt aus der Graphenstruktur abzulesen sind.
+Die meisten Eigenschaften können anschließend durch einen Abgleich von Graphen-Eigen\-schaften und Valenzzuständen im Bit-Array weiter geprüft und gegebenenfalls weitere Bits auf "0" gesetzt werden.
+In Algorithmus \ref{alg:fingerprint2} und \ref{alg:fingerprint3} sind die Verarbeitung der Eigenschaften der Bindungen (\texttt{D<n>}) und der Aromazität beschrieben, da diese nicht direkt aus der Graphenstruktur abzulesen sind.
 
 \begin{algorithm}[H]
 \caption{Fingerprintgenerierung Ausschnitt 2 \cite{Master}} \label{alg:fingerprint2}
@@ -147,13 +147,13 @@ Im Algorithmus \ref{alg:fingerprint2} und Algorithmus \ref{alg:fingerprint3} sin
 		\ForAll{$\big(i \in [1,nof\_valenceStates]\big)$}
 			\NoThen
 			\If {$ \begin{pmatrix*}[l]
-					&\Big(node\_degree \ne \big(\Call{GetNofBonds}{valencestates[i]}\\
+					&\Big(node\_degree~!= \big(\Call{GetNofBonds}{valencestates[i]}\\
 					
 					&-\Call{GetNofHydrogens}{valencestates[i]}\big) \textbf{ and}\\
 					
 					&\big(\Call{NodeDegreeNegationFlag}{node} == \texttt{false}\big)\Big)\\
 					
-					\textbf{or} & \Big(node\_degree = \big(\Call{GetNofBonds}{valencestates[i]}\\ 
+					\textbf{or} & \Big(node\_degree == \big(\Call{GetNofBonds}{valencestates[i]}\\ 
 					
 					&-\Call{GetNofHydrogens}{valencestates[i]}\big) \textbf{ and}\\
 					
@@ -206,13 +206,13 @@ Für die Kanten können die Eigenschaften zur Fingerprintgenerierung direkt aus de
 	\label{tab:smartsbind}
 \end{table}
 
-Nicht alle Eigenschaften eines SMARTS-Ausdruck können in dem hier vorgestellten Verfahren verarbeitet werden. Zum Beispiel können die in Kapitel \ref{sssec:smarts} beschriebenen Rekursionen, die für SMARTS-Ausdrücke genutzt werden, um Umgebungen von SMARTS-Primitiven zu definieren, nicht beachtet werden. Für weitere nicht unterstützte SMARTS-Primitve siehe Kapitel \ref{ssec:probleme}. Lösungsansätze werden in Kapitel \ref{sec:ausblick} beschrieben.
+Nicht alle Eigenschaften eines SMARTS-Ausdrucks können in dem hier vorgestellten Verfahren verarbeitet werden. Zum Beispiel können die in Kapitel \ref{sssec:smarts} beschriebenen Rekursionen, die für SMARTS-Ausdrücke genutzt werden, um Umgebungen von SMARTS-Primitiven zu definieren, nicht beachtet werden. Für weitere nicht unterstützte SMARTS-Primitve siehe Kapitel \ref{ssec:probleme}. Lösungsansätze werden in Kapitel \ref{sec:ausblick} beschrieben.
 
-\subsection{Vergleich und Aufbau Relations-Matrix} \label{ssec:relmatr}
-Für die Untersuchung auf einen Subgraphisomorphismus von zwei chemischen Mustern benötigt man Initial-Matrizen für Knoten und Kanten, die die möglichen bijektiven Abbildungen der einzelnen Elemente repräsentieren.
-Anschließend wird die Initial-Matrix der Knoten und die der Kanten zusammen mit den Adjazenzmatrizen\footnote[1]{Matrix zugehörig zu einen Graphen. Matrixeintrag "`1"' bedeuted, dass eine Kante zwischen zwei Knoten besteht. Matrixeintrag "`0"', dass es keine Kante zwischen zwei Knoten gibt. Dabei besitzt sie für jeden Knoten eine Zeile ($i$) und eine Spalte ($j$). Ein Element ($i,j$) gibt die Adjazenz vom $i$-ten und $j$-ten Knoten an. \cite{graph}} der beiden chemischen Mustern an einen Algorithmus zur Berechnung des Isomorphismus übergeben. In dieser Arbeit wurde dazu der Algorithmus nach Ullmann \cite{ullmann} verwendet.\\
+\subsection{Vergleich und Aufbau Relationsmatrix} \label{ssec:relmatr}
+Für die Untersuchung auf einen Subgraph-Isomorphismus von zwei chemischen Mustern benötigt man Initial-Matrizen für Knoten und Kanten, die die möglichen bijektiven Abbildungen der einzelnen Elemente repräsentieren.
+Anschließend wird die Initial-Matrix der Knoten und die der Kanten zusammen mit den Adjazenzmatrizen\footnote[1]{Matrix zugehörig zu einen Graphen. Matrixeintrag "`1"' bedeutet, dass eine Kante zwischen zwei Knoten besteht. Matrixeintrag "`0"' heißt, dass es keine Kante zwischen zwei Knoten gibt. Dabei besitzt sie für jeden Knoten eine Zeile ($i$) und eine Spalte ($j$). Ein Element ($i,j$) gibt die Adjazenz vom $i$-ten und $j$-ten Knoten an. \cite{graph}} der beiden chemischen Muster an einen Algorithmus zur Berechnung des Isomorphismus übergeben. In dieser Arbeit wurde dazu der Algorithmus nach Ullmann \cite{ullmann} verwendet.\\
 Anhand der Fingerprints, die für alle Bestandteile der beiden zu untersuchenden SMARTS-Ausdrücke erstellt wurden, können Rückschlüsse auf die Teilmengen-Relationen gezogen werden.\\
-Für den Vergleich werden Bit-Operationen genutzt. Die Tabelle \ref{tab:bitop} zeigt welche Bit-Operationen dazu ausgeführt werden müssen, um die Teilmengen-Relationen zu überprüfen. Anschließend können mit den Ergebnissen der Vergleiche die Initial-Matrizen initialisiert werden. In diesem Kontext werden sie als Relations-Matrizen bezeichnet, da sie Rückschlüsse auf Teilmengen-Relationen geben.\\
+Für den Vergleich werden Bit-Operationen genutzt. Die Tabelle \ref{tab:bitop} zeigt welche Bit-Operationen dazu ausgeführt werden müssen, um die Teilmengen-Relationen zu überprüfen. Anschließend können mit den Ergebnissen der Vergleiche die Initial-Matrizen initialisiert werden. In diesem Kontext werden sie als Relationsmatrizen bezeichnet, da sie Rückschlüsse auf Teilmengen-Relationen geben.\\
 
 \begin{table}[h]
 	\centering
@@ -226,7 +226,7 @@ Für den Vergleich werden Bit-Operationen genutzt. Die Tabelle \ref{tab:bitop} ze
 	\label{tab:bitop}
 \end{table}
 
-Wird für zwei Knoten oder zwei Kanten festgestellt, dass die angegebene Teilmengen-Relation besteht so wird der Matrix Eintrag auf "`1"' gesetzt. Abbildung \ref{abb:matrix} zeigt ein Beispiel einer initialisierten Relations-Matrix von zwei SMARTS-Ausdrücken.
+Wird für zwei Knoten oder zwei Kanten festgestellt, dass die angegebene Teilmengen-Relation besteht, so wird der Matrix-Eintrag auf "`1"' gesetzt. Abbildung \ref{abb:matrix} zeigt ein Beispiel einer initialisierten Relationsmatrix von zwei SMARTS-Ausdrücken.
 
 \begin{figure}[h]
 	\centering
@@ -281,7 +281,7 @@ Beispiel \ref{bsp:intersecone} zeigt zwei SMARTS-Ausdrücke für die Formel \eqref
 	\end{tabular}
 \end{table}
 
-Beispiel \ref{bsp:intersectwo} zeigt zwei SMARTS-Ausdrücke bei denen Formel \eqref{eq:fall2} gilt. Für mindestens einen Knoten gilt $\supset$. In diesem Beispiel ist es jeweils der letzte Knoten. Des Weiteren gilt für mindestens einen Knoten- oder Bindungspaar $\subset$. In diesem Beispiel sind dies die jeweils ersten beiden Knoten und die Bindung.\\
+Beispiel \ref{bsp:intersectwo} zeigt zwei SMARTS-Ausdrücke bei denen Formel \eqref{eq:fall2} gilt. Für mindestens einen Knoten gilt $\supset$. In diesem Beispiel ist es jeweils der letzte Knoten. Des Weiteren gilt für mindestens ein Knoten- oder Bindungspaar $\subset$. In diesem Beispiel sind dies die jeweils ersten beiden Knoten und die Bindung.\\
 
 \newpage
 \begin{bsp}
@@ -296,10 +296,10 @@ Beispiel \ref{bsp:intersectwo} zeigt zwei SMARTS-Ausdrücke bei denen Formel \eqr
 	\end{tabular}
 \end{table}
 
-\subsection{Subgraphisomorphie Analyse}
-Anhand der Relations-Matrizen von Knoten und Kanten ist es nun möglich zwei Muster auf einen Subgraphisomorphismus zu untersuchen.
+\subsection{Subgraph-Isomorphie Analyse}
+Anhand der Relationsmatrizen von Knoten und Kanten ist es nun möglich zwei Muster auf einen Subgraph-Isomorphismus zu untersuchen.
 
-Mit der für die Knoten erzeugten Relations-Matrix, den jeweiligen Adjazenz-Matrizen und der Information zur Vereinbarkeit der Kanten durch die entsprechende Relations-Matrix wird durch den Algorithmus nach Ullmann ein Isomorphismus gesucht. Die gefundenen bijektiven Abbildungen werden in Form von Permutationsmatrizen ausgegeben.
+Mit der für die Knoten erzeugten Relationsmatrix, den jeweiligen Adjazenz-Matrizen und der Information zur Vereinbarkeit der Kanten durch die entsprechende Relationsmatrix wird durch den Algorithmus nach Ullmann ein Isomorphismus gesucht. Die gefundenen bijektiven Abbildungen werden in Form von Permutationsmatrizen ausgegeben.
 
 Bei der Überprüfung auf eine Schnitt-Relation werden die Permutationsmatrizen in einem weiteren Schritt erneut auf diese Teilmengen-Relation geprüft. In diesem Schritt wird für die resultierende bijektive Abbildung geprüft, ob Formel \eqref{eq:fall1} oder Formel \eqref{eq:fall2} gilt.
 

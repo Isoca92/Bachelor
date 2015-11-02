@@ -1,32 +1,31 @@
 \BOOKMARK [1][-]{section.1}{Einleitung}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Motivation}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{Grundlagen}{section.1}% 3
-\BOOKMARK [1][-]{section.2}{L\366sungsstrategie}{}% 4
-\BOOKMARK [2][-]{subsection.2.1}{Konzepte}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.2}{Struktur}{section.2}% 6
-\BOOKMARK [1][-]{section.3}{Realisierung}{}% 7
-\BOOKMARK [2][-]{subsection.3.1}{Genutze Software}{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.2}{Aufarbeitung und Auswahl}{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.3}{Fingerprintgenerierung}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.4}{Vergleich und Aufbau Relations-Matrix}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.5}{Subgraphisomorphie Analyse}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.6}{Kennzeichnung}{section.3}% 13
-\BOOKMARK [1][-]{section.4}{Evaluation}{}% 14
-\BOOKMARK [2][-]{subsection.4.1}{Validierung}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.2}{Laufzeitanalyse}{section.4}% 16
-\BOOKMARK [1][-]{section.5}{Experimente und Auswertung}{}% 17
-\BOOKMARK [2][-]{subsection.5.1}{Diskussion der Experimente}{section.5}% 18
-\BOOKMARK [1][-]{section.6}{Fazit}{}% 19
-\BOOKMARK [2][-]{subsection.6.1}{Ungel\366ste Probleme}{section.6}% 20
-\BOOKMARK [1][-]{section.7}{Weiterf\374hrende Arbeit}{}% 21
-\BOOKMARK [1][-]{appendix.A}{Software User Guide}{}% 22
-\BOOKMARK [2][-]{subsection.A.1}{Command Line Syntax}{appendix.A}% 23
-\BOOKMARK [2][-]{subsection.A.2}{Command Line Options}{appendix.A}% 24
-\BOOKMARK [1][-]{appendix.B}{Softwarearchitektur}{}% 25
-\BOOKMARK [1][-]{appendix.C}{Wichtige Module und Klassen}{}% 26
-\BOOKMARK [1][-]{appendix.D}{Tests}{}% 27
-\BOOKMARK [1][-]{appendix.E}{APIs}{}% 28
-\BOOKMARK [1][-]{appendix.F}{Genutzte Datens\344tze}{}% 29
-\BOOKMARK [1][-]{appendix.G}{Ergebnisse der Experimente}{}% 30
-\BOOKMARK [1][-]{appendix.H}{Implementation}{}% 31
-\BOOKMARK [1][-]{appendix.I}{Literatur}{}% 32
+\BOOKMARK [2][-]{subsection.1.1}{Grundlagen}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{L\366sungsstrategie}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Konzepte}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Struktur}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Realisierung}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Genutzte Software}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Aufarbeitung und Auswahl}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Fingerprintgenerierung}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{Vergleich und Aufbau Relationsmatrix}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.5}{Subgraph-Isomorphie Analyse}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.6}{Kennzeichnung}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Evaluation}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Validierung}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.2}{Laufzeitanalyse}{section.4}% 15
+\BOOKMARK [1][-]{section.5}{Experimente und Auswertung}{}% 16
+\BOOKMARK [2][-]{subsection.5.1}{Diskussion der Experimente}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Fazit}{}% 18
+\BOOKMARK [2][-]{subsection.6.1}{Ungel\366ste Probleme}{section.6}% 19
+\BOOKMARK [1][-]{section.7}{Weiterf\374hrende Arbeit}{}% 20
+\BOOKMARK [1][-]{appendix.A}{Software User Guide}{}% 21
+\BOOKMARK [2][-]{subsection.A.1}{Command Line Syntax}{appendix.A}% 22
+\BOOKMARK [2][-]{subsection.A.2}{Command Line Options}{appendix.A}% 23
+\BOOKMARK [1][-]{appendix.B}{Softwarearchitektur}{}% 24
+\BOOKMARK [1][-]{appendix.C}{Wichtige Module und Klassen}{}% 25
+\BOOKMARK [1][-]{appendix.D}{Tests}{}% 26
+\BOOKMARK [1][-]{appendix.E}{APIs}{}% 27
+\BOOKMARK [1][-]{appendix.F}{Genutzte Datens\344tze}{}% 28
+\BOOKMARK [1][-]{appendix.G}{Ergebnisse der Experimente}{}% 29
+\BOOKMARK [1][-]{appendix.H}{Implementation}{}% 30
+\BOOKMARK [1][-]{appendix.I}{Literatur}{}% 31

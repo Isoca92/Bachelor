@@ -4,9 +4,9 @@
 
 \subsection{Command Line Syntax} 
 
-Command Line Syntax beginnt immer mit dem Command Line Programmnamen. Dem Programmnamen können dann Optionen und Dateinamen folgen. Die Optionen können in beliebiger Reihenfolge, angeführt von einem Minus und getrennt mit einem Leerzeichen angegeben werden.\\
+Command Line Syntax beginnt immer mit dem Command Line Programmnamen. Dem Programmnamen können dann Optionen und Dateinamen folgen. Die Optionen können in beliebiger Reihenfolge, angeführt von einem Minus und getrennt mit einem Leerzeichen, angegeben werden.\\
 
-Das folgende Beispiel zeigt die Command Line Syntax um \textit{SmartsSmarts} mit einer SMARTS Datei auszuführen
+Das folgende Beispiel zeigt die Command Line Syntax, um \textit{SmartsSmarts} mit einer SMARTS Datei auszuführen:
 \begin{itemize}
 	\item
 	\begin{itemize}
@@ -63,7 +63,7 @@ Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Paramete
 \noindent \hspace*{10mm}\textbf{\texttt{--relationship }}\textit{"Bitstring"}
 
 \textbf{Hinweis:}\\
-Der Bitstring muss folgenden Syntax einhalten:
+Der Bitstring muss folgende Syntax einhalten:
 \begin{itemize}
 	\setlength\itemsep{0em}\setlength\parskip{0em}
 	\item Der Bitstring besteht aus 4 Zeichen
@@ -82,7 +82,7 @@ Der Bitstring muss folgenden Syntax einhalten:
 \subsubsection*{-v (Validierung (Entwickleroption))}
 Wenn der Programmname mit dieser Option eingeben wird, ist als weiterer Parameter ein Dateiname erforderlich, welche Molekülbeschreibungen beinhaltet. Mögliche Dateiformate sind:  \texttt{.mol2}, \texttt{.pdb}, \texttt{.sdf}, \texttt{.smi}, \texttt{.smiles}\\
 Die Optionen \texttt{-s} (oder \texttt{-l}), \texttt{-t} und  \texttt{-r} sind bei dieser Option erforderlich.
-Es handelt sich bei dieser Option um eine Entwickleroption mit der die Validierung des Programms ausgeführt wird.\\
+Es handelt sich bei dieser Option um eine Entwickleroption, mit der die Validierung des Programms ausgeführt wird.\\
 \textbf{Syntax:}\\
 \noindent \hspace*{10mm}\textbf{\texttt{-v }}\textit{molecules}\\
 \noindent \hspace*{10mm}\textbf{\texttt{--validation}} \textit{molecules}
@@ -110,14 +110,14 @@ In Abbildung \ref{fig:softwarestruk} ist die Softwarestruktur des Programms \tex
 & \texttt{const std::vector<std::vector<int>>}\\
 & \qquad \texttt{existingLabels)}
 \end{align*}
-Diese Funktion versieht anhand von Anfrage-SMARTS, Ziel-SMARTS und einen Liste über die bestehenden \textit{Label}, beide SMARTS-Ausdrücke mit \textit{Labeln} zur eindeutigen Kennzeichnung und gibt diese zurück.
+Diese Funktion versieht anhand von Anfrage-SMARTS, Ziel-SMARTS und einer Liste über die bestehenden \textit{Label} beide SMARTS-Ausdrücke mit \textit{Labeln} zur eindeutigen Kennzeichnung und gibt diese zurück.
 \begin{align*}
 	\hspace{0.3cm}\texttt{std::pair<std::string,}&\texttt{std::string> recalculateLabels(const std::string}\\
 	& \texttt{ \&smarts\_q, const std::string \&smarts\_t,}\\
 	& \texttt{ const std::vector<std::vector<int>>\&existingLabels,}\\
 	& \texttt{ const Base::SimpleMatrix<int>\&solutions)}
 \end{align*}
-	Diese Funktion bekommt Anfrage-SMARTS, Ziel-SMARTS, eine Liste über die bestehenden \textit{Label} und eine Permutationsmatrix, die einen Isomorphismus repräsentiert übergeben. Sie setzt die \textit{Label} anhand der gefundenen Lösung neu, und gibt Anfrage- und Ziel-SMARTS zurück.\\
+	Diese Funktion bekommt Anfrage-SMARTS, Ziel-SMARTS, eine Liste über die bestehenden \textit{Label} und eine Permutationsmatrix, die einen Isomorphismus repräsentiert, übergeben. Sie setzt die \textit{Label} anhand der gefundenen Lösung neu und gibt Anfrage- und Ziel-SMARTS zurück.\\
 
 \textbf{\large SmartsSmartsUllmann.hpp}
 \begin{flalign*}
@@ -134,26 +134,26 @@ Diese Funktion berechnet mit einem Anfrage-SMARTS, Ziel-SMARTS und einer Teilmen
 & \texttt{ const std::string \&smarts\_t,}&\\
 & \texttt{ const std::string \&relation)}&
 \end{flalign*}
-Anhand von Anfrage-SMARTS, Ziel-SMARTS und Teilmengen-Relation in Form eines Bitstrings initialisiert diese Funktion eine Relations-Matrix. Ausgegeben wird die Relations-Matrix, die die Verträglichkeit der Knoten der beiden SMARTS-Ausdrücke repräsentiert.
+Anhand von Anfrage-SMARTS, Ziel-SMARTS und Teilmengen-Relation in Form eines Bitstrings initialisiert diese Funktion eine Relationsmatrix. Ausgegeben wird die Relationsmatrix, die die Verträglichkeit der Knoten der beiden SMARTS-Ausdrücke repräsentiert.
 \begin{flalign*}
 \hspace{0.3cm}\texttt{SmartsMatcher::EdgeCompatibility} & \texttt{ initialiseEdgeCompatibility}&\\
 & \qquad \texttt{(const std::string \&smarts\_q,}&\\
 & \qquad \texttt{ const std::string \&smarts\_t,}&\\
 & \qquad \texttt{ const std::string \&relation)}&
 \end{flalign*}
-Anhand von Anfrage-SMARTS, Ziel-SMARTS und Teilmengen-Relation in Form eines Bitstrings initialisiert diese Funktion ein \texttt{SmartsMatcher::EdgeCompatibility} Ausgegeben wird das \texttt{EdgeCompatibility}-Objekt, welches die Verträglichkeit der Kanten der beiden SMARTS-Ausdrücke repräsentiert.\\
+Anhand von Anfrage-SMARTS, Ziel-SMARTS und Teilmengen-Relation in Form eines Bitstrings initialisiert diese Funktion ein \texttt{SmartsMatcher::EdgeCompatibility}. Ausgegeben wird das \texttt{EdgeCompatibility}-Objekt, welches die Verträglichkeit der Kanten der beiden SMARTS-Ausdrücke repräsentiert.\\
 
 \textbf{\large Mapping.hpp}
 \begin{flalign*}
 \hspace{0.3cm}\texttt{std::string isNodeMappable} & \texttt{(const sg\_node *node\_q, const sg\_node *node\_t,}&\\
 & \texttt{ const std::string \&relation)}&
 \end{flalign*}
-Anfrage-Knoten, Ziel-Knoten und Teilmengen-Relation in Form eines Bitstrings werden an diese Funktion übergeben, die anschließend prüft welche Teilmengen-Relation bei zwei Knoten vorliegt und gibt diese als Bitstring zurück.
+Anfrage-Knoten, Ziel-Knoten und Teilmengen-Relation in Form eines Bitstrings werden an diese Funktion übergeben, die anschließend prüft, welche Teilmengen-Relation bei zwei Knoten vorliegt, und diese als Bitstring zurückgibt.
 \begin{flalign*}
 \hspace{0.3cm}\texttt{std::string isEdgeMappable} & \texttt{(const sg\_edge *edge\_q, const sg\_edge *edge\_t,}&\\
 & \texttt{ const std::string \&relation)}&
 \end{flalign*}
-Anfrage-Kante, Ziel-Kante und Teilmengen-Relation in Form eines Bitstrings werden dieser Funktion übergeben, die prüft welche Teilmengen-Relation zwischen zwei Kanten vorliegt und gibt diese als Bitstring zurück\\
+Anfrage-Kante, Ziel-Kante und Teilmengen-Relation in Form eines Bitstrings werden dieser Funktion übergeben, die prüft, welche Teilmengen-Relation zwischen zwei Kanten vorliegt, und diese als Bitstring zurückgibt.\\
 
 \textbf{\large Fingerprint.hpp}
 \begin{flalign*}
@@ -165,7 +165,7 @@ Diese Funktion generiert einen Fingerprint für einen gegebenen Knoten und gibt d
 \end{flalign*}
 Diese Funktion generiert einen Fingerprint für eine gegebene Kante und gibt diesen in Form eines Bitsets aus.
 
-\textbf{\large ExpendedValencestate.hpp}
+\textbf{\large ExpandedValencestate.hpp}
 \begin{flalign*}
 &\hspace{0.3cm}\texttt{std::vector<ExpandedValenceState> createAllValenceStates()}&
 \end{flalign*}
@@ -178,7 +178,7 @@ Erstellt eine Liste über alle möglichen Valenzzustände von Atom-SMARTS-Ausdrücke
 & \texttt{ std::string relation, std::string smarts\_q,}&\\
 & \texttt{ std::string smarts\_t)}&
 \end{flalign*}
-Fügt einem gegebenen ValidierungsOutput anhand einer Liste von Molekülen, einer Liste über gefundene \textit{Mappings}, einem Anfrage- und einem Ziel-SMARTS, neue Ergebnisse der Validierung zu.
+Fügt einem gegebenen ValidierungsOutput anhand einer Liste von Molekülen, einer Liste über gefundene \textit{Mappings}, einem Anfrage- und einem Ziel-SMARTS neue Ergebnisse der Validierung zu.
 
 \section{Tests}\label{ssec:test}
 Zur Überprüfung der Korrektheit des implementierten Verfahrens \textit{SmartsSmarts} wurden im ersten Schritt der Evaluation die Hauptfunktionen, die das Verfahren nutzt, auf korrekte Ergebnisse überprüft. Welche Testfunktionen genutzt wurden, wird in diesem Kapitel beschrieben.
@@ -188,21 +188,21 @@ Zur Überprüfung der Korrektheit des implementierten Verfahrens \textit{SmartsSma
 	Die Testfunktion prüft, ob bei der Übergabe von einem Knoten eines SMARTS-Ausdrucks ein Fingerprint generiert wurde, der die richtigen Bits gesetzt hat.
 	
 	\item[\texttt{mapping:}]\hfill \\
-	Überprüft die Korrektheit der Funktion bei der anhand von zwei Fingerprints und einer Teilmengen-Relation ermittelt wird, ob die gewünschte Teilmengen-Relation gefunden wurde.
+	Überprüft die Korrektheit der Funktion, bei der anhand von zwei Fingerprints und einer Teilmengen-Relation ermittelt wird, ob die gewünschte Teilmengen-Relation gefunden wurde.
 	
 	\item[\texttt{nodeRelationMatrix:}]\hfill \\
-	Initialisiert eine Relations-Matrix und überprüft, ob diese korrekt erstellt wurde.
+	Initialisiert eine Relationsmatrix und überprüft, ob diese korrekt erstellt wurde.
 	
 	\item[\texttt{smartsSmartsUllmann:}]\hfill \\
 	Testfunktion die ermittelt, ob bei der Übergabe von zwei SMARTS-Ausdrücken und einer Teilmengen-Relation das erwartete \textit{Mapping} in Form einer Permutationsmatrix ausgegeben wird.
 	
 \end{description}
 
-Durch die Testfunktionen konnten Fehler in der Finerprintgenerierung und der Isomorphismusanalyse durch den Algorithmus nach Ullmann identifiziert und behoben werden.
+Durch die Testfunktionen konnten Fehler in der Fingerprintgenerierung und der Isomorphismus-Analyse durch den Algorithmus nach Ullmann identifiziert und behoben werden.
 
 \newpage
 \section{APIs}
-Um das \textit{SmartsSmarts}-Programm einzubinden müssen folgende Funktionen aufgerufen werden:
+Um das \textit{SmartsSmarts}-Programm einzubinden, müssen folgende Funktionen aufgerufen werden:
 
 \textbf{Prototyp:}
 \begin{lstlisting}
@@ -216,16 +216,13 @@ Gewinnt aus einem gegebenen SMARTS-Ausdruck bestehende \textit{Label} und speich
 
 \textbf{Prototyp:}
 \begin{lstlisting}
-std::pair<std::string,std::string> addLabels(const std::string &querySmarts,
-const std::string &targetSmarts,
-const std::vector<std::vector<int>>
-&existingLabels);
+std::pair<std::string,std::string> addLabels(const std::string &querySmarts, const std::string &targetSmarts, const std::vector<std::vector<int>> &existingLabels);
 \end{lstlisting}
 \textbf{Header:}\\
 "`LabelMapping.hpp"'
 
 \textbf{Beschreibung:}\\
-Fügt an alle Atome eines Anfrage- und eines Ziel-SMARTS, falls noch nicht vorhanden, \textit{Label} hinzu, so dass jedes Atom eine eindeutige Kennzeichnung hat.
+Fügt an alle Atome eines Anfrage- und eines Ziel-SMARTS, falls noch nicht vorhanden, \textit{Label} hinzu, sodass jedes Atom eine eindeutige Kennzeichnung hat.
 
 \textbf{Prototyp:}
 \begin{lstlisting}
@@ -237,22 +234,17 @@ const std::string &relation);
 "`SmartsSmartsUllmann.hpp"'
 
 \textbf{Beschreibung:}\\
-Prüft für einen Anfrage-, Ziel-SMARTS und eine Teilmengen-Relation, ob es einen oder mehrere Isomorphismen gibt und gibt diesen in Form eines\\ \texttt{std::vector<Base::SimpleMatrix<int>>} zurück.
-
+Prüft für einen Anfrage-, Ziel-SMARTS und eine Teilmengen-Relation, ob es einen oder mehrere Isomorphismen gibt, und gibt diesen in Form eines\\ \texttt{std::vector<Base::SimpleMatrix<int>>} zurück.
+\newpage
 \textbf{Prototyp:}
 \begin{lstlisting}
-std::pair<std::string,std::string> recalculateLabels(const std::string &querySmarts,
-const std::string &targetSmarts,
-const std::vector<std::vector<int>>
-&existingLabels,
-const Base::SimpleMatrix<int>
-&solutions);
+std::pair<std::string,std::string> recalculateLabels(const std::string &querySmarts, const std::string &targetSmarts, const std::vector<std::vector<int>> &existingLabels, const Base::SimpleMatrix<int> &solutions);
 \end{lstlisting}
 \textbf{Header:}\\
 "`LabelMapping.hpp"'
 
 \textbf{Beschreibung:}\\
-Kenntzeichnet einen gefundenen Isomorphismus durch Neusetzung der \textit{Label} und gibt Anfrage- und Ziel-SMARTS als \texttt{std::pair<std::string,std::string>} zurück.
+Kennzeichnet einen gefundenen Isomorphismus durch Neusetzung der \textit{Label} und gibt Anfrage- und Ziel-SMARTS als \texttt{std::pair<std::string,std::string>} zurück.
 
 %Bitte gany am Ende belassen.
 \nocite{*}
@@ -289,10 +281,10 @@ siehe \texttt{all\_smarts\_zbh.txt}
 \noindent \hspace*{10mm}siehe \texttt{ChEMBL\_SureChEMBL.txt}
 
 \section{Ergebnisse der Experimente} \label{ssec:exp}
-Ergebnisse, die durch das Experiment (vgl. Kapitel \ref{sec:experimente}) der acht Filter entstanden sind. 28 Dateien mit Ergebnissen nach Ausführung des \textit{SmartsSmarts}-Programms. Siehe Ordner \texttt{Ergebnisse\_Experimente} auf Datenträger (Seite \pageref{endoffile}).
+Ergebnisse, die durch das Experiment (vgl. Kapitel \ref{sec:experimente}) der acht Filter entstanden sind. 28 Dateien mit Ergebnissen nach Ausführung des \textit{SmartsSmarts}-Programms. Siehe Datenträger (Seite \pageref{endoffile}).
 
 \section{Implementation}
-Siehe Ordner \texttt{Implementation} auf Datenträger (Seite \pageref{endoffile})
+Siehe Datenträger (Seite \pageref{endoffile})
 
  
 \label{endoffile}

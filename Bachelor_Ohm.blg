@@ -10,10 +10,9 @@ A level-1 auxiliary file: chapters/kapitel6.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: _eidversicherung.aux
 Database file #1: bibliography/literatur.bib
-Warning--I didn't find a database entry for "smartsviewer"
 You've used 26 entries,
             1791 wiz_defined-function locations,
-            605 strings with 7486 characters,
+            604 strings with 7377 characters,
 and the built_in function-call counts, 4831 in all, are:
 = -- 416
 > -- 212
@@ -52,4 +51,3 @@ warning$ -- 0
 while$ -- 38
 width$ -- 28
 write$ -- 283
-(There was 1 warning)
